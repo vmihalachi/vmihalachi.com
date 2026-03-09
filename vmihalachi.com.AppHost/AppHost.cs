@@ -1,5 +1,8 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
+// Add the following line to configure the Azure App Container environment
+builder.AddAzureContainerAppEnvironment("env");
+
 var server = builder.AddProject<Projects.vmihalachi_com_Server>("server")
     .WithHttpHealthCheck("/health")
     .WithExternalHttpEndpoints();
