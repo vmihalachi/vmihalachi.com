@@ -1,5 +1,7 @@
 # vmihalachi.com
 
-aspire run --project "./vmihalachi.com.AppHost/vmihalachi.com.AppHost.csproj"
-aspire publish --project "./vmihalachi.com.AppHost/vmihalachi.com.AppHost.csproj"
-aspire deploy --project "./vmihalachi.com.AppHost/vmihalachi.com.AppHost.csproj" --log-level debug
+Personal portfolio of Vlad Mihalachi — Senior Software Engineer at Microsoft.
+
+## Deployment
+
+Automated via GitHub Actions to Azure Static Web Apps.
