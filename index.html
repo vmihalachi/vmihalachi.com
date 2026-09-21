@@ -5,31 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Vlad Mihalachi — Full-Stack and App Developer, Senior Software Engineer at Microsoft."
+      content="Vlad Mihalachi — Senior Software Engineer at Microsoft, building useful software and side projects."
     />
     <meta name="theme-color" content="#f4f0e8" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <title>Vlad Mihalachi — Engineer in full colour</title>
+    <title>Vlad Mihalachi — Software Engineer</title>
   </head>
   <body>
     <main>
       <nav class="nav" aria-label="Main navigation">
         <a class="wordmark" href="#top" aria-label="Vlad Mihalachi, home">VM<span>.</span></a>
         <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#now">Now</a>
+          <a href="#work">Work</a>
+          <a href="#current">Open source</a>
+          <a href="#interests">Interests</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
 
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <h1 id="hero-title">Building useful<br /><em>things</em> with care.</h1>
+          <h1 id="hero-title">I build software<br />that earns its <em>place.</em></h1>
           <p class="intro">
-            I’m Vlad — a full-stack and app developer who enjoys turning complicated systems into
-            clear, human experiences.
+            I’m Vlad, a full-stack and app developer. I enjoy the work of making complicated systems
+            feel clear and useful.
           </p>
-          <a class="button" href="#about">A little more about me <span>↓</span></a>
+          <a class="button" href="#work">My work <span>↓</span></a>
         </div>
         <div class="orbit-art" aria-hidden="true">
           <div class="orbit orbit-one"></div>
@@ -41,26 +42,44 @@
         </div>
       </section>
 
-      <section class="manifesto" id="about" aria-labelledby="about-title">
-        <p class="section-mark">01 / A BIT OF CONTEXT</p>
+      <section class="manifesto" id="work" aria-labelledby="work-title">
+        <p class="section-mark">01 / WORK</p>
         <div class="manifesto-grid">
-          <h2 id="about-title">Good software is a quiet kind of <span>magic.</span></h2>
+          <h2 id="work-title">I like the messy part<br />before things <span>click.</span></h2>
           <div class="manifesto-copy">
             <p>
-              I’m a Senior Software Engineer at Microsoft, working across the stack and wherever an
-              idea needs thoughtful engineering. I believe the best work is rigorous underneath and
-              delightfully simple on the surface.
+              I’m a Senior Software Engineer at Microsoft, where I’ve been building since December
+              2019. That’s <span id="microsoft-experience"></span> years at Microsoft and
+              <span id="professional-experience"></span> years of professional experience. I work
+              across the stack, wherever a problem needs careful engineering.
             </p>
             <p>
-              Open source is how I learn in public and give back. If there’s a chance to make a
-              useful contribution, I’m usually in.
+              I care about the details that make a product easier to understand and easier to use.
+              Open source is also part of that: a way to learn in public and make useful
+              contributions where I can.
             </p>
           </div>
         </div>
       </section>
 
-      <section class="interests" aria-label="Things that fascinate me">
-        <p class="section-mark">02 / OFF THE CLOCK</p>
+      <section class="now" id="current" aria-labelledby="current-title">
+        <div>
+          <p class="section-mark light">02 / OPEN SOURCE</p>
+          <h2 id="current-title">Learning in<br />the open.</h2>
+        </div>
+        <div class="now-detail">
+          <div class="signal-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <p>
+            Open source is where I learn in public, follow good work closely, and contribute when I
+            can.
+          </p>
+          <p class="small">Always learning.</p>
+        </div>
+      </section>
+
+      <section class="interests" id="interests" aria-labelledby="interests-title">
+        <p class="section-mark">03 / OFF THE CLOCK</p>
+        <h2 id="interests-title" class="visually-hidden">Things that fascinate me</h2>
         <div class="interest-grid">
           <article class="interest-card maths">
             <span>🔢</span>
@@ -70,39 +89,22 @@
           <article class="interest-card physics">
             <span>🔭</span>
             <h3>Physics</h3>
-            <p>A lifelong fascination with how the universe keeps its books.</p>
+            <p>I like asking how the universe holds together and why it behaves the way it does.</p>
           </article>
           <article class="interest-card biology">
             <span>🌱</span>
             <h3>Biology</h3>
-            <p>Nature’s beautifully opinionated approach to system design.</p>
+            <p>A reminder that living systems are full of strange, practical solutions.</p>
           </article>
-        </div>
-      </section>
-
-      <section class="now" id="now" aria-labelledby="now-title">
-        <div>
-          <p class="section-mark light">03 / CURRENTLY</p>
-          <h2 id="now-title">Making signals<br />make sense.</h2>
-        </div>
-        <div class="now-detail">
-          <div class="signal-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-          <p>
-            I’m also working on
-            <a href="https://signalio.com" target="_blank" rel="noreferrer"
-              >signalio.com <span>↗</span></a
-            >.
-          </p>
-          <p class="small">More soon.</p>
         </div>
       </section>
 
       <section class="contact" id="contact" aria-labelledby="contact-title">
         <p class="section-mark">04 / SAY HELLO</p>
-        <h2 id="contact-title">Found a bigger<br />prime number?</h2>
+        <h2 id="contact-title">Got a question<br />worth following?</h2>
         <p>
-          Or simply want to talk about building things, open source, or why nature’s codebase is
-          undefeated.
+          I’m always happy to talk about software, open source, or the things we are still trying to
+          understand.
         </p>
         <a
           class="contact-link"
@@ -115,7 +117,7 @@
     </main>
     <footer>
       <span>© <span id="year"></span> Vlad Mihalachi</span>
-      <span>Made with curiosity &amp; a few good questions.</span>
+      <span>Still asking questions.</span>
     </footer>
     <script type="module" src="/src/main.js"></script>
   </body>
