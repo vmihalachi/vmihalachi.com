@@ -1,0 +1,9 @@
+{
+  "name": "Vlad Mihalachi — Software Engineer",
+  "short_name": "Vlad Mihalachi",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f4f0e8",
+  "theme_color": "#f4f0e8",
+  "icons": [{ "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" }]
+}
