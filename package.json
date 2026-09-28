@@ -6,7 +6,8 @@
     "dev": "vp dev",
     "build": "vp build",
     "preview": "vp preview",
-    "check": "vp check",
+    "check": "vp check && node scripts/check-csp.mjs",
+    "csp:fix": "node scripts/check-csp.mjs --fix",
     "prepare": "vp config"
   },
   "devDependencies": {

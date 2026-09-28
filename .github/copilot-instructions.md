@@ -11,13 +11,15 @@ Requires Node.js 24 (`.nvmrc`).
 ```sh
 npm install
 npm run dev      # vp dev
-npm run check    # vp check: Oxfmt format + Oxlint (type-aware) + type check
+npm run check    # vp check (Oxfmt + type-aware Oxlint + type check) + CSP hash check
+npm run csp:fix  # rewrite the CSP hash after editing the inline <head> script
 npm run build    # vp build → dist/
 npm run preview  # vp preview
 ```
 
-- There is no test suite. `npm run check` is the validation step, and CI runs it before
-  building.
+- There is no test suite. Skip the `vp test` step from the `AGENTS.md` checklist. It
+  exits 1 with "No test files found". `npm run check` is the validation step, and CI
+  runs it before building.
 - The pre-commit hook (`.vite-hooks/pre-commit` → `vp staged`) runs `vp check --fix` on
   staged files.
 - Lint rule `vite-plus/prefer-vite-plus-imports` is an error: import from `vite-plus`,
@@ -48,16 +50,14 @@ npm run preview  # vp preview
 ## Conventions and gotchas
 
 - **CSP hash:** `public/staticwebapp.config.json` allows the inline `<head>` script by its
-  SHA-256 hash. Any change to that script, including whitespace, needs a new hash. After
-  `npm run build`, run:
-
-  ```sh
-  python3 -c "import re,hashlib,base64;s=open('dist/index.html').read();m=re.search(r'<script>(.*?)</script>',s,re.S).group(1);print(base64.b64encode(hashlib.sha256(m.encode()).digest()).decode())"
-  ```
+  SHA-256 hash, so any change to that script, including whitespace, needs a new hash.
+  `scripts/check-csp.mjs` (part of `npm run check`) fails on a stale hash. Run
+  `npm run csp:fix` to rewrite it.
 
   Any new external origin (fonts, images, scripts, fetch) must also be added to the CSP.
 
-- When editing copy, keep the counter element IDs used by `main.js`.
+- When editing copy, keep the counter element IDs used by `main.js`. Their text in
+  `index.html` is what no-JS visitors see, so keep those fallbacks current as well.
 - Nav `href`s must match section `id`s.
 - Section marks are numbered (`01 / WORK`, `02 / …`); renumber all of them together when
   sections change.

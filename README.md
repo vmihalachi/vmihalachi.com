@@ -23,9 +23,5 @@ Automated via GitHub Actions to Azure Static Web Apps. Pushes to `master` deploy
 production; pull requests get a preview environment.
 
 Security headers and caching are configured in `public/staticwebapp.config.json`. The
-Content-Security-Policy allows the inline script in `index.html` by its SHA-256 hash, so
-if that script (including its whitespace) changes, update the hash too:
-
-```sh
-python3 -c "import re,hashlib,base64;s=open('dist/index.html').read();m=re.search(r'<script>(.*?)</script>',s,re.S).group(1);print(base64.b64encode(hashlib.sha256(m.encode()).digest()).decode())"
-```
+Content-Security-Policy allows the inline script in `index.html` by its SHA-256 hash.
+`npm run check` fails when the hash is stale, and `npm run csp:fix` rewrites it.
