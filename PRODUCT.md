@@ -27,8 +27,7 @@ A first-person site written by one engineer about his own work and curiosity. It
 ## Capabilities and Constraints
 
 - Plain HTML/CSS/JS built with Vite+ (`vp`). No framework or CMS.
-- A strict Content-Security-Policy in `public/staticwebapp.config.json`. It allows the inline script by its SHA-256 hash, so any change to that script needs a new hash.
-- The experience counters are computed in `src/main.js` from a December 2019 Microsoft start date. Professional experience is that figure + 3 years.
+- A strict Content-Security-Policy. Every new external origin (fonts, images, scripts) is a deliberate trade-off.
 - The site must be able to grow: more projects and work will be added over time. It should not be locked into a single side-project slot.
 - Open decision: whether to add a writing/blog section later.
 
@@ -42,7 +41,8 @@ A first-person site written by one engineer about his own work and curiosity. It
 ## Evidence on Hand
 
 - Senior Software Engineer at Microsoft since December 2019.
-- mybackhurts (https://mybackhurts.app): a macOS menu-bar app (macOS 14 Sonoma or later) that prompts a short break to stand up and move every 45 minutes. It can optionally count reps with the webcam, and all processing stays on the Mac. Status: launching soon.
+- About 3 years of professional software work before Microsoft. The page's experience counters depend on this figure.
+- mybackhurts (https://mybackhurts.app): a desktop menu-bar app that prompts a short break to stand up and move every 45 minutes. It can optionally count reps with the webcam, and all processing stays on the device. Status: launching soon.
 - Reads open-source code and contributes when he has something useful to add.
 - Interests: Maths, Physics, Biology.
 - Profiles: LinkedIn and GitHub (above).

@@ -353,6 +353,14 @@ h1 em {
   outline: 2px solid var(--acid);
   outline-offset: 4px;
 }
+.project-name {
+  background: rgba(203, 255, 70, 0.2);
+  padding: 0.15em 0.35em;
+  border-radius: 0.25em;
+}
+.now .project-name {
+  background: rgba(203, 255, 70, 0.15);
+}
 .now-detail .small {
   font:
     400 0.82rem "DM Mono",
