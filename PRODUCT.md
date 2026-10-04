@@ -22,7 +22,7 @@ A first-person site written by one engineer about his own work and curiosity. It
 
 - A single static page served from Azure Static Web Apps, deployed from `master` via GitHub Actions.
 - Visitors mostly land from outbound profiles (LinkedIn, GitHub) or from mybackhurts.app.
-- Visitors can follow up on LinkedIn (https://www.linkedin.com/in/vmihalachi/) and GitHub (https://github.com/vmihalachi).
+- Visitors can follow up via email (hello@vmihalachi.com), LinkedIn (https://www.linkedin.com/in/vmihalachi/), and GitHub (https://github.com/vmihalachi).
 
 ## Capabilities and Constraints
 
@@ -45,7 +45,7 @@ A first-person site written by one engineer about his own work and curiosity. It
 - mybackhurts (https://mybackhurts.app): a desktop menu-bar app that prompts a short break to stand up and move every 45 minutes. It can optionally count reps with the webcam, and all processing stays on the device. Status: launching soon.
 - Reads open-source code and contributes when he has something useful to add.
 - Interests: Maths, Physics, Biology.
-- Profiles: LinkedIn and GitHub (above).
+- Contact & profiles: Email (hello@vmihalachi.com), LinkedIn, and GitHub (above).
 - Absent: testimonials, case studies, press, a project portfolio with screenshots, and a photo. Do not fabricate them.
 
 ## Product Principles
