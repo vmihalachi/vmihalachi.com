@@ -2,8 +2,11 @@
 
 Personal portfolio of Vlad Mihalachi — Senior Software Engineer at Microsoft.
 
-Available in English (`/`), Italian (`/it/`), and Romanian (`/ro/`). Each language is a
-separate static page: `index.html`, `it/index.html`, and `ro/index.html`.
+Available in English (`/`), Italian (`/it/`), and Romanian (`/ro/`). `index.html` is a
+template with `{{ key }}` placeholders, and the strings for each language live in
+`src/i18n/` (`en.json`, `it.json`, `ro.json`). A small Vite plugin (`scripts/i18n.mjs`)
+renders one static page per language at build time and fails the build if a translation
+is missing or out of sync.
 
 ## Development
 
@@ -17,8 +20,8 @@ npm run build    # build to dist/
 npm run preview  # preview the production build
 ```
 
-Static files served as-is (favicon, `robots.txt`, `sitemap.xml`, web manifest and the
-Azure Static Web Apps config) live in `public/`.
+Static files served as-is (favicon, `robots.txt`, web manifest and the Azure Static Web
+Apps config) live in `public/`. `sitemap.xml` is generated at build time.
 
 ## Deployment
 

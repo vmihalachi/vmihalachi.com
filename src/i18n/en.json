@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "title": "Vlad Mihalachi — Software Engineer",
+    "description": "Vlad Mihalachi, Senior Software Engineer at Microsoft and maker of mybackhurts.app."
+  },
+  "nav": {
+    "label": "Main navigation",
+    "home": "Vlad Mihalachi, home",
+    "work": "Work",
+    "interests": "Interests",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "hero": {
+    "title": "I build software<br />that earns its <em>place.</em>",
+    "intro": "I’m Vlad, a software engineer working across the stack, from services to apps. Most days that means untangling something until it’s simple enough to explain.",
+    "cta": "My work",
+    "badge": "CURIOUS<br />BY NATURE"
+  },
+  "work": {
+    "mark": "WORK",
+    "title": "I like the messy part<br />before things <span>click.</span>",
+    "experience": "I’m a Senior Software Engineer at Microsoft. I’ve been building software professionally for <span id=\"professional-experience\">9+</span> years, the last <span id=\"microsoft-experience\">6+</span> of them there.",
+    "openSource": "Outside work, I read a lot of open-source code and contribute back when I have something useful to add. It’s the best way I know to see how other people think through problems."
+  },
+  "project": {
+    "mark": "SIDE PROJECT",
+    "title": "My back hurts.<br />So I built an app.",
+    "description": "lives in your desktop’s menu bar and nudges you every 45 minutes to stand up and do a few quick moves. If you let it, your webcam counts the reps. Everything stays on your desktop.",
+    "link": "See",
+    "status": "Launching soon · Desktop"
+  },
+  "interests": {
+    "mark": "OFF THE CLOCK",
+    "title": "Things that fascinate me",
+    "maths": "Maths",
+    "mathsText": "Patterns, proofs, and the quiet pleasure of an elegant solution.",
+    "physics": "Physics",
+    "physicsText": "How the universe holds together, and why it behaves the way it does.",
+    "biology": "Biology",
+    "biologyText": "Living systems are full of strange, practical solutions."
+  },
+  "contact": {
+    "mark": "SAY HELLO",
+    "title": "Want to talk?",
+    "text": "I’m happy to talk about software, open source, or anything we still don’t fully understand.",
+    "linkedin": "Find me on LinkedIn",
+    "github": "Find me on GitHub"
+  },
+  "footer": {
+    "tagline": "Still asking questions."
+  }
+}

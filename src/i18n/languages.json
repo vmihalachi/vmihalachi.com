@@ -1,0 +1,5 @@
+[
+  { "code": "en", "name": "English", "path": "/", "locale": "en_US" },
+  { "code": "it", "name": "Italiano", "path": "/it/", "locale": "it_IT" },
+  { "code": "ro", "name": "Română", "path": "/ro/", "locale": "ro_RO" }
+]

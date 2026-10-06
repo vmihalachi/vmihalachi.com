@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "title": "Vlad Mihalachi — Software Engineer",
+    "description": "Vlad Mihalachi, Senior Software Engineer la Microsoft și creatorul mybackhurts.app."
+  },
+  "nav": {
+    "label": "Navigare principală",
+    "home": "Vlad Mihalachi, începutul paginii",
+    "work": "Muncă",
+    "interests": "Interese",
+    "contact": "Contact",
+    "language": "Limbă"
+  },
+  "hero": {
+    "title": "Construiesc software<br />care își câștigă <em>locul.</em>",
+    "intro": "Sunt Vlad, inginer software și lucrez la toate nivelurile, de la servicii la aplicații. În cele mai multe zile, asta înseamnă să descâlcesc ceva până devine destul de simplu încât să-l pot explica.",
+    "cta": "Ce fac",
+    "badge": "CURIOS<br />DIN FIRE"
+  },
+  "work": {
+    "mark": "MUNCĂ",
+    "title": "Îmi place haosul<br />dinainte ca totul să se <span>lege.</span>",
+    "experience": "Sunt Senior Software Engineer la Microsoft. Fac software în mod profesionist de <span id=\"professional-experience\">9+</span> ani, dintre care ultimii <span id=\"microsoft-experience\">6+</span> acolo.",
+    "openSource": "În afara serviciului citesc mult cod open source și contribui când am ceva util de adăugat. E cel mai bun mod pe care îl știu de a vedea cum gândesc alții o problemă."
+  },
+  "project": {
+    "mark": "PROIECT PERSONAL",
+    "title": "Mă doare spatele.<br />Așa că am făcut o aplicație.",
+    "description": "stă în bara de meniu a calculatorului tău și, la fiecare 45 de minute, îți amintește să te ridici și să faci câteva mișcări rapide. Dacă îi dai voie, camera web numără repetările. Totul rămâne pe calculatorul tău.",
+    "link": "Vezi",
+    "status": "În curând · Desktop"
+  },
+  "interests": {
+    "mark": "DUPĂ PROGRAM",
+    "title": "Lucruri care mă fascinează",
+    "maths": "Matematică",
+    "mathsText": "Tipare, demonstrații și plăcerea discretă a unei soluții elegante.",
+    "physics": "Fizică",
+    "physicsText": "Cum se ține universul laolaltă și de ce se comportă așa cum se comportă.",
+    "biology": "Biologie",
+    "biologyText": "Sistemele vii sunt pline de soluții ciudate și practice."
+  },
+  "contact": {
+    "mark": "SCRIE-MI",
+    "title": "Vrei să vorbim?",
+    "text": "Vorbesc cu plăcere despre software, open source sau orice lucru pe care încă nu-l înțelegem pe deplin.",
+    "linkedin": "Găsește-mă pe LinkedIn",
+    "github": "Găsește-mă pe GitHub"
+  },
+  "footer": {
+    "tagline": "Încă pun întrebări."
+  }
+}
