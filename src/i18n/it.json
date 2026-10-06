@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "title": "Vlad Mihalachi — Software Engineer",
+    "description": "Vlad Mihalachi, Senior Software Engineer in Microsoft e creatore di mybackhurts.app."
+  },
+  "nav": {
+    "label": "Navigazione principale",
+    "home": "Vlad Mihalachi, inizio pagina",
+    "work": "Lavoro",
+    "interests": "Interessi",
+    "contact": "Contatti",
+    "language": "Lingua"
+  },
+  "hero": {
+    "title": "Creo software<br />che si merita il suo <em>posto.</em>",
+    "intro": "Sono Vlad, un ingegnere del software che lavora su tutto lo stack, dai servizi alle app. Quasi ogni giorno vuol dire sbrogliare qualcosa finché non diventa abbastanza semplice da spiegare.",
+    "cta": "Il mio lavoro",
+    "badge": "CURIOSO<br />PER NATURA"
+  },
+  "work": {
+    "mark": "LAVORO",
+    "title": "Mi piace la parte confusa,<br />prima che tutto <span>torni.</span>",
+    "experience": "Sono Senior Software Engineer in Microsoft. Sviluppo software per lavoro da <span id=\"professional-experience\">9+</span> anni, di cui gli ultimi <span id=\"microsoft-experience\">6+</span> proprio lì.",
+    "openSource": "Fuori dal lavoro leggo molto codice open source e contribuisco quando ho qualcosa di utile da aggiungere. È il modo migliore che conosco per vedere come gli altri ragionano sui problemi."
+  },
+  "project": {
+    "mark": "PROGETTO PERSONALE",
+    "title": "Mi fa male la schiena.<br />Così ho creato un’app.",
+    "description": "vive nella barra dei menu del tuo computer e ogni 45 minuti ti ricorda di alzarti e fare qualche movimento veloce. Se glielo permetti, la webcam conta le ripetizioni. Tutto resta sul tuo computer.",
+    "link": "Vai su",
+    "status": "In arrivo · Desktop"
+  },
+  "interests": {
+    "mark": "FUORI ORARIO",
+    "title": "Cose che mi affascinano",
+    "maths": "Matematica",
+    "mathsText": "Schemi, dimostrazioni e il piacere discreto di una soluzione elegante.",
+    "physics": "Fisica",
+    "physicsText": "Come sta in piedi l’universo, e perché si comporta così.",
+    "biology": "Biologia",
+    "biologyText": "I sistemi viventi sono pieni di soluzioni strane e pratiche."
+  },
+  "contact": {
+    "mark": "SCRIVIMI",
+    "title": "Ti va di parlare?",
+    "text": "Parlo volentieri di software, di open source o di qualsiasi cosa che ancora non capiamo fino in fondo.",
+    "linkedin": "Trovami su LinkedIn",
+    "github": "Trovami su GitHub"
+  },
+  "footer": {
+    "tagline": "Ancora pieno di domande."
+  }
+}

@@ -11,7 +11,7 @@ Requires Node.js 24 (`.nvmrc`).
 ```sh
 npm install
 npm run dev      # vp dev
-npm run check    # vp check (Oxfmt + type-aware Oxlint + type check) + CSP hash check
+npm run check    # vp check (Oxfmt + type-aware Oxlint + type check) + CSP hash + i18n checks
 npm run csp:fix  # rewrite the CSP hash after editing the inline <head> script
 npm run build    # vp build → dist/
 npm run preview  # vp preview
@@ -27,8 +27,23 @@ npm run preview  # vp preview
 
 ## Architecture
 
-- `index.html` contains all page content, nav, and SEO metadata (meta description,
-  Open Graph, Twitter, and JSON-LD `Person`).
+- The page is built in three languages from one template: English at `/` (also the
+  `x-default`), Italian at `/it/`, and Romanian at `/ro/`.
+  - `index.html` is the template. It holds all markup, nav, and SEO metadata (meta
+    description, Open Graph, Twitter, and JSON-LD `Person`), with `{{ key }}` placeholders
+    for every piece of text.
+  - `src/i18n/en.json`, `it.json`, and `ro.json` hold the strings. Values are inserted
+    as-is, so they may contain HTML (`<br />`, `<em>`, the counter `<span>`s).
+  - `src/i18n/languages.json` lists the languages (code, name, path, `og:locale`). The
+    first one is the default.
+  - `scripts/i18n.mjs` is a Vite plugin that renders each language's page, serves `/it/`
+    and `/ro/` in dev, and generates `sitemap.xml`. It also fills the `{{ page.* }}`
+    placeholders: `lang`, canonical URL, `og:locale`, the `hreflang` alternates, and the
+    language switcher links (`.lang-switch`).
+  - The build fails, and `npm run check` runs the same validation, if a language is missing
+    a key or has an extra one, a placeholder has no string, a string is unused, or a
+    language renders different element IDs than English.
+
 - `src/main.js` does only two things:
   - Writes computed values into `#year`, `#microsoft-experience`, and
     `#professional-experience`. Microsoft tenure is counted from December 2019;
@@ -40,7 +55,7 @@ npm run preview  # vp preview
   - Reveal animations apply only under the `.js` class, which the inline `<head>` script
     adds, so content stays visible without JS.
   - It has a `prefers-reduced-motion` override and a single mobile breakpoint at `720px`.
-- `public/` is copied as-is: favicon, `robots.txt`, `sitemap.xml`, the web manifest, and
+- `public/` is copied as-is: favicon, `robots.txt`, the web manifest, and
   `staticwebapp.config.json`.
 - Deployment runs through GitHub Actions to Azure Static Web Apps:
   - CI runs `npm ci && npm run check && npm run build` and uploads `dist/` with
@@ -49,20 +64,26 @@ npm run preview  # vp preview
 
 ## Conventions and gotchas
 
+- **Translations:** never put visible text directly in `index.html`. Add a placeholder and
+  the same key to every `src/i18n/*.json` file. Markup changes happen once, in the template.
+  Section IDs stay in English in every language so anchors work the same everywhere. To add
+  a language, add it to `languages.json` and create its strings file.
+
 - **CSP hash:** `public/staticwebapp.config.json` allows the inline `<head>` script by its
   SHA-256 hash, so any change to that script, including whitespace, needs a new hash.
   `scripts/check-csp.mjs` (part of `npm run check`) fails on a stale hash. Run
-  `npm run csp:fix` to rewrite it.
+  `npm run csp:fix` to rewrite it. All languages share the template, so they share the hash.
 
   Any new external origin (fonts, images, scripts, fetch) must also be added to the CSP.
 
-- When editing copy, keep the counter element IDs used by `main.js`. Their text in
-  `index.html` is what no-JS visitors see, so keep those fallbacks current as well.
+- When editing copy, keep the counter element IDs used by `main.js` in every language's
+  strings. Their text is what no-JS visitors see, so keep those fallbacks current as well.
 - Nav `href`s must match section `id`s.
-- Section marks are numbered (`01 / WORK`, `02 / …`); renumber all of them together when
-  sections change.
+- Section marks are numbered (`01 / {{ work.mark }}`, `02 / …`); the numbers live in the
+  template, so renumber them there when sections change.
 - External links use `target="_blank" rel="noopener noreferrer"`.
-- Keep the meta description, `og:description`, and `twitter:description` identical. Update
-  `public/sitemap.xml` if URLs change.
+- The meta description, `og:description`, and `twitter:description` all use
+  `{{ meta.description }}`, so they stay identical. The sitemap is generated from
+  `languages.json`.
 - Copy is first-person, specific, and restrained. Keep facts accurate and never invent
   credentials, projects, or claims.

@@ -1,6 +1,10 @@
 import { defineConfig } from "vite-plus";
+import i18nPages from "./scripts/i18n.mjs";
 
 export default defineConfig({
+  // Builds one page per language (English at /, Italian at /it/, Romanian at /ro/) from
+  // the index.html template and the strings in src/i18n/.
+  plugins: [i18nPages()],
   staged: {
     "*": "vp check --fix",
   },

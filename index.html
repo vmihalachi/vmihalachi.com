@@ -1,29 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ page.lang }}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Vlad Mihalachi, Senior Software Engineer at Microsoft and maker of mybackhurts.app."
-    />
+    <meta name="description" content="{{ meta.description }}" />
     <meta name="theme-color" content="#f4f0e8" />
-    <link rel="canonical" href="https://vmihalachi.com/" />
+    <link rel="canonical" href="{{ page.url }}" />
+    {{ page.alternateLinks }}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://vmihalachi.com/" />
-    <meta property="og:title" content="Vlad Mihalachi — Software Engineer" />
-    <meta
-      property="og:description"
-      content="Vlad Mihalachi, Senior Software Engineer at Microsoft and maker of mybackhurts.app."
-    />
+    <meta property="og:url" content="{{ page.url }}" />
+    <meta property="og:locale" content="{{ page.locale }}" />
+    {{ page.alternateLocales }}
+    <meta property="og:title" content="{{ meta.title }}" />
+    <meta property="og:description" content="{{ meta.description }}" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Vlad Mihalachi — Software Engineer" />
-    <meta
-      name="twitter:description"
-      content="Vlad Mihalachi, Senior Software Engineer at Microsoft and maker of mybackhurts.app."
-    />
+    <meta name="twitter:title" content="{{ meta.title }}" />
+    <meta name="twitter:description" content="{{ meta.description }}" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -45,28 +39,28 @@
     <script>
       document.documentElement.classList.add("js");
     </script>
-    <title>Vlad Mihalachi — Software Engineer</title>
+    <title>{{ meta.title }}</title>
   </head>
   <body>
     <main>
-      <nav class="nav" aria-label="Main navigation">
-        <a class="wordmark" href="#top" aria-label="Vlad Mihalachi, home">VM<span>.</span></a>
+      <nav class="nav" aria-label="{{ nav.label }}">
+        <a class="wordmark" href="#top" aria-label="{{ nav.home }}">VM<span>.</span></a>
         <div class="nav-links">
-          <a href="#work">Work</a>
+          <a href="#work">{{ nav.work }}</a>
           <a href="#mybackhurts">mybackhurts</a>
-          <a href="#interests">Interests</a>
-          <a href="#contact">Contact</a>
+          <a href="#interests">{{ nav.interests }}</a>
+          <a href="#contact">{{ nav.contact }}</a>
+        </div>
+        <div class="lang-switch" role="group" aria-label="{{ nav.language }}">
+          {{ page.languageLinks }}
         </div>
       </nav>
 
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <h1 id="hero-title">I build software<br />that earns its <em>place.</em></h1>
-          <p class="intro">
-            I’m Vlad, a software engineer working across the stack, from services to apps. Most days
-            that means untangling something until it’s simple enough to explain.
-          </p>
-          <a class="button" href="#work">My work <span>↓</span></a>
+          <h1 id="hero-title">{{ hero.title }}</h1>
+          <p class="intro">{{ hero.intro }}</p>
+          <a class="button" href="#work">{{ hero.cta }} <span>↓</span></a>
         </div>
         <div class="orbit-art" aria-hidden="true">
           <div class="orbit orbit-one"></div>
@@ -74,77 +68,62 @@
           <div class="core">VM</div>
           <span class="star star-one">✦</span>
           <span class="star star-two">✦</span>
-          <span class="orbit-label">CURIOUS<br />BY NATURE</span>
+          <span class="orbit-label">{{ hero.badge }}</span>
         </div>
       </section>
 
       <section class="manifesto" id="work" aria-labelledby="work-title">
-        <p class="section-mark">01 / WORK</p>
+        <p class="section-mark">01 / {{ work.mark }}</p>
         <div class="manifesto-grid">
-          <h2 id="work-title">I like the messy part<br />before things <span>click.</span></h2>
+          <h2 id="work-title">{{ work.title }}</h2>
           <div class="manifesto-copy">
-            <p>
-              I’m a Senior Software Engineer at Microsoft. I’ve been building software
-              professionally for <span id="professional-experience">9+</span> years, the last
-              <span id="microsoft-experience">6+</span> of them there.
-            </p>
-            <p>
-              Outside work, I read a lot of open-source code and contribute back when I have
-              something useful to add. It’s the best way I know to see how other people think
-              through problems.
-            </p>
+            <p>{{ work.experience }}</p>
+            <p>{{ work.openSource }}</p>
           </div>
         </div>
       </section>
 
       <section class="now" id="mybackhurts" aria-labelledby="mybackhurts-title">
         <div>
-          <p class="section-mark light">02 / SIDE PROJECT</p>
-          <h2 id="mybackhurts-title">My back hurts.<br />So I built an app.</h2>
+          <p class="section-mark light">02 / {{ project.mark }}</p>
+          <h2 id="mybackhurts-title">{{ project.title }}</h2>
         </div>
         <div class="now-detail">
-          <p>
-            <span class="project-name">mybackhurts</span> lives in your desktop’s menu bar and
-            nudges you every 45 minutes to stand up and do a few quick moves. If you let it, your
-            webcam counts the reps. Everything stays on your desktop.
-          </p>
+          <p><span class="project-name">mybackhurts</span> {{ project.description }}</p>
           <a class="project-link" href="https://mybackhurts.app"
-            >See <span class="project-name">mybackhurts.app</span>
+            >{{ project.link }} <span class="project-name">mybackhurts.app</span>
             <span aria-hidden="true">↗</span></a
           >
-          <p class="small">Launching soon · Desktop</p>
+          <p class="small">{{ project.status }}</p>
         </div>
       </section>
 
       <section class="interests" id="interests" aria-labelledby="interests-title">
-        <p class="section-mark">03 / OFF THE CLOCK</p>
-        <h2 id="interests-title" class="visually-hidden">Things that fascinate me</h2>
+        <p class="section-mark">03 / {{ interests.mark }}</p>
+        <h2 id="interests-title" class="visually-hidden">{{ interests.title }}</h2>
         <div class="interest-grid">
           <article class="interest-card maths">
             <span aria-hidden="true">🔢</span>
-            <h3>Maths</h3>
-            <p>Patterns, proofs, and the quiet pleasure of an elegant solution.</p>
+            <h3>{{ interests.maths }}</h3>
+            <p>{{ interests.mathsText }}</p>
           </article>
           <article class="interest-card physics">
             <span aria-hidden="true">🔭</span>
-            <h3>Physics</h3>
-            <p>How the universe holds together, and why it behaves the way it does.</p>
+            <h3>{{ interests.physics }}</h3>
+            <p>{{ interests.physicsText }}</p>
           </article>
           <article class="interest-card biology">
             <span aria-hidden="true">🌱</span>
-            <h3>Biology</h3>
-            <p>Living systems are full of strange, practical solutions.</p>
+            <h3>{{ interests.biology }}</h3>
+            <p>{{ interests.biologyText }}</p>
           </article>
         </div>
       </section>
 
       <section class="contact" id="contact" aria-labelledby="contact-title">
-        <p class="section-mark">04 / SAY HELLO</p>
-        <h2 id="contact-title">Want to talk?</h2>
-        <p>
-          I’m happy to talk about software, open source, or anything we still don’t fully
-          understand.
-        </p>
+        <p class="section-mark">04 / {{ contact.mark }}</p>
+        <h2 id="contact-title">{{ contact.title }}</h2>
+        <p>{{ contact.text }}</p>
         <div class="contact-links">
           <a class="contact-link" href="mailto:hello@vmihalachi.com"
             >hello@vmihalachi.com <span aria-hidden="true">↗</span></a
@@ -154,21 +133,21 @@
             href="https://www.linkedin.com/in/vmihalachi/"
             target="_blank"
             rel="noopener noreferrer"
-            >Find me on LinkedIn <span aria-hidden="true">↗</span></a
+            >{{ contact.linkedin }} <span aria-hidden="true">↗</span></a
           >
           <a
             class="contact-link"
             href="https://github.com/vmihalachi"
             target="_blank"
             rel="noopener noreferrer"
-            >Find me on GitHub <span aria-hidden="true">↗</span></a
+            >{{ contact.github }} <span aria-hidden="true">↗</span></a
           >
         </div>
       </section>
     </main>
     <footer>
       <span>© <span id="year">2026</span> Vlad Mihalachi</span>
-      <span>Still asking questions.</span>
+      <span>{{ footer.tagline }}</span>
     </footer>
     <script type="module" src="/src/main.js"></script>
   </body>
