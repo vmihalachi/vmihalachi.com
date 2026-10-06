@@ -1,6 +1,16 @@
 import { defineConfig } from "vite-plus";
 
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      // One page per language: English at /, Italian at /it/, Romanian at /ro/.
+      input: {
+        en: "index.html",
+        it: "it/index.html",
+        ro: "ro/index.html",
+      },
+    },
+  },
   staged: {
     "*": "vp check --fix",
   },

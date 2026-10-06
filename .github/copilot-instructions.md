@@ -27,8 +27,15 @@ npm run preview  # vp preview
 
 ## Architecture
 
-- `index.html` contains all page content, nav, and SEO metadata (meta description,
-  Open Graph, Twitter, and JSON-LD `Person`).
+- The page exists in three languages, each a full static HTML file with its own content,
+  nav, and SEO metadata (meta description, Open Graph, Twitter, and JSON-LD `Person`):
+  - `index.html`: English, served at `/` (also the `x-default`).
+  - `it/index.html`: Italian, served at `/it/`.
+  - `ro/index.html`: Romanian, served at `/ro/`.
+
+  All three are listed as build inputs in `vite.config.ts`, link to each other with
+  `hreflang` alternates, and share a language switcher (`.lang-switch`) in the nav.
+
 - `src/main.js` does only two things:
   - Writes computed values into `#year`, `#microsoft-experience`, and
     `#professional-experience`. Microsoft tenure is counted from December 2019;
@@ -49,20 +56,27 @@ npm run preview  # vp preview
 
 ## Conventions and gotchas
 
+- **Translations:** any change to copy, markup, or metadata must be made in all three
+  language pages. Keep the markup structure, IDs, and classes identical; only the text,
+  `lang`, canonical/`og:url`, `og:locale`, and the switcher's `aria-current` differ.
+  Section IDs stay in English in every language so anchors work the same everywhere.
+
 - **CSP hash:** `public/staticwebapp.config.json` allows the inline `<head>` script by its
   SHA-256 hash, so any change to that script, including whitespace, needs a new hash.
-  `scripts/check-csp.mjs` (part of `npm run check`) fails on a stale hash. Run
+  The script must be byte-identical in all three pages. `scripts/check-csp.mjs` (part of
+  `npm run check`) fails on a stale hash or on pages whose scripts differ. Run
   `npm run csp:fix` to rewrite it.
 
   Any new external origin (fonts, images, scripts, fetch) must also be added to the CSP.
 
-- When editing copy, keep the counter element IDs used by `main.js`. Their text in
-  `index.html` is what no-JS visitors see, so keep those fallbacks current as well.
+- When editing copy, keep the counter element IDs used by `main.js` in every language.
+  Their text in the HTML is what no-JS visitors see, so keep those fallbacks current as well.
 - Nav `href`s must match section `id`s.
 - Section marks are numbered (`01 / WORK`, `02 / …`); renumber all of them together when
   sections change.
 - External links use `target="_blank" rel="noopener noreferrer"`.
-- Keep the meta description, `og:description`, and `twitter:description` identical. Update
-  `public/sitemap.xml` if URLs change.
+- Within each page, keep the meta description, `og:description`, and `twitter:description`
+  identical. Update `public/sitemap.xml` (including its `hreflang` alternates) if URLs or
+  languages change.
 - Copy is first-person, specific, and restrained. Keep facts accurate and never invent
   credentials, projects, or claims.

@@ -2,6 +2,9 @@
 
 Personal portfolio of Vlad Mihalachi — Senior Software Engineer at Microsoft.
 
+Available in English (`/`), Italian (`/it/`), and Romanian (`/ro/`). Each language is a
+separate static page: `index.html`, `it/index.html`, and `ro/index.html`.
+
 ## Development
 
 Requires Node.js 24 (see `.nvmrc`). The project uses [Vite+](https://viteplus.dev/) (`vp`).
