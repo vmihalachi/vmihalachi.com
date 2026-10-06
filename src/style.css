@@ -5,6 +5,7 @@
   --coral: #fa6e54;
   --blue: #83c5e8;
   --line: rgba(23, 42, 40, 0.18);
+  --gutter: clamp(1.5rem, 5vw, 5rem);
 }
 * {
   box-sizing: border-box;
@@ -31,8 +32,8 @@ section,
 footer {
   max-width: 1240px;
   margin: auto;
-  padding-left: clamp(1.5rem, 5vw, 5rem);
-  padding-right: clamp(1.5rem, 5vw, 5rem);
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
 }
 .nav {
   height: 88px;
@@ -179,6 +180,32 @@ h1 em {
   font-size: 1.2rem;
   color: var(--acid);
 }
+.hero-copy > *,
+.orbit-art {
+  animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+.hero-copy > :nth-child(2) {
+  animation-delay: 0.1s;
+}
+.hero-copy > :nth-child(3) {
+  animation-delay: 0.2s;
+}
+.orbit-art {
+  animation-name: settle;
+  animation-delay: 0.15s;
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: scale(0.92) rotate(-6deg);
+  }
+}
 .orbit-art {
   height: 420px;
   position: relative;
@@ -222,9 +249,49 @@ h1 em {
   padding-right: 0.12em;
   box-shadow: 12px 12px 0 var(--coral);
 }
+/* Two eased movements a quarter turn apart, one across and one down, trace the ellipse */
+.planet {
+  position: absolute;
+  inset: -1px;
+  transform: translateX(-50%);
+  animation: orbit-x 7s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate;
+}
+.planet::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, var(--coral) 5px, transparent 5.5px);
+  animation: orbit-y 7s cubic-bezier(0.37, 0, 0.63, 1) -3.5s infinite alternate;
+}
+.orbit-two .planet,
+.orbit-two .planet::before {
+  animation-duration: 11s;
+}
+.orbit-two .planet::before {
+  background-image: radial-gradient(circle, var(--ink) 3.5px, transparent 4px);
+  /* Three quarter turns ahead, so this planet travels the other way */
+  animation-delay: -16.5s;
+}
+@keyframes orbit-x {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+@keyframes orbit-y {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(50%);
+  }
+}
 .star {
   position: absolute;
   font-size: 2rem;
+  animation: twinkle 5s ease-in-out infinite;
 }
 .star-one {
   top: 17%;
@@ -235,6 +302,13 @@ h1 em {
   bottom: 9%;
   left: 9%;
   color: #0d7770;
+  animation-delay: -2.5s;
+}
+@keyframes twinkle {
+  50% {
+    opacity: 0.6;
+    transform: scale(0.75) rotate(20deg);
+  }
 }
 .orbit-label {
   position: absolute;
@@ -253,17 +327,28 @@ h1 em {
 }
 .manifesto-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 6rem;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
   margin-top: 2rem;
 }
 .manifesto h2,
 .now h2,
 .contact h2 {
-  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  font-size: clamp(3rem, 5.5vw, 5rem);
 }
 .manifesto h2 span {
+  display: inline-block;
   color: #087c75;
+  transform-origin: 30% 80%;
+}
+.js .manifesto.is-visible h2 span {
+  animation: click 0.7s 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+@keyframes click {
+  from {
+    opacity: 0;
+    transform: scale(0.6) rotate(-10deg);
+  }
 }
 .manifesto-copy {
   font-size: 1.1rem;
@@ -295,10 +380,83 @@ h1 em {
 }
 .interest-card:hover {
   transform: translateY(-7px);
-  box-shadow: 7px 8px 0 var(--ink);
+  box-shadow: 7px 8px 0 var(--shade);
 }
-.interest-card span {
-  font-size: 2.2rem;
+.interest-icon {
+  align-self: flex-start;
+  height: 3rem;
+  aspect-ratio: 36 / 23;
+  color: var(--ink);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 0.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.interest-icon circle {
+  fill: currentColor;
+  stroke: none;
+}
+.interest-icon .guide,
+.interest-icon .rungs {
+  stroke-width: 0.6;
+  stroke-opacity: 0.35;
+}
+.spiral {
+  stroke-dasharray: 1;
+}
+.interest-card:hover .spiral {
+  animation: draw 1.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+.swing-left {
+  transform-origin: 9px 1.5px;
+}
+.swing-right {
+  transform-origin: 25px 1.5px;
+}
+.interest-card:hover .swing-left {
+  animation: swing-left 1.4s infinite;
+}
+.interest-card:hover .swing-right {
+  animation: swing-right 1.4s infinite;
+}
+@keyframes swing-left {
+  0%,
+  50%,
+  100% {
+    transform: none;
+    animation-timing-function: ease-out;
+  }
+  25% {
+    transform: rotate(28deg);
+    animation-timing-function: ease-in;
+  }
+}
+@keyframes swing-right {
+  0%,
+  50%,
+  100% {
+    transform: none;
+    animation-timing-function: ease-out;
+  }
+  75% {
+    transform: rotate(-28deg);
+    animation-timing-function: ease-in;
+  }
+}
+/* The strands repeat every 17 units, so sliding by one wavelength loops seamlessly */
+.interest-card:hover .helix {
+  animation: twist 2.4s linear infinite;
+}
+@keyframes twist {
+  to {
+    transform: translateX(17px);
+  }
 }
 .interest-card h3 {
   font:
@@ -314,31 +472,28 @@ h1 em {
 }
 .maths {
   background: #eee5ff;
+  --shade: #b9a3f0;
 }
 .physics {
   background: var(--blue);
+  --shade: #4b97c4;
 }
 .biology {
   background: #d9efb2;
+  --shade: #9fc965;
 }
 .now {
   background: var(--ink);
   color: var(--paper);
   max-width: none;
+  /* Full-width background, content lined up with the other sections */
+  padding-left: max(var(--gutter), (100% - 1240px) / 2 + var(--gutter));
+  padding-right: max(var(--gutter), (100% - 1240px) / 2 + var(--gutter));
   padding-top: 7rem;
   padding-bottom: 7rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 4rem;
-}
-.now > *,
-.now .section-mark {
-  max-width: 620px;
-}
-.now > div:first-child {
-  justify-self: end;
-  width: 100%;
-  padding-left: clamp(1.5rem, 5vw, 5rem);
 }
 .now h2 {
   margin-bottom: 0;
@@ -348,7 +503,6 @@ h1 em {
 }
 .now-detail {
   align-self: end;
-  padding-right: clamp(1.5rem, 5vw, 5rem);
 }
 .now-detail p {
   font:
@@ -462,6 +616,10 @@ footer {
     scroll-behavior: auto !important;
     transition: none !important;
   }
+  *,
+  *::before {
+    animation: none !important;
+  }
   .js section:not(.hero),
   .js .interest-card {
     opacity: 1;
@@ -513,13 +671,9 @@ footer {
     min-height: 180px;
   }
   .now {
-    padding: 5rem 0;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     gap: 2.5rem;
-  }
-  .now > div:first-child,
-  .now-detail {
-    padding-left: clamp(1.5rem, 5vw, 5rem);
-    padding-right: clamp(1.5rem, 5vw, 5rem);
   }
   .contact {
     padding-top: 5rem;
