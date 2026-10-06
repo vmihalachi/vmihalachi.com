@@ -42,7 +42,7 @@ A first-person site written by one engineer about his own work and curiosity. It
 
 - Senior Software Engineer at Microsoft since December 2019.
 - About 3 years of professional software work before Microsoft. The page's experience counters depend on this figure.
-- mybackhurts (https://mybackhurts.app): a desktop menu-bar app that prompts a short break to stand up and move every 45 minutes. It can optionally count reps with the webcam, and all processing stays on the device. Status: launching soon.
+- mybackhurts (https://mybackhurts.app): a desktop menu-bar app that prompts a short break to stand up and move every 45 minutes. It can optionally count reps with the webcam, and all processing stays on the device. Status: launched.
 - Reads open-source code and contributes when he has something useful to add.
 - Interests: Maths, Physics, Biology.
 - Contact & profiles: Email (hello@vmihalachi.com), LinkedIn, and GitHub (above).
