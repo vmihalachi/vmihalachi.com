@@ -47,8 +47,7 @@
         <a class="wordmark" href="#top" aria-label="{{ nav.home }}">VM<span>.</span></a>
         <div class="nav-links">
           <a href="#work">{{ nav.work }}</a>
-          <a href="#mybackhurts">mybackhurts</a>
-          <a href="#deskling">Deskling</a>
+          <a href="#projects">{{ nav.projects }}</a>
           <a href="#interests">{{ nav.interests }}</a>
           <a href="#contact">{{ nav.contact }}</a>
         </div>
@@ -84,42 +83,45 @@
         </div>
       </section>
 
-      <section class="now" id="mybackhurts" aria-labelledby="mybackhurts-title">
-        <div>
-          <p class="section-mark light">02 / {{ project.mark }}</p>
-          <h2 id="mybackhurts-title">{{ project.title }}</h2>
-        </div>
-        <div class="now-detail">
-          <p><span class="project-name">mybackhurts</span> {{ project.description }}</p>
-          <a class="project-link" href="https://mybackhurts.app"
-            >{{ project.link }} <span class="project-name">mybackhurts.app</span>
-            <span aria-hidden="true">↗</span></a
-          >
-          <p class="small">{{ project.status }}</p>
-        </div>
-      </section>
-
-      <section class="manifesto open-source" id="deskling" aria-labelledby="deskling-title">
-        <p class="section-mark">03 / {{ deskling.mark }}</p>
-        <div class="manifesto-grid">
-          <h2 id="deskling-title">{{ deskling.title }}</h2>
-          <div class="manifesto-copy">
-            <p><span class="project-name">Deskling</span> {{ deskling.description }}</p>
-            <p>{{ deskling.details }}</p>
-            <a
-              class="project-link"
-              href="https://github.com/vmihalachi/deskling"
-              target="_blank"
-              rel="noopener noreferrer"
-              >{{ deskling.link }} <span aria-hidden="true">↗</span></a
+      <section class="projects" id="projects" aria-labelledby="projects-title">
+        <div class="now">
+          <div>
+            <p class="section-mark light">02 / {{ projects.mark }}</p>
+            <h2 id="projects-title" class="visually-hidden">{{ projects.title }}</h2>
+            <h3 id="mybackhurts-title">{{ project.title }}</h3>
+          </div>
+          <div class="now-detail">
+            <p><span class="project-name">mybackhurts</span> {{ project.description }}</p>
+            <a class="project-link" href="https://mybackhurts.app"
+              >{{ project.link }} <span class="project-name">mybackhurts.app</span>
+              <span aria-hidden="true">↗</span></a
             >
-            <p class="small">{{ deskling.status }}</p>
+            <p class="small">{{ project.status }}</p>
+          </div>
+        </div>
+
+        <div class="manifesto open-source">
+          <p class="section-mark">{{ deskling.mark }}</p>
+          <div class="manifesto-grid">
+            <h3 id="deskling-title">{{ deskling.title }}</h3>
+            <div class="manifesto-copy">
+              <p><span class="project-name">Deskling</span> {{ deskling.description }}</p>
+              <p>{{ deskling.details }}</p>
+              <a
+                class="project-link"
+                href="https://github.com/vmihalachi/deskling"
+                target="_blank"
+                rel="noopener noreferrer"
+                >{{ deskling.link }} <span aria-hidden="true">↗</span></a
+              >
+              <p class="small">{{ deskling.status }}</p>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="interests" id="interests" aria-labelledby="interests-title">
-        <p class="section-mark">04 / {{ interests.mark }}</p>
+        <p class="section-mark">03 / {{ interests.mark }}</p>
         <h2 id="interests-title" class="visually-hidden">{{ interests.title }}</h2>
         <div class="interest-grid">
           <article class="interest-card maths">
@@ -177,7 +179,7 @@
       </section>
 
       <section class="contact" id="contact" aria-labelledby="contact-title">
-        <p class="section-mark">05 / {{ contact.mark }}</p>
+        <p class="section-mark">04 / {{ contact.mark }}</p>
         <h2 id="contact-title">{{ contact.title }}</h2>
         <p>{{ contact.text }}</p>
         <div class="contact-links">

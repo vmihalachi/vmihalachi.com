@@ -7,6 +7,7 @@
     "label": "Main navigation",
     "home": "Vlad Mihalachi, home",
     "work": "Work",
+    "projects": "Projects",
     "interests": "Interests",
     "contact": "Contact",
     "language": "Language"
@@ -23,8 +24,11 @@
     "experience": "I’m a Senior Software Engineer at Microsoft. I’ve been building software professionally for <span id=\"professional-experience\">9+</span> years, the last <span id=\"microsoft-experience\">6+</span> of them there.",
     "openSource": "Outside work, I read a lot of open-source code and contribute back when I have something useful to add. It’s the best way I know to see how other people think through problems."
   },
+  "projects": {
+    "mark": "SIDE PROJECTS",
+    "title": "Side projects"
+  },
   "project": {
-    "mark": "SIDE PROJECT",
     "title": "My back hurts.<br />So I built an app.",
     "description": "lives in your desktop’s menu bar and nudges you every 45 minutes to stand up and do a few quick moves. If you let it, your webcam counts the reps. Everything stays on your desktop.",
     "link": "See",

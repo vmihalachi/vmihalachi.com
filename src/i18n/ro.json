@@ -7,6 +7,7 @@
     "label": "Navigare principală",
     "home": "Vlad Mihalachi, începutul paginii",
     "work": "Muncă",
+    "projects": "Proiecte",
     "interests": "Interese",
     "contact": "Contact",
     "language": "Limbă"
@@ -23,8 +24,11 @@
     "experience": "Sunt Senior Software Engineer la Microsoft. Fac software în mod profesionist de <span id=\"professional-experience\">9+</span> ani, dintre care ultimii <span id=\"microsoft-experience\">6+</span> acolo.",
     "openSource": "În afara serviciului citesc mult cod open source și contribui când am ceva util de adăugat. E cel mai bun mod pe care îl știu de a vedea cum gândesc alții o problemă."
   },
+  "projects": {
+    "mark": "PROIECTE PERSONALE",
+    "title": "Proiecte personale"
+  },
   "project": {
-    "mark": "PROIECT PERSONAL",
     "title": "Mă doare spatele.<br />Așa că am făcut o aplicație.",
     "description": "stă în bara de meniu a calculatorului tău și, la fiecare 45 de minute, îți amintește să te ridici și să faci câteva mișcări rapide. Dacă îi dai voie, camera web numără repetările. Totul rămâne pe calculatorul tău.",
     "link": "Vezi",

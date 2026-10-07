@@ -7,6 +7,7 @@
     "label": "Navigazione principale",
     "home": "Vlad Mihalachi, inizio pagina",
     "work": "Lavoro",
+    "projects": "Progetti",
     "interests": "Interessi",
     "contact": "Contatti",
     "language": "Lingua"
@@ -23,8 +24,11 @@
     "experience": "Sono Senior Software Engineer in Microsoft. Sviluppo software per lavoro da <span id=\"professional-experience\">9+</span> anni, di cui gli ultimi <span id=\"microsoft-experience\">6+</span> proprio lì.",
     "openSource": "Fuori dal lavoro leggo molto codice open source e contribuisco quando ho qualcosa di utile da aggiungere. È il modo migliore che conosco per vedere come gli altri ragionano sui problemi."
   },
+  "projects": {
+    "mark": "PROGETTI PERSONALI",
+    "title": "Progetti personali"
+  },
   "project": {
-    "mark": "PROGETTO PERSONALE",
     "title": "Mi fa male la schiena.<br />Così ho creato un’app.",
     "description": "vive nella barra dei menu del tuo computer e ogni 45 minuti ti ricorda di alzarti e fare qualche movimento veloce. Se glielo permetti, la webcam conta le ripetizioni. Tutto resta sul tuo computer.",
     "link": "Vai su",
