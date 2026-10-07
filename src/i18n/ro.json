@@ -31,16 +31,33 @@
   "project": {
     "title": "Mă doare spatele.<br />Așa că am făcut o aplicație.",
     "description": "stă în bara de meniu a calculatorului tău și, la fiecare 45 de minute, îți amintește să te ridici și să faci câteva mișcări rapide. Dacă îi dai voie, camera web numără repetările. Totul rămâne pe calculatorul tău.",
-    "link": "Vezi",
-    "status": "Desktop"
+    "link": "Vezi mybackhurts.app",
+    "status": "macOS și Windows",
+    "artExercise": "Genuflexiune la scaun"
   },
   "deskling": {
     "mark": "OPEN SOURCE",
     "title": "Apoi am pus piesele<br />la <span>comun.</span>",
     "description": "adună bucățile de care are nevoie orice aplicație din bara de meniu sau din zona de notificare și pe care nimeni nu vrea să le scrie de două ori: un temporizator pentru mementouri care ține cont de orele de liniște și de inactivitate, detectarea apelurilor fără să ceară vreodată acces la cameră sau la microfon, scurtături de tastatură globale și pornirea automată la conectare.",
-    "details": "mybackhurts rulează pe Deskling. E scris în Swift pe macOS și în .NET pe Windows, cu teste comune care fac ca cele două variante să se comporte la fel. Dacă faci și tu o aplicație mică de felul ăsta, s-ar putea să-ți economisească ceva timp.",
+    "details": "mybackhurts și sunnysays rulează pe Deskling. E scris în Swift pe macOS și în .NET pe Windows, cu teste comune care fac ca cele două variante să se comporte la fel. Dacă faci și tu o aplicație mică de felul ăsta, s-ar putea să-ți economisească ceva timp.",
     "link": "Vezi site-ul Deskling",
-    "status": "macOS și Windows · MIT"
+    "status": "macOS și Windows · MIT",
+    "artTimer": "Temporizator",
+    "artCalls": "Detectarea apelurilor",
+    "artHotkey": "Scurtătură globală",
+    "artLogin": "Pornire la conectare"
+  },
+  "sunnysays": {
+    "mark": "JUCĂRIE DE BIROU",
+    "title": "Apoi am făcut ceva<br />doar de <span>joacă.</span>",
+    "description": "e o floarea-soarelui mică, pe nume Sunny, care stă în bara de meniu sau în zona de notificare și spune ceva de vreo două ori pe oră: despre lumină, despre oră sau despre nimic anume. Apeși Spune ceva și vorbește imediat. Îi spui șșt și își pleacă capul.",
+    "details": "Tace când ești într-un apel, fără să ceară vreodată acces la cameră sau la microfon. Nu face cereri în rețea și nu păstrează nimic în afară de setările tale.",
+    "link": "Fă cunoștință cu Sunny",
+    "status": "macOS și Windows",
+    "line1": "A trecut o albină odată. Ne-am salutat din cap.",
+    "line2": "M-am tot gândit la nori. Încă nicio concluzie.",
+    "line3": "Fotosinteza merge grozav, mulțumesc de întrebare.",
+    "line4": "Cred că biroul e puțin înclinat. Sau eu."
   },
   "interests": {
     "mark": "DUPĂ PROGRAM",

@@ -42,11 +42,13 @@ A first-person site written by one engineer about his own work and curiosity. It
 
 - Senior Software Engineer at Microsoft since December 2019.
 - About 3 years of professional software work before Microsoft. The page's experience counters depend on this figure.
-- mybackhurts (https://mybackhurts.app): a desktop menu-bar app that prompts a short break to stand up and move every 45 minutes. It can optionally count reps with the webcam, and all processing stays on the device. Status: launched.
+- mybackhurts (https://mybackhurts.app): a desktop menu-bar app that prompts a short break to stand up and move every 45 minutes. It can optionally count reps with the webcam, and all processing stays on the device. macOS and Windows. Status: launched.
+- Deskling (https://vmihalachi.github.io/deskling/): the open-source (MIT) menu bar and tray plumbing that mybackhurts and sunnysays run on. Swift on macOS, .NET on Windows.
+- sunnysays (https://sunnysays.app): a desk toy, a sunflower named Sunny that lives in the menu bar or tray and says a short line a couple of times an hour. Quiet during calls without camera or microphone access, no network. macOS and Windows; same business model as mybackhurts. Status: in development, but the site presents it as available, by Vlad's choice.
 - Reads open-source code and contributes when he has something useful to add.
 - Interests: Maths, Physics, Biology.
 - Contact & profiles: Email (hello@vmihalachi.com), LinkedIn, and GitHub (above).
-- Absent: testimonials, case studies, press, a project portfolio with screenshots, and a photo. Do not fabricate them.
+- Absent: testimonials, case studies, press, and a photo. Do not fabricate them. Project visuals reuse each project's own art from its repo, never invented screenshots.
 
 ## Product Principles
 

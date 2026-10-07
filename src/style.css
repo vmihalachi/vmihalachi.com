@@ -145,8 +145,7 @@ p {
 }
 h1,
 h2,
-.manifesto h3,
-.now h3 {
+.manifesto h3 {
   font-family: Fraunces, serif;
   letter-spacing: -0.055em;
   line-height: 0.98;
@@ -350,7 +349,6 @@ h1 em {
 }
 .manifesto h2,
 .manifesto h3,
-.now h3,
 .contact h2 {
   font-size: clamp(3rem, 5.5vw, 5rem);
 }
@@ -359,6 +357,21 @@ h1 em {
   display: inline-block;
   color: #087c75;
   transform-origin: 30% 80%;
+}
+/* Work is the one dark band, full width with its content lined up with the rest */
+.band {
+  max-width: none;
+  padding-left: max(var(--gutter), (100% - 1240px) / 2 + var(--gutter));
+  padding-right: max(var(--gutter), (100% - 1240px) / 2 + var(--gutter));
+  background: var(--ink);
+  color: var(--paper);
+  border-top: none;
+}
+.band h2 span {
+  color: var(--acid);
+}
+.band + .projects .manifesto:first-child {
+  border-top: none;
 }
 .js .manifesto.is-visible h2 span,
 .js .projects.is-visible .manifesto h3 span {
@@ -502,44 +515,8 @@ h1 em {
   background: #d9efb2;
   --shade: #9fc965;
 }
-.now {
-  background: var(--ink);
-  color: var(--paper);
-  max-width: none;
-  /* Full-width background, content lined up with the other sections */
-  padding-left: max(var(--gutter), (100% - 1240px) / 2 + var(--gutter));
-  padding-right: max(var(--gutter), (100% - 1240px) / 2 + var(--gutter));
-  padding-top: 7rem;
-  padding-bottom: 7rem;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 4rem;
-}
-.now h3 {
-  margin-bottom: 0;
-}
 .light {
   color: var(--acid);
-}
-.now-detail {
-  align-self: end;
-}
-.now-detail p {
-  font:
-    500 1.5rem Fraunces,
-    serif;
-  letter-spacing: -0.03em;
-}
-.now-detail .project-link {
-  display: inline-flex;
-  gap: 0.5rem;
-  margin-top: 2rem;
-  padding-bottom: 0.5rem;
-  font:
-    600 1.1rem "DM Sans",
-    sans-serif;
-  color: var(--acid);
-  border-bottom: 1px solid var(--acid);
 }
 .project-link span {
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -559,18 +536,8 @@ h1 em {
   line-height: 1;
   vertical-align: baseline;
 }
-.now .project-name {
-  background: rgba(203, 255, 70, 0.15);
-}
-.now-detail .small {
-  font:
-    400 0.82rem "DM Mono",
-    monospace;
-  color: #b1c2bd;
-  margin-top: 3rem;
-}
-/* The project link and status line on the light background */
-.open-source .project-link {
+/* The project link and status line */
+.side-project .project-link {
   display: inline-flex;
   gap: 0.5rem;
   margin-top: 0.6rem;
@@ -580,26 +547,534 @@ h1 em {
     sans-serif;
   border-bottom: 2px solid var(--coral);
 }
-.open-source .project-name-link {
+.side-project .project-name-link {
   text-decoration: underline;
   text-decoration-color: var(--coral);
   text-underline-offset: 0.2em;
 }
-.open-source .project-name-link:focus-visible {
+.side-project .project-name-link:focus-visible {
   outline-color: var(--coral);
 }
-.open-source .project-link span {
+.side-project .project-link span {
   color: var(--coral);
 }
-.open-source .project-link:focus-visible {
+.side-project .project-link:focus-visible {
   outline-color: var(--coral);
 }
-.open-source .small {
+.side-project .small {
   font:
     400 0.82rem "DM Mono",
     monospace;
   color: #61706c;
   margin-top: 2.5rem;
+}
+
+/* Project art: each project drawn in its own app's look. The default is the
+   still pose (no JS, reduced motion); main.js adds .is-visible each time one comes into view. */
+.project-art {
+  margin: 3.5rem 0 0;
+}
+
+/* mybackhurts: the app's chair squat card, in its riso navy and pink */
+.mbh-art {
+  --mbh-paper: #f3ede1;
+  --mbh-panel: #faf7f0;
+  --mbh-ink: #26336b;
+  --mbh-pink: #ff4d9d;
+}
+.mbh-card {
+  width: min(100%, 300px);
+  padding: 1.1rem 1.1rem 1.3rem;
+  background: var(--mbh-paper);
+  color: var(--mbh-ink);
+  border: 2px solid var(--mbh-ink);
+  border-radius: 6px;
+  box-shadow: 6px 6px 0 var(--mbh-pink);
+  transform: rotate(-2deg);
+}
+.mbh-figure {
+  display: block;
+  width: 100%;
+  height: 180px;
+  padding: 0.6rem 0 0.3rem;
+  overflow: visible;
+  background: radial-gradient(rgba(38, 51, 107, 0.2) 1.2px, transparent 1.5px) 0 0 / 10px 10px
+    var(--mbh-panel);
+  border: 2px solid var(--mbh-ink);
+  border-radius: 4px;
+  fill: none;
+  stroke: var(--mbh-ink);
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.mbh-head {
+  fill: var(--mbh-panel);
+}
+/* Still pose: the bottom of the squat. Pivots: foot, knee, hip, shoulder. */
+.sq-shin {
+  transform-origin: 66px 160px;
+  transform: rotate(20deg);
+}
+.sq-thigh {
+  transform-origin: 66px 130px;
+  transform: rotate(-98deg);
+}
+.sq-torso {
+  transform-origin: 66px 100px;
+  transform: rotate(103deg);
+}
+.sq-arm {
+  transform-origin: 66px 60px;
+  transform: rotate(-115deg);
+}
+/* Start from the held squat (47% in) and finish the set standing up */
+.mbh-art.is-counting :is(.sq-shin, .sq-thigh, .sq-torso, .sq-arm) {
+  animation: 2.6s ease-in-out -1.22s 4 forwards;
+}
+.mbh-art.is-counting .sq-shin {
+  animation-name: sq-shin;
+}
+.mbh-art.is-counting .sq-thigh {
+  animation-name: sq-thigh;
+}
+.mbh-art.is-counting .sq-torso {
+  animation-name: sq-torso;
+}
+.mbh-art.is-counting .sq-arm {
+  animation-name: sq-arm;
+}
+@keyframes sq-shin {
+  0%,
+  100% {
+    transform: none;
+  }
+  40%,
+  55% {
+    transform: rotate(20deg);
+  }
+}
+@keyframes sq-thigh {
+  0%,
+  100% {
+    transform: none;
+  }
+  40%,
+  55% {
+    transform: rotate(-98deg);
+  }
+}
+@keyframes sq-torso {
+  0%,
+  100% {
+    transform: none;
+  }
+  40%,
+  55% {
+    transform: rotate(103deg);
+  }
+}
+@keyframes sq-arm {
+  0%,
+  100% {
+    transform: none;
+  }
+  40%,
+  55% {
+    transform: rotate(-115deg);
+  }
+}
+.mbh-name {
+  margin-top: 1.1rem;
+  font:
+    600 1.2rem/1.15 "DM Sans",
+    sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0.06em 0.05em 0 var(--mbh-pink);
+}
+.mbh-count {
+  margin-top: 0.4rem;
+  font:
+    600 1.15rem "DM Sans",
+    sans-serif;
+  text-align: center;
+}
+.mbh-count b {
+  font-size: 3rem;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0.05em 0.04em 0 var(--mbh-pink);
+}
+.mbh-reps {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 0.7rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.mbh-reps li {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--mbh-ink);
+  border-radius: 2px;
+  transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mbh-reps .is-done {
+  background: var(--mbh-pink);
+}
+
+/* Deskling: the same parts wired into a macOS menu bar and a Windows tray */
+.dk-art {
+  --dk-fg: #0d1513;
+  --dk-muted: #5c6965;
+  --dk-line: #cfd8d5;
+  --dk-wash: #f6f8f7;
+  --dk-accent: #0b7a68;
+  --dk-soft: #e3f3ef;
+  --dk-mark: #2fd3b4;
+  /* Center of the app icon, measured from the bars' right edge:
+     border + padding + clock + gap + half the icon */
+  --dk-x: calc(1px + 0.6rem + 30px + 0.5rem + 7px);
+  max-width: 440px;
+  padding: 1.25rem;
+  background: #fff;
+  border: 1px solid #e2e8e6;
+  border-radius: 12px;
+  color: var(--dk-fg);
+  font:
+    500 0.8rem "DM Mono",
+    monospace;
+}
+.dk-os {
+  margin: 0 0 0.55rem;
+  color: var(--dk-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+.dk-taskbar + .dk-os {
+  margin: 0.55rem 0 0;
+}
+.dk-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 28px;
+  padding: 0 0.6rem;
+  background: var(--dk-wash);
+  border: 1px solid #e2e8e6;
+  border-radius: 7px;
+}
+.dk-bar i {
+  display: block;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--dk-line);
+}
+.dk-menus {
+  display: flex;
+  flex: 1;
+  gap: 0.7rem;
+}
+.dk-menus i {
+  width: 18px;
+}
+.dk-menus i:first-child {
+  width: 26px;
+  background: var(--dk-fg);
+}
+.dk-menus i:nth-child(3) {
+  width: 24px;
+}
+.dk-status {
+  display: flex;
+  gap: 0.5rem;
+}
+.dk-status i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dk-tasks {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  gap: 0.4rem;
+}
+.dk-tasks i {
+  width: 14px;
+  height: 14px;
+}
+.dk-chevron {
+  width: 10px;
+  height: 6px;
+  fill: none;
+  stroke: var(--dk-muted);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.dk-bar .dk-clock {
+  width: 30px;
+}
+/* The app: Deskling's own mark, a dark tile with a bar and a dot */
+.dk-app {
+  position: relative;
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: var(--dk-fg);
+}
+.dk-app::after {
+  content: "";
+  position: absolute;
+  right: 2.5px;
+  bottom: 2.5px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--dk-mark);
+}
+.dk-app::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border: 2px solid var(--dk-mark);
+  border-radius: 7px;
+  opacity: 0;
+}
+.dk-parts {
+  position: relative;
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 1.2rem var(--dk-x) 1.2rem 0;
+  list-style: none;
+}
+/* One wire from the menu bar app down to the tray app */
+.dk-parts::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: calc(var(--dk-x) - 1px);
+  width: 2px;
+  background: var(--dk-accent);
+}
+.dk-parts li {
+  display: flex;
+  align-items: center;
+}
+.dk-parts li::after {
+  content: "";
+  flex: 1;
+  min-width: 1rem;
+  height: 2px;
+  margin-left: 0.6rem;
+  background: var(--dk-accent);
+}
+.dk-parts span {
+  padding: 0.35rem 0.6rem;
+  background: var(--dk-soft);
+  border: 1px solid var(--dk-accent);
+  border-radius: 6px;
+  color: var(--dk-accent);
+}
+.dk-parts span,
+.dk-parts li::after {
+  transition:
+    background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* With JS, the parts plug in one by one once the drawing is in view */
+.js .dk-art:not(.is-visible) .dk-parts::before,
+.js .dk-art:not(.is-visible) .dk-parts li::after {
+  background: var(--dk-line);
+}
+.js .dk-art:not(.is-visible) .dk-parts span {
+  background: #fff;
+  border-color: var(--dk-line);
+  color: var(--dk-fg);
+}
+.dk-parts li:nth-child(2) span,
+.dk-parts li:nth-child(2)::after {
+  transition-delay: 0.9s;
+}
+.dk-parts li:nth-child(3) span,
+.dk-parts li:nth-child(3)::after {
+  transition-delay: 1.8s;
+}
+.dk-parts li:nth-child(4) span,
+.dk-parts li:nth-child(4)::after {
+  transition-delay: 2.7s;
+}
+/* Both apps light up together each time a part plugs in */
+.js .dk-art.is-visible .dk-app::before {
+  animation: dk-ping 0.9s cubic-bezier(0.16, 1, 0.3, 1) 4;
+}
+@keyframes dk-ping {
+  from {
+    opacity: 1;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+/* sunnysays: Sunny from the character sheet, saying a few of its lines */
+.sunny-art {
+  --sunny-ink: #4a2e1a;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 470px;
+}
+.sunny {
+  flex: none;
+  width: 160px;
+  height: auto;
+  overflow: visible;
+}
+.sunny-plant {
+  transform-origin: 60px 100px;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.sunny-eyes-closed,
+.sunny-talk,
+.sunny-sleep,
+.sunny-zz {
+  display: none;
+}
+.sunny-talk {
+  transform-origin: 60px 48.6px;
+}
+.sunny-bubble {
+  position: relative;
+  display: grid;
+  margin-top: 1.25rem;
+  padding: 0.8rem 1rem;
+  background: #fffdf7;
+  border: 2.5px solid var(--sunny-ink);
+  border-radius: 18px;
+  color: var(--sunny-ink);
+  font:
+    600 1rem/1.35 "DM Sans",
+    sans-serif;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.sunny-bubble::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 1.15rem;
+  width: 15px;
+  height: 15px;
+  background: #fffdf7;
+  border-left: 2.5px solid var(--sunny-ink);
+  border-bottom: 2.5px solid var(--sunny-ink);
+  transform: rotate(45deg);
+}
+/* Every line sits in the same cell, so the bubble is sized for the longest one */
+.sunny-bubble span {
+  grid-area: 1 / 1;
+  visibility: hidden;
+}
+.sunny-bubble .is-current {
+  visibility: visible;
+}
+.js .sunny-art.is-visible .sunny-bubble .is-current {
+  animation: sunny-line 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.js .sunny-art.is-visible:not(.is-asleep) .sunny-plant {
+  animation: sunny-sway 4s ease-in-out infinite;
+}
+.js .sunny-art.is-visible:not(.is-asleep) .sunny-eyes-open {
+  animation: sunny-blink 4.6s linear infinite;
+}
+.js .sunny-art.is-visible:not(.is-asleep) .sunny-eyes-closed {
+  display: inline;
+  opacity: 0;
+  animation: sunny-blink-closed 4.6s linear infinite;
+}
+.sunny-art.is-talking .sunny-smile {
+  display: none;
+}
+.sunny-art.is-talking .sunny-talk {
+  display: inline;
+  animation: sunny-talk 0.32s steps(2) infinite;
+}
+.sunny-art.is-asleep .sunny-plant {
+  transform: rotate(-5deg);
+}
+.sunny-art.is-asleep :is(.sunny-eyes-open, .sunny-smile, .sunny-talk) {
+  display: none;
+}
+.sunny-art.is-asleep :is(.sunny-eyes-closed, .sunny-sleep, .sunny-zz) {
+  display: inline;
+}
+.sunny-art.is-asleep .sunny-zz {
+  animation: sunny-zz 2.4s ease-in-out 3;
+}
+.sunny-art.is-asleep .sunny-bubble {
+  opacity: 0;
+}
+@keyframes sunny-line {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+@keyframes sunny-sway {
+  0%,
+  100% {
+    transform: rotate(-2.5deg);
+  }
+  50% {
+    transform: rotate(2.5deg);
+  }
+}
+@keyframes sunny-blink {
+  0%,
+  94% {
+    opacity: 1;
+  }
+  95%,
+  98% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 1;
+  }
+}
+@keyframes sunny-blink-closed {
+  0%,
+  94% {
+    opacity: 0;
+  }
+  95%,
+  98% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+}
+@keyframes sunny-talk {
+  to {
+    transform: scaleY(0.4);
+  }
+}
+@keyframes sunny-zz {
+  50% {
+    transform: translate(-2px, -3px);
+    opacity: 0.6;
+  }
 }
 .contact {
   padding-top: 8rem;
@@ -680,8 +1155,7 @@ footer {
 }
 @media (max-width: 720px) {
   .hero,
-  .manifesto-grid,
-  .now {
+  .manifesto-grid {
     grid-template-columns: 1fr;
   }
   .hero {
@@ -726,11 +1200,6 @@ footer {
   .interest-card {
     min-height: 180px;
   }
-  .now {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    gap: 2.5rem;
-  }
   .contact {
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -750,5 +1219,21 @@ footer {
     width: 100%;
     flex-wrap: wrap;
     gap: 0.7rem 1rem;
+  }
+  .project-art {
+    margin-top: 2.5rem;
+  }
+  .dk-art {
+    padding: 1rem;
+  }
+  .sunny {
+    width: 96px;
+  }
+  .sunny-art {
+    gap: 0.8rem;
+  }
+  .sunny-bubble {
+    margin-top: 0.4rem;
+    font-size: 0.95rem;
   }
 }

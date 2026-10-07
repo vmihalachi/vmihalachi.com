@@ -44,12 +44,20 @@ npm run preview  # vp preview
     a key or has an extra one, a placeholder has no string, a string is unused, or a
     language renders different element IDs than English.
 
-- `src/main.js` does only two things:
+- `src/main.js` does three things:
   - Writes computed values into `#year`, `#microsoft-experience`, and
     `#professional-experience`. Microsoft tenure is counted from December 2019;
     professional experience is Microsoft years + 3.
   - Runs an `IntersectionObserver` that adds `.is-visible` to every
     `section:not(.hero)` and `.interest-card`.
+  - Plays each `.project-art` drawing when it scrolls into view and resets it once it is
+    fully off screen, so it plays again on the next visit: the mybackhurts card finishes
+    its set of squats (rep 6 to 10), Deskling's parts plug in, and Sunny says its four
+    lines, then dozes off. With reduced motion, the drawings stay in their still pose.
+- The project drawings reuse each project's own art: the chair squat poses from the
+  mybackhurts landing page, Deskling's mark, and Sunny from the sunnysays character
+  sheet. Text inside them (exercise name, Deskling parts, Sunny's lines) comes from the
+  strings files like any other copy.
 - `src/style.css`:
   - Design tokens are CSS custom properties in `:root`.
   - Reveal animations apply only under the `.js` class, which the inline `<head>` script

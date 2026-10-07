@@ -31,16 +31,33 @@
   "project": {
     "title": "Mi fa male la schiena.<br />Così ho creato un’app.",
     "description": "vive nella barra dei menu del tuo computer e ogni 45 minuti ti ricorda di alzarti e fare qualche movimento veloce. Se glielo permetti, la webcam conta le ripetizioni. Tutto resta sul tuo computer.",
-    "link": "Vai su",
-    "status": "Desktop"
+    "link": "Vai su mybackhurts.app",
+    "status": "macOS e Windows",
+    "artExercise": "Squat sulla sedia"
   },
   "deskling": {
     "mark": "OPEN SOURCE",
     "title": "Poi ho condiviso<br />i <span>mattoncini.</span>",
     "description": "raccoglie i pezzi che servono a ogni app nella barra dei menu o nell’area di notifica e che nessuno vuole scrivere due volte: un timer per i promemoria che tiene conto delle ore di silenzio e dell’inattività, un rilevamento delle chiamate che non chiede mai l’accesso a fotocamera o microfono, le scorciatoie da tastiera globali e l’avvio automatico all’accesso.",
-    "details": "mybackhurts gira su Deskling. È scritto in Swift su macOS e in .NET su Windows, con test condivisi che fanno sì che le due versioni si comportino allo stesso modo. Se stai creando una piccola app del genere, potrebbe farti risparmiare un po’ di tempo.",
+    "details": "mybackhurts e sunnysays girano su Deskling. È scritto in Swift su macOS e in .NET su Windows, con test condivisi che fanno sì che le due versioni si comportino allo stesso modo. Se stai creando una piccola app del genere, potrebbe farti risparmiare un po’ di tempo.",
     "link": "Vai al sito di Deskling",
-    "status": "macOS e Windows · MIT"
+    "status": "macOS e Windows · MIT",
+    "artTimer": "Timer dei promemoria",
+    "artCalls": "Rilevamento chiamate",
+    "artHotkey": "Scorciatoia globale",
+    "artLogin": "Avvio all’accesso"
+  },
+  "sunnysays": {
+    "mark": "GIOCATTOLO DA SCRIVANIA",
+    "title": "Poi ho fatto qualcosa<br />solo per <span>gioco.</span>",
+    "description": "è un piccolo girasole di nome Sunny che vive nella barra dei menu o nell’area di notifica e dice qualcosa un paio di volte all’ora: sulla luce, sull’ora o su niente di particolare. Premi Di’ qualcosa e parla subito. Digli shh e china la testa.",
+    "details": "Sta zitto quando sei in chiamata, senza mai chiedere l’accesso a fotocamera o microfono. Non fa richieste di rete e non conserva nulla oltre alle tue impostazioni.",
+    "link": "Conosci Sunny",
+    "status": "macOS e Windows",
+    "line1": "Una volta è passata un’ape. Ci siamo fatti un cenno.",
+    "line2": "Ho pensato alle nuvole. Nessuna conclusione, per ora.",
+    "line3": "La fotosintesi va alla grande, grazie di avermelo chiesto.",
+    "line4": "Mi sa che la scrivania è un po’ storta. O io."
   },
   "interests": {
     "mark": "FUORI ORARIO",
