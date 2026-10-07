@@ -7,26 +7,31 @@
     "label": "Main navigation",
     "home": "Vlad Mihalachi, home",
     "work": "Work",
+    "projects": "Side Projects",
     "interests": "Interests",
     "contact": "Contact",
     "language": "Language"
   },
   "hero": {
     "title": "I build software<br />that earns its <em>place.</em>",
-    "intro": "I’m Vlad, a software engineer working across the stack, from services to apps. Most days that means untangling something until it’s simple enough to explain.",
+    "intro": "I'm Vlad, a software engineer working across the stack, from services to apps. Most days that means untangling something until it's simple enough to explain.",
     "cta": "My work",
     "badge": "CURIOUS<br />BY NATURE"
   },
   "work": {
     "mark": "WORK",
     "title": "I like the messy part<br />before things <span>click.</span>",
-    "experience": "I’m a Senior Software Engineer at Microsoft. I’ve been building software professionally for <span id=\"professional-experience\">9+</span> years, the last <span id=\"microsoft-experience\">6+</span> of them there.",
-    "openSource": "Outside work, I read a lot of open-source code and contribute back when I have something useful to add. It’s the best way I know to see how other people think through problems."
+    "experience": "I'm a Senior Software Engineer at Microsoft. I've been building software professionally for <span id=\"professional-experience\">9+</span> years, the last <span id=\"microsoft-experience\">6+</span> of them there.",
+    "openSource": "Outside work, I read a lot of open-source code and contribute back when I have something useful to add. It's the best way I know to see how other people think through problems."
+  },
+  "projects": {
+    "mark": "SIDE PROJECTS",
+    "title": "Side Projects"
   },
   "project": {
     "mark": "SIDE PROJECT",
     "title": "My back hurts.<br />So I built an app.",
-    "description": "lives in your desktop’s menu bar and nudges you every 45 minutes to stand up and do a few quick moves. If you let it, your webcam counts the reps. Everything stays on your desktop.",
+    "description": "lives in your desktop's menu bar and nudges you every 45 minutes to stand up and do a few quick moves. If you let it, your webcam counts the reps. Everything stays on your desktop.",
     "link": "See",
     "status": "Desktop"
   },
@@ -34,7 +39,7 @@
     "mark": "OPEN SOURCE",
     "title": "Then I shared<br />the <span>plumbing.</span>",
     "description": "holds the parts every menu bar or tray app needs and nobody wants to write twice: a reminder timer that knows about quiet hours and idle time, call detection that never asks for camera or microphone access, global hotkeys, and starting at login.",
-    "details": "mybackhurts runs on it. It’s Swift on macOS and .NET on Windows, with shared tests that keep the two behaving the same. If you’re building a little app like this, it might save you some time.",
+    "details": "mybackhurts runs on it. It's Swift on macOS and .NET on Windows, with shared tests that keep the two behaving the same. If you're building a little app like this, it might save you some time.",
     "link": "See it on GitHub",
     "status": "macOS and Windows · MIT"
   },
@@ -51,7 +56,7 @@
   "contact": {
     "mark": "SAY HELLO",
     "title": "Want to talk?",
-    "text": "I’m happy to talk about software, open source, or anything we still don’t fully understand.",
+    "text": "I'm happy to talk about software, open source, or anything we still don't fully understand.",
     "linkedin": "Find me on LinkedIn",
     "github": "Find me on GitHub"
   },

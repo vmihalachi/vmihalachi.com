@@ -7,6 +7,7 @@
     "label": "Navigazione principale",
     "home": "Vlad Mihalachi, inizio pagina",
     "work": "Lavoro",
+    "projects": "Progetti Personali",
     "interests": "Interessi",
     "contact": "Contatti",
     "language": "Lingua"
@@ -23,18 +24,22 @@
     "experience": "Sono Senior Software Engineer in Microsoft. Sviluppo software per lavoro da <span id=\"professional-experience\">9+</span> anni, di cui gli ultimi <span id=\"microsoft-experience\">6+</span> proprio lì.",
     "openSource": "Fuori dal lavoro leggo molto codice open source e contribuisco quando ho qualcosa di utile da aggiungere. È il modo migliore che conosco per vedere come gli altri ragionano sui problemi."
   },
+  "projects": {
+    "mark": "PROGETTI PERSONALI",
+    "title": "Progetti Personali"
+  },
   "project": {
     "mark": "PROGETTO PERSONALE",
-    "title": "Mi fa male la schiena.<br />Così ho creato un’app.",
-    "description": "vive nella barra dei menu del tuo computer e ogni 45 minuti ti ricorda di alzarti e fare qualche movimento veloce. Se glielo permetti, la webcam conta le ripetizioni. Tutto resta sul tuo computer.",
+    "title": "Mi fa male la schiena.<br />Così ho creato un'app.",
+    "description": "vive nella barra dei menu del tuo computer e ogni 45 minuti ti ricorda di alzarti e fare qualche movimento veloce. Se glielo permetti, la webcam conta le ripetizioni. Tutto rimane sul tuo computer.",
     "link": "Vai su",
     "status": "Desktop"
   },
   "deskling": {
     "mark": "OPEN SOURCE",
     "title": "Poi ho condiviso<br />i <span>mattoncini.</span>",
-    "description": "raccoglie i pezzi che servono a ogni app nella barra dei menu o nell’area di notifica e che nessuno vuole scrivere due volte: un timer per i promemoria che tiene conto delle ore di silenzio e dell’inattività, un rilevamento delle chiamate che non chiede mai l’accesso a fotocamera o microfono, le scorciatoie da tastiera globali e l’avvio automatico all’accesso.",
-    "details": "mybackhurts gira su Deskling. È scritto in Swift su macOS e in .NET su Windows, con test condivisi che fanno sì che le due versioni si comportino allo stesso modo. Se stai creando una piccola app del genere, potrebbe farti risparmiare un po’ di tempo.",
+    "description": "raccoglie i pezzi che servono a ogni app nella barra dei menu o nell'area di notifica e che nessuno vuole scrivere due volte: un timer per i promemoria che tiene conto delle ore di silenzio e di inattività, il rilevamento delle chiamate che non chiede mai l'accesso a fotocamera e microfono, gli hotkey globali e l'avvio al login.",
+    "details": "mybackhurts gira su Deskling. È scritto in Swift su macOS e in .NET su Windows, con test condivisi che fanno sì che le due versioni si comportino allo stesso modo. Se stai creando un'app piccola come questa, potrebbe farti risparmiare qualche tempo.",
     "link": "Guardalo su GitHub",
     "status": "macOS e Windows · MIT"
   },
@@ -44,7 +49,7 @@
     "maths": "Matematica",
     "mathsText": "Schemi, dimostrazioni e il piacere discreto di una soluzione elegante.",
     "physics": "Fisica",
-    "physicsText": "Come sta in piedi l’universo, e perché si comporta così.",
+    "physicsText": "Come sta in piedi l'universo, e perché si comporta così.",
     "biology": "Biologia",
     "biologyText": "I sistemi viventi sono pieni di soluzioni strane e pratiche."
   },
