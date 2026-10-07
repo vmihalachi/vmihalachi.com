@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "Vlad Mihalachi — Software Engineer",
-    "description": "Vlad Mihalachi, Senior Software Engineer at Microsoft and maker of mybackhurts.app."
+    "description": "Vlad Mihalachi, Senior Software Engineer at Microsoft and maker of mybackhurts.app.",
+    "imageAlt": "Vlad Mihalachi, software engineer and maker, next to the VM orbit drawing from the site."
   },
   "nav": {
     "label": "Main navigation",

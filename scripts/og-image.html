@@ -1,0 +1,159 @@
+<!doctype html>
+<!--
+  Source for public/og-image.png, the 1200×630 link preview card. It redraws the hero's
+  orbit art at rest. After editing, render it with headless Chrome from the project root:
+
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless \
+    --hide-scrollbars --window-size=1200,630 --virtual-time-budget=5000 \
+    --screenshot=public/og-image.png scripts/og-image.html
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=block"
+    />
+    <style>
+      :root {
+        --ink: #172a28;
+        --paper: #f4f0e8;
+        --acid: #cbff46;
+        --coral: #fa6e54;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: var(--paper);
+        color: var(--ink);
+      }
+      .card {
+        position: relative;
+        box-sizing: border-box;
+        height: 100%;
+        padding: 72px 80px;
+        display: grid;
+        grid-template-columns: 1fr 440px;
+        align-items: center;
+      }
+      .mono {
+        font:
+          500 22px "DM Mono",
+          monospace;
+        letter-spacing: 0.12em;
+      }
+      .wordmark {
+        position: absolute;
+        top: 64px;
+        left: 80px;
+        font:
+          500 40px "DM Mono",
+          monospace;
+        letter-spacing: -0.12em;
+      }
+      .wordmark span,
+      h1 span {
+        color: var(--coral);
+      }
+      h1 {
+        margin: 0 0 32px;
+        font:
+          600 128px/0.92 Fraunces,
+          serif;
+        letter-spacing: -0.055em;
+      }
+      .url {
+        position: absolute;
+        bottom: 64px;
+        left: 80px;
+        letter-spacing: 0.04em;
+        color: #455451;
+      }
+      .art {
+        position: relative;
+        width: 440px;
+        height: 440px;
+      }
+      .art svg {
+        position: absolute;
+        inset: 0;
+      }
+      .core {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(calc(-50% - 7px), calc(-50% - 7px));
+        width: 124px;
+        height: 124px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--acid);
+        box-shadow: 14px 14px 0 var(--coral);
+        font:
+          600 52px Fraunces,
+          serif;
+        letter-spacing: -0.14em;
+        padding-right: 0.12em;
+        box-sizing: border-box;
+      }
+      .star {
+        position: absolute;
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="wordmark">VM<span>.</span></div>
+      <div>
+        <h1>Vlad<br />Mihalachi<span>.</span></h1>
+        <div class="mono">SOFTWARE ENGINEER · MAKER</div>
+      </div>
+      <div class="art">
+        <svg viewBox="0 0 440 440" fill="none">
+          <ellipse
+            cx="220"
+            cy="220"
+            rx="200"
+            ry="94"
+            stroke="#172a28"
+            stroke-width="1.5"
+            transform="rotate(-28 220 220)"
+          />
+          <ellipse
+            cx="220"
+            cy="220"
+            rx="94"
+            ry="200"
+            stroke="#fa6e54"
+            stroke-width="1.5"
+            transform="rotate(38 220 220)"
+          />
+          <!-- Planets resting on their orbits: angle θ on each ellipse, then rotated with it -->
+          <circle
+            cx="220"
+            cy="220"
+            r="8"
+            fill="#fa6e54"
+            transform="rotate(-28 220 220) translate(-173 -47)"
+          />
+          <circle
+            cx="220"
+            cy="220"
+            r="6"
+            fill="#172a28"
+            transform="rotate(38 220 220) translate(66 142.4)"
+          />
+        </svg>
+        <div class="core">VM</div>
+        <span class="star" style="top: 12%; right: 4%; color: #fa6e54">✦</span>
+        <span class="star" style="bottom: 8%; left: 6%; color: #0d7770">✦</span>
+      </div>
+      <div class="mono url">vmihalachi.com</div>
+    </div>
+  </body>
+</html>
