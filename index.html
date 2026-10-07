@@ -48,6 +48,7 @@
         <div class="nav-links">
           <a href="#work">{{ nav.work }}</a>
           <a href="#mybackhurts">mybackhurts</a>
+          <a href="#deskling">Deskling</a>
           <a href="#interests">{{ nav.interests }}</a>
           <a href="#contact">{{ nav.contact }}</a>
         </div>
@@ -98,8 +99,27 @@
         </div>
       </section>
 
+      <section class="manifesto open-source" id="deskling" aria-labelledby="deskling-title">
+        <p class="section-mark">03 / {{ deskling.mark }}</p>
+        <div class="manifesto-grid">
+          <h2 id="deskling-title">{{ deskling.title }}</h2>
+          <div class="manifesto-copy">
+            <p><span class="project-name">Deskling</span> {{ deskling.description }}</p>
+            <p>{{ deskling.details }}</p>
+            <a
+              class="project-link"
+              href="https://github.com/vmihalachi/deskling"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ deskling.link }} <span aria-hidden="true">↗</span></a
+            >
+            <p class="small">{{ deskling.status }}</p>
+          </div>
+        </div>
+      </section>
+
       <section class="interests" id="interests" aria-labelledby="interests-title">
-        <p class="section-mark">03 / {{ interests.mark }}</p>
+        <p class="section-mark">04 / {{ interests.mark }}</p>
         <h2 id="interests-title" class="visually-hidden">{{ interests.title }}</h2>
         <div class="interest-grid">
           <article class="interest-card maths">
@@ -157,7 +177,7 @@
       </section>
 
       <section class="contact" id="contact" aria-labelledby="contact-title">
-        <p class="section-mark">04 / {{ contact.mark }}</p>
+        <p class="section-mark">05 / {{ contact.mark }}</p>
         <h2 id="contact-title">{{ contact.title }}</h2>
         <p>{{ contact.text }}</p>
         <div class="contact-links">

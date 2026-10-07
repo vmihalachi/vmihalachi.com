@@ -30,6 +30,14 @@
     "link": "Vezi",
     "status": "Desktop"
   },
+  "deskling": {
+    "mark": "OPEN SOURCE",
+    "title": "Apoi am pus piesele<br />la <span>comun.</span>",
+    "description": "adună bucățile de care are nevoie orice aplicație din bara de meniu sau din zona de notificare și pe care nimeni nu vrea să le scrie de două ori: un temporizator pentru mementouri care ține cont de orele de liniște și de inactivitate, detectarea apelurilor fără să ceară vreodată acces la cameră sau la microfon, scurtături de tastatură globale și pornirea automată la conectare.",
+    "details": "mybackhurts rulează pe Deskling. E scris în Swift pe macOS și în .NET pe Windows, cu teste comune care fac ca cele două variante să se comporte la fel. Dacă faci și tu o aplicație mică de felul ăsta, s-ar putea să-ți economisească ceva timp.",
+    "link": "Vezi-l pe GitHub",
+    "status": "macOS și Windows · MIT"
+  },
   "interests": {
     "mark": "DUPĂ PROGRAM",
     "title": "Lucruri care mă fascinează",

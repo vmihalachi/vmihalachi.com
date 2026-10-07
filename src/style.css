@@ -551,6 +551,30 @@ h1 em {
   color: #b1c2bd;
   margin-top: 3rem;
 }
+/* The project link and status line on the light background */
+.open-source .project-link {
+  display: inline-flex;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  padding-bottom: 0.45rem;
+  font:
+    600 1.1rem "DM Sans",
+    sans-serif;
+  border-bottom: 2px solid var(--coral);
+}
+.open-source .project-link span {
+  color: var(--coral);
+}
+.open-source .project-link:focus-visible {
+  outline-color: var(--coral);
+}
+.open-source .small {
+  font:
+    400 0.82rem "DM Mono",
+    monospace;
+  color: #61706c;
+  margin-top: 2.5rem;
+}
 .contact {
   padding-top: 8rem;
   padding-bottom: 8rem;
@@ -694,6 +718,7 @@ footer {
   .nav-links {
     order: 1;
     width: 100%;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 0.7rem 1rem;
   }
 }

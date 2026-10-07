@@ -30,6 +30,14 @@
     "link": "See",
     "status": "Desktop"
   },
+  "deskling": {
+    "mark": "OPEN SOURCE",
+    "title": "Then I shared<br />the <span>plumbing.</span>",
+    "description": "holds the parts every menu bar or tray app needs and nobody wants to write twice: a reminder timer that knows about quiet hours and idle time, call detection that never asks for camera or microphone access, global hotkeys, and starting at login.",
+    "details": "mybackhurts runs on it. It’s Swift on macOS and .NET on Windows, with shared tests that keep the two behaving the same. If you’re building a little app like this, it might save you some time.",
+    "link": "See it on GitHub",
+    "status": "macOS and Windows · MIT"
+  },
   "interests": {
     "mark": "OFF THE CLOCK",
     "title": "Things that fascinate me",
