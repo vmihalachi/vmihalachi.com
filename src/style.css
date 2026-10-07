@@ -232,10 +232,12 @@ h1 em {
   border-color: var(--coral);
 }
 .core {
+  --shadow: 12px;
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  /* Shift back by half the shadow so the disc and its shadow sit centered together */
+  transform: translate(calc(-50% - var(--shadow) / 2), calc(-50% - var(--shadow) / 2));
   width: 104px;
   height: 104px;
   background: var(--acid);
@@ -247,7 +249,7 @@ h1 em {
     serif;
   letter-spacing: -0.14em;
   padding-right: 0.12em;
-  box-shadow: 12px 12px 0 var(--coral);
+  box-shadow: var(--shadow) var(--shadow) 0 var(--coral);
 }
 /* Two eased movements a quarter turn apart, one across and one down, trace the ellipse */
 .planet {
