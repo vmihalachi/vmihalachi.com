@@ -107,6 +107,8 @@ footer {
   gap: 3rem;
   padding-top: 3rem;
   padding-bottom: 6rem;
+  /* The planets are orbit-sized boxes moved by transforms; keep them from widening the page */
+  overflow-x: clip;
 }
 .eyebrow,
 .section-mark {
@@ -662,9 +664,13 @@ footer {
     padding-top: 2rem;
     min-height: auto;
   }
+  /* Below about 390px, shrink with the column so the longest word ("Construiesc") still fits */
+  h1 {
+    font-size: min(4rem, (100vw - 2 * var(--gutter)) / 5.3);
+  }
   .orbit-art {
     height: 300px;
-    width: 300px;
+    max-width: 300px;
   }
   .orbit-one {
     width: 280px;
