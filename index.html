@@ -34,7 +34,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=[...]
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
     />
     <script>
       document.documentElement.classList.add("js");
@@ -84,12 +84,11 @@
       </section>
 
       <section class="projects" id="projects" aria-labelledby="projects-title">
-        <p class="section-mark">02 / {{ projects.mark }}</p>
-        <h2 id="projects-title" class="visually-hidden">{{ projects.title }}</h2>
-
         <div class="now">
           <div>
-            <h2 id="mybackhurts-title">{{ project.title }}</h2>
+            <p class="section-mark light">02 / {{ projects.mark }}</p>
+            <h2 id="projects-title" class="visually-hidden">{{ projects.title }}</h2>
+            <h3 id="mybackhurts-title">{{ project.title }}</h3>
           </div>
           <div class="now-detail">
             <p><span class="project-name">mybackhurts</span> {{ project.description }}</p>
@@ -102,8 +101,9 @@
         </div>
 
         <div class="manifesto open-source">
+          <p class="section-mark">{{ deskling.mark }}</p>
           <div class="manifesto-grid">
-            <h2 id="deskling-title">{{ deskling.title }}</h2>
+            <h3 id="deskling-title">{{ deskling.title }}</h3>
             <div class="manifesto-copy">
               <p><span class="project-name">Deskling</span> {{ deskling.description }}</p>
               <p>{{ deskling.details }}</p>
@@ -162,7 +162,7 @@
               <g class="helix">
                 <path
                   class="rungs"
-                  d="M-14.875 6V15M-12.75 4.5V16.5M-10.625 6V15M-6.375 6V15M-4.25 4.5V16.5M-2.125 6V15M2.125 6V15M4.25 4.5V16.5M6.375 6V15M10.625 6V15M12.75 4.5V16.5M14.875 6V15M19.125 6V15M21.25[...]
+                  d="M-14.875 6V15M-12.75 4.5V16.5M-10.625 6V15M-6.375 6V15M-4.25 4.5V16.5M-2.125 6V15M2.125 6V15M4.25 4.5V16.5M6.375 6V15M10.625 6V15M12.75 4.5V16.5M14.875 6V15M19.125 6V15M21.25 4.5V16.5M23.375 6V15M27.625 6V15M29.75 4.5V16.5M31.875 6V15M36.125 6V15M38.25 4.5V16.5M40.375 6V15M44.625 6V15M46.75 4.5V16.5M48.875 6V15"
                 />
                 <path
                   d="M-17 10.5Q-12.75-1.5-8.5 10.5T0 10.5T8.5 10.5T17 10.5T25.5 10.5T34 10.5T42.5 10.5T51 10.5"

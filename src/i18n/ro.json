@@ -7,39 +7,38 @@
     "label": "Navigare principală",
     "home": "Vlad Mihalachi, începutul paginii",
     "work": "Muncă",
-    "projects": "Proiecte Personale",
+    "projects": "Proiecte",
     "interests": "Interese",
     "contact": "Contact",
     "language": "Limbă"
   },
   "hero": {
     "title": "Construiesc software<br />care își câștigă <em>locul.</em>",
-    "intro": "Sunt Vlad, inginer software și lucrez la toate nivelurile, de la servicii la aplicații. În cele mai multe zile, asta înseamnă să descâlcesc ceva până devine destul de simplu de explicat.",
+    "intro": "Sunt Vlad, inginer software și lucrez la toate nivelurile, de la servicii la aplicații. În cele mai multe zile, asta înseamnă să descâlcesc ceva până devine destul de simplu încât să-l pot explica.",
     "cta": "Ce fac",
     "badge": "CURIOS<br />DIN FIRE"
   },
   "work": {
     "mark": "MUNCĂ",
     "title": "Îmi place haosul<br />dinainte ca totul să se <span>lege.</span>",
-    "experience": "Sunt Senior Software Engineer la Microsoft. Fac software în mod profesionist de <span id=\"professional-experience\">9+</span> ani, dintre care ultimii <span id=\"microsoft-experience\">6+</span> la Microsoft.",
+    "experience": "Sunt Senior Software Engineer la Microsoft. Fac software în mod profesionist de <span id=\"professional-experience\">9+</span> ani, dintre care ultimii <span id=\"microsoft-experience\">6+</span> acolo.",
     "openSource": "În afara serviciului citesc mult cod open source și contribui când am ceva util de adăugat. E cel mai bun mod pe care îl știu de a vedea cum gândesc alții o problemă."
   },
   "projects": {
     "mark": "PROIECTE PERSONALE",
-    "title": "Proiecte Personale"
+    "title": "Proiecte personale"
   },
   "project": {
-    "mark": "PROIECT PERSONAL",
     "title": "Mă doare spatele.<br />Așa că am făcut o aplicație.",
-    "description": "stă în bara de meniu a calculatorului tău și, la fiecare 45 de minute, îți amintește să te ridici și să faci câteva mișcări rapide. Dacă îi dai voie, camera web numără repetițiile. Totul rămâne pe calculatorul tău.",
+    "description": "stă în bara de meniu a calculatorului tău și, la fiecare 45 de minute, îți amintește să te ridici și să faci câteva mișcări rapide. Dacă îi dai voie, camera web numără repetările. Totul rămâne pe calculatorul tău.",
     "link": "Vezi",
     "status": "Desktop"
   },
   "deskling": {
     "mark": "OPEN SOURCE",
     "title": "Apoi am pus piesele<br />la <span>comun.</span>",
-    "description": "adună bucățile de care are nevoie orice aplicație din bara de meniu sau din zona de notificare și pe care nimeni nu vrea să le scrie de două ori: un temporizator pentru promemoria care cunoaște orele liniștite și orele inactive, detectarea apelurilor care nu cere niciodată acces la cameră sau microfon, comenzi rapide globale și pornire la login.",
-    "details": "mybackhurts rulează pe Deskling. E scris în Swift pe macOS și în .NET pe Windows, cu teste comune care fac ca cele două variante să se comporte la fel. Dacă faci și tu o aplicație mică ca asta, ar putea să-ți economisească ceva timp.",
+    "description": "adună bucățile de care are nevoie orice aplicație din bara de meniu sau din zona de notificare și pe care nimeni nu vrea să le scrie de două ori: un temporizator pentru mementouri care ține cont de orele de liniște și de inactivitate, detectarea apelurilor fără să ceară vreodată acces la cameră sau la microfon, scurtături de tastatură globale și pornirea automată la conectare.",
+    "details": "mybackhurts rulează pe Deskling. E scris în Swift pe macOS și în .NET pe Windows, cu teste comune care fac ca cele două variante să se comporte la fel. Dacă faci și tu o aplicație mică de felul ăsta, s-ar putea să-ți economisească ceva timp.",
     "link": "Vezi-l pe GitHub",
     "status": "macOS și Windows · MIT"
   },
