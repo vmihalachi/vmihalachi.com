@@ -24,6 +24,25 @@ document
   .querySelectorAll("section:not(.hero), .interest-card")
   .forEach((element) => observer.observe(element));
 
+// The page takes the color (--tone) of whichever section crosses the middle of the
+// screen, so each project is read in its own app's light and the rest on paper.
+const toneObserver = new IntersectionObserver(
+  (entries) =>
+    entries.forEach(
+      ({ target, isIntersecting }) =>
+        isIntersecting &&
+        document.body.style.setProperty(
+          "--room",
+          getComputedStyle(target).getPropertyValue("--tone"),
+        ),
+    ),
+  { rootMargin: "-50% 0px -49% 0px" },
+);
+
+document
+  .querySelectorAll("main > section:not(.projects), .side-project")
+  .forEach((element) => toneObserver.observe(element));
+
 // The project drawings play each time one comes into view, and reset once it has
 // left the screen completely, so the reset is never seen.
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;

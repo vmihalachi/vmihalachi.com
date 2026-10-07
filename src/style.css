@@ -6,6 +6,8 @@
   --blue: #83c5e8;
   --line: rgba(23, 42, 40, 0.18);
   --gutter: clamp(1.5rem, 5vw, 5rem);
+  /* The page color while a section is being read; projects set their own */
+  --tone: var(--paper);
 }
 * {
   box-sizing: border-box;
@@ -13,11 +15,13 @@
 html {
   scroll-behavior: smooth;
 }
+/* main.js sets --room to the --tone of the section in the middle of the screen */
 body {
   margin: 0;
-  background: var(--paper);
+  background: var(--room, var(--paper));
   color: var(--ink);
   font-family: "DM Sans", sans-serif;
+  transition: background-color 1.1s cubic-bezier(0.33, 1, 0.68, 1);
 }
 a {
   color: inherit;
@@ -355,7 +359,7 @@ h1 em {
 .manifesto h2 span,
 .manifesto h3 span {
   display: inline-block;
-  color: #087c75;
+  color: var(--accent-text, #087c75);
   transform-origin: 30% 80%;
 }
 /* Work is the one dark band, full width with its content lined up with the rest */
@@ -529,12 +533,45 @@ h1 em {
   outline-offset: 4px;
 }
 .project-name {
-  background: rgba(203, 255, 70, 0.2);
+  background: var(--chip);
   padding: 0.15em 0.35em;
   border-radius: 0.25em;
   display: inline-block;
   line-height: 1;
   vertical-align: baseline;
+}
+/* Each project brings its app's own colors. While it's being read the page washes
+   over to a soft tint of the app (--tone), and its links, name highlight and status
+   line take the app's accent. A project without its own colors gets the site's. */
+.side-project {
+  --accent: var(--coral);
+  --accent-text: #087c75;
+  --chip: rgba(203, 255, 70, 0.2);
+  --muted: #61706c;
+}
+/* mybackhurts: the riso pink plate, navy ink */
+.side-project.tone-mybackhurts {
+  --tone: color-mix(in oklab, var(--paper), #ffc3dd 32%);
+  --accent: #ff4d9d;
+  --accent-text: #c8105f;
+  --chip: #ffb6ce;
+  --muted: #555b89;
+}
+/* Deskling: its site's mint and teal */
+.side-project.tone-deskling {
+  --tone: #e3f3ef;
+  --accent: #0b7a68;
+  --accent-text: #0b7a68;
+  --chip: color-mix(in oklab, var(--tone), #2fd3b4 35%);
+  --muted: #46534f;
+}
+/* sunnysays: the day sky behind Sunny, sun yellow, leaf green */
+.side-project.tone-sunnysays {
+  --tone: color-mix(in oklab, var(--paper), #ffe9a8 45%);
+  --accent: #5e8c3a;
+  --accent-text: #8a5a00;
+  --chip: color-mix(in oklab, var(--tone), #f7c948 60%);
+  --muted: #735940;
 }
 /* The project link and status line */
 .side-project .project-link {
@@ -545,27 +582,27 @@ h1 em {
   font:
     600 1.1rem "DM Sans",
     sans-serif;
-  border-bottom: 2px solid var(--coral);
+  border-bottom: 2px solid var(--accent);
 }
 .side-project .project-name-link {
   text-decoration: underline;
-  text-decoration-color: var(--coral);
+  text-decoration-color: var(--accent);
   text-underline-offset: 0.2em;
 }
 .side-project .project-name-link:focus-visible {
-  outline-color: var(--coral);
+  outline-color: var(--accent-text);
 }
 .side-project .project-link span {
-  color: var(--coral);
+  color: var(--accent);
 }
 .side-project .project-link:focus-visible {
-  outline-color: var(--coral);
+  outline-color: var(--accent-text);
 }
 .side-project .small {
   font:
     400 0.82rem "DM Mono",
     monospace;
-  color: #61706c;
+  color: var(--muted);
   margin-top: 2.5rem;
 }
 
