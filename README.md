@@ -2,7 +2,7 @@
 
 My portfolio :)
 
-----
+---
 
 Available in English (`/`), Italian (`/it/`), and Romanian (`/ro/`). `index.html` is a
 template with `{{ key }}` placeholders, and the strings for each language live in
