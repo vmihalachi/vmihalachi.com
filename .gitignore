@@ -16,3 +16,7 @@ pnpm-debug.log*
 .idea/
 .vscode/
 *.sw?
+
+# Local agent tooling
+.codex/
+.junie/plans/

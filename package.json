@@ -2,6 +2,7 @@
   "name": "vmihalachi-portfolio",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "vp dev",
     "build": "vp build",
@@ -15,6 +16,7 @@
     "vite-plus": "0.3.3"
   },
   "overrides": {
+    "source-map-js": "^1.2.2",
     "vite": "npm:@voidzero-dev/vite-plus-core@0.3.3"
   },
   "engines": {

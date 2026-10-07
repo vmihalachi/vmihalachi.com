@@ -31,3 +31,10 @@ production; pull requests get a preview environment.
 Security headers and caching are configured in `public/staticwebapp.config.json`. The
 Content-Security-Policy allows the inline script in `index.html` by its SHA-256 hash.
 `npm run check` fails when the hash is stale, and `npm run csp:fix` rewrites it.
+
+## License
+
+The code is released under the [MIT License](LICENSE). The license doesn't cover the
+site's content: the copy in `src/i18n/` and `PRODUCT.md`, and the VM wordmark, are
+© Vlad Mihalachi, all rights reserved. If you reuse the code, replace the content with
+your own.
