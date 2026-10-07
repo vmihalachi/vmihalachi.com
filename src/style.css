@@ -348,16 +348,19 @@ h1 em {
   gap: 4rem;
   margin-top: 2rem;
 }
+.manifesto h2,
 .manifesto h3,
 .now h3,
 .contact h2 {
   font-size: clamp(3rem, 5.5vw, 5rem);
 }
+.manifesto h2 span,
 .manifesto h3 span {
   display: inline-block;
   color: #087c75;
   transform-origin: 30% 80%;
 }
+.js .manifesto.is-visible h2 span,
 .js .projects.is-visible .manifesto h3 span {
   animation: click 0.7s 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
 }
