@@ -580,6 +580,14 @@ h1 em {
     sans-serif;
   border-bottom: 2px solid var(--coral);
 }
+.open-source .project-name-link {
+  text-decoration: underline;
+  text-decoration-color: var(--coral);
+  text-underline-offset: 0.2em;
+}
+.open-source .project-name-link:focus-visible {
+  outline-color: var(--coral);
+}
 .open-source .project-link span {
   color: var(--coral);
 }
