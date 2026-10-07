@@ -7,7 +7,7 @@ const configPath = new URL("../public/staticwebapp.config.json", import.meta.url
 const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
 const config = readFileSync(configPath, "utf8");
 
-const inlineScript = html.match(/<script>(.*?)<\/script>/s)?.[1];
+const inlineScript = html.match(/<script>(.*?)<\/script>/is)?.[1];
 if (inlineScript === undefined) {
   console.error("No inline <script> found in index.html.");
   process.exit(1);
