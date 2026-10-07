@@ -31,16 +31,33 @@
   "project": {
     "title": "My back hurts.<br />So I built an app.",
     "description": "lives in your desktop’s menu bar and nudges you every 45 minutes to stand up and do a few quick moves. If you let it, your webcam counts the reps. Everything stays on your desktop.",
-    "link": "See",
-    "status": "Desktop"
+    "link": "See mybackhurts.app",
+    "status": "macOS and Windows",
+    "artExercise": "Chair squat"
   },
   "deskling": {
     "mark": "OPEN SOURCE",
     "title": "Then I shared<br />the <span>plumbing.</span>",
     "description": "holds the parts every menu bar or tray app needs and nobody wants to write twice: a reminder timer that knows about quiet hours and idle time, call detection that never asks for camera or microphone access, global hotkeys, and starting at login.",
-    "details": "mybackhurts runs on it. It’s Swift on macOS and .NET on Windows, with shared tests that keep the two behaving the same. If you’re building a little app like this, it might save you some time.",
+    "details": "mybackhurts and sunnysays run on it. It’s Swift on macOS and .NET on Windows, with shared tests that keep the two behaving the same. If you’re building a little app like this, it might save you some time.",
     "link": "See the Deskling site",
-    "status": "macOS and Windows · MIT"
+    "status": "macOS and Windows · MIT",
+    "artTimer": "Reminder timer",
+    "artCalls": "Call detection",
+    "artHotkey": "Global hotkey",
+    "artLogin": "Launch at login"
+  },
+  "sunnysays": {
+    "mark": "DESK TOY",
+    "title": "Then I built something<br />just for <span>fun.</span>",
+    "description": "is a little sunflower named Sunny that lives in your menu bar or tray and says something a couple of times an hour: about the light, the time, or nothing much at all. Press Say something and it talks now. Tell it shh and it droops.",
+    "details": "It goes quiet when you’re on a call, without ever asking for your camera or microphone. It makes no network requests and keeps nothing but your settings.",
+    "link": "Meet Sunny",
+    "status": "macOS and Windows",
+    "line1": "A bee came by once. We nodded.",
+    "line2": "I’ve been thinking about clouds. No conclusions yet.",
+    "line3": "Photosynthesis is going great, thanks for asking.",
+    "line4": "I think the desk is slightly tilted. Or I am."
   },
   "interests": {
     "mark": "OFF THE CLOCK",
