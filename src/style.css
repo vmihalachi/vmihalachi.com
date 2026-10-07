@@ -629,8 +629,13 @@ h1 em {
   transform: rotate(-115deg);
 }
 /* Start from the held squat (47% in) and finish the set standing up */
+/* Longhands, not the shorthand: a shorthand without a name gets minified to "none" */
 .mbh-art.is-counting :is(.sq-shin, .sq-thigh, .sq-torso, .sq-arm) {
-  animation: 2.6s ease-in-out -1.22s 4 forwards;
+  animation-duration: 2.6s;
+  animation-timing-function: ease-in-out;
+  animation-delay: -1.22s;
+  animation-iteration-count: 4;
+  animation-fill-mode: forwards;
 }
 .mbh-art.is-counting .sq-shin {
   animation-name: sq-shin;
