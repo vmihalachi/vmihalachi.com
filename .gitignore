@@ -18,5 +18,4 @@ pnpm-debug.log*
 *.sw?
 
 # Local agent tooling
-.codex/
 .junie/plans/

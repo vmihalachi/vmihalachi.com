@@ -1,13 +1,9 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Guidance for Claude Code. It's shared with the other agents, so it lives in `AGENTS.md`
+(commands, architecture, conventions) and `PRODUCT.md` (voice and the facts that can be
+stated about Vlad). Claude Code doesn't read `AGENTS.md` on its own, so both are imported
+here.
 
-The project guidance is shared with other agents and lives in these files. Claude Code
-loads `AGENTS.md` (the Vite+ toolchain) automatically, and imports the other two below:
-
-- `.github/copilot-instructions.md`: commands, architecture, and conventions.
-- `PRODUCT.md`: voice, audience, and the facts that can be stated about Vlad. Read it
-  before changing any copy.
-
-@.github/copilot-instructions.md
+@AGENTS.md
 @PRODUCT.md
