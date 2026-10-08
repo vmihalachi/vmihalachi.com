@@ -204,6 +204,11 @@ h1 em {
   animation-name: settle;
   animation-delay: 0.15s;
 }
+/* main.js starts the entrance once the fonts are in, so the text never swaps mid-rise */
+.js:not(.fonts-ready) .hero-copy > *,
+.js:not(.fonts-ready) .orbit-art {
+  animation-play-state: paused;
+}
 @keyframes rise {
   from {
     opacity: 0;

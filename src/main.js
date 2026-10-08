@@ -1,5 +1,10 @@
 import "./style.css";
 
+// Hold the hero entrance until the fonts have loaded, but never for more than a moment.
+const startHero = () => document.documentElement.classList.add("fonts-ready");
+void document.fonts.ready.then(startHero);
+setTimeout(startHero, 1000);
+
 document.querySelector("#year").textContent = new Date().getFullYear();
 
 const microsoftStart = new Date(2019, 11);
