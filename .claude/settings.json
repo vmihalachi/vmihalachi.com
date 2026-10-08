@@ -1,4 +1,20 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(npm run check)",
+      "Bash(npm run build)",
+      "Bash(npm run csp:fix)",
+      "Bash(vp check:*)",
+      "Bash(jbcontext search:*)",
+      "Bash(jbcontext status)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "mcp__jbcontext__code_search"
+    ]
+  },
+  "enabledMcpjsonServers": ["jbcontext"],
   "hooks": {
     "SessionStart": [
       {
