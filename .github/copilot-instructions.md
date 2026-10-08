@@ -63,7 +63,8 @@ npm run preview  # vp preview
   - Reveal animations apply only under the `.js` class, which the inline `<head>` script
     adds, so content stays visible without JS.
   - It has a `prefers-reduced-motion` override and a single mobile breakpoint at `720px`.
-- `public/` is copied as-is: favicon, `robots.txt`, the web manifest, and
+- `public/` is copied as-is: favicon, the self-hosted fonts (`public/fonts/`, declared in
+  `src/fonts.css`, latin and latin-ext subsets from Google Fonts), `robots.txt`, the web manifest, and
   `staticwebapp.config.json`.
 - Deployment runs through GitHub Actions to Azure Static Web Apps:
   - CI runs `npm ci && npm run check && npm run build` and uploads `dist/` with

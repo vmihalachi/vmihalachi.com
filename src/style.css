@@ -1,8 +1,11 @@
+@import "./fonts.css";
 :root {
   --ink: #172a28;
   --paper: #f4f0e8;
   --acid: #cbff46;
   --coral: #fa6e54;
+  /* Coral dark enough for text on paper (3.8:1, AA for large type) */
+  --coral-text: #d9472f;
   --blue: #83c5e8;
   --line: rgba(23, 42, 40, 0.18);
   --gutter: clamp(1.5rem, 5vw, 5rem);
@@ -159,7 +162,7 @@ h1 {
   margin: 1.3rem 0 2rem;
 }
 h1 em {
-  color: var(--coral);
+  color: var(--coral-text);
   font-weight: 500;
 }
 .intro {
