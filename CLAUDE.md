@@ -1,9 +1,7 @@
 # CLAUDE.md
 
-Guidance for Claude Code. It's shared with the other agents, so it lives in `AGENTS.md`
-(commands, architecture, conventions) and `PRODUCT.md` (voice and the facts that can be
-stated about Vlad). Claude Code doesn't read `AGENTS.md` on its own, so both are imported
-here.
+Guidance for every agent lives in `AGENTS.md`; Claude Code imports it here. `PRODUCT.md`
+(voice, audience, and the facts that can be stated about Vlad) is read on demand:
+`AGENTS.md` and the `edit-copy` and `add-project` skills say when.
 
 @AGENTS.md
-@PRODUCT.md
