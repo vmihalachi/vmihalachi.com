@@ -60,6 +60,13 @@
     "line3": "Photosynthesis is going great, thanks for asking.",
     "line4": "I think the desk is slightly tilted. Or I am."
   },
+  "tools": {
+    "mark": "ALSO OPEN SOURCE",
+    "title": "Plus a couple of<br /><span>smaller</span> tools.",
+    "webling": "is Deskling’s web sibling: the parts every small ASP.NET Core and Blazor site behind Cloudflare needs, like a job queue in PostgreSQL, origin protection, and Tailwind without Node.",
+    "untranslated": "fails the build when a Blazor component shows text that isn’t translated, and points at the line.",
+    "status": ".NET · MIT"
+  },
   "interests": {
     "mark": "OFF THE CLOCK",
     "title": "Things that fascinate me",

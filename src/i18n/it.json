@@ -60,6 +60,13 @@
     "line3": "La fotosintesi va alla grande, grazie di avermelo chiesto.",
     "line4": "Mi sa che la scrivania è un po’ storta. O io."
   },
+  "tools": {
+    "mark": "ANCHE OPEN SOURCE",
+    "title": "E un paio di strumenti<br />più <span>piccoli.</span>",
+    "webling": "è il fratello web di Deskling: i pezzi che servono a ogni piccolo sito ASP.NET Core e Blazor dietro Cloudflare, come una coda di job in PostgreSQL, la protezione dell’origine e Tailwind senza Node.",
+    "untranslated": "fa fallire la build quando un componente Blazor mostra un testo non tradotto, e ti indica la riga.",
+    "status": ".NET · MIT"
+  },
   "interests": {
     "mark": "FUORI ORARIO",
     "title": "Cose che mi affascinano",

@@ -45,6 +45,8 @@ A first-person site written by one engineer about his own work and curiosity. It
 - mybackhurts (https://mybackhurts.app): a desktop menu-bar app that prompts a short break to stand up and move every 45 minutes. It can optionally count reps with the webcam, and all processing stays on the device. macOS and Windows. Status: launched.
 - Deskling (https://vmihalachi.github.io/deskling/): the open-source (MIT) menu bar and tray plumbing that mybackhurts and sunnysays run on. Swift on macOS, .NET on Windows.
 - sunnysays (https://sunnysays.app): a desk toy, a sunflower named Sunny that lives in the menu bar or tray and says a short line a couple of times an hour. Quiet during calls without camera or microphone access, no network. macOS and Windows; same business model as mybackhurts. Status: in development, but the site presents it as available, by Vlad's choice.
+- Webling (https://vmihalachi.github.io/webling/): open-source (MIT) .NET 10 packages, Deskling's web sibling: the parts small ASP.NET Core and Blazor sites behind Cloudflare need (a PostgreSQL job queue, origin protection, cache headers, Turnstile, Tailwind without Node, image uploads). Shown as a small tool, not a headline project.
+- Blazor.Untranslated (https://vmihalachi.github.io/blazor-untranslated/): an open-source (MIT) Roslyn analyzer for .NET 8+ that fails the build when a Blazor component renders literal text instead of a localized resource. Shown as a small tool, not a headline project.
 - Reads open-source code and contributes when he has something useful to add.
 - Interests: Maths, Physics, Biology.
 - Contact & profiles: Email (hello@vmihalachi.com), LinkedIn, and GitHub (above).

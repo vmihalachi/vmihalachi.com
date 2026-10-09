@@ -581,6 +581,21 @@ h1 em {
   --chip: color-mix(in oklab, var(--tone), #f7c948 60%);
   --muted: #735940;
 }
+/* Smaller tools share one compact card: no drawing, a smaller title, each name in
+   its mark's color (Webling's amber block, Blazor.Untranslated's red squiggle) */
+.side-tools {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.manifesto.side-tools h3 {
+  font-size: clamp(2.2rem, 3.6vw, 3.2rem);
+}
+.side-tools .tool-webling {
+  background: color-mix(in oklab, var(--tone), #ffb547 55%);
+}
+.side-tools .tool-untranslated {
+  background: color-mix(in oklab, var(--tone), #ff6b81 35%);
+}
 /* The project link and status line */
 .side-project .project-link {
   display: inline-flex;

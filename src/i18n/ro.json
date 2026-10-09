@@ -60,6 +60,13 @@
     "line3": "Fotosinteza merge grozav, mulțumesc de întrebare.",
     "line4": "Cred că biroul e puțin înclinat. Sau eu."
   },
+  "tools": {
+    "mark": "TOT OPEN SOURCE",
+    "title": "Plus două unelte<br />mai <span>mici.</span>",
+    "webling": "e fratele web al lui Deskling: piesele de care are nevoie orice site mic ASP.NET Core și Blazor din spatele Cloudflare, cum ar fi o coadă de joburi în PostgreSQL, protecția originii și Tailwind fără Node.",
+    "untranslated": "oprește build-ul când o componentă Blazor afișează text netradus și îți arată linia.",
+    "status": ".NET · MIT"
+  },
   "interests": {
     "mark": "DUPĂ PROGRAM",
     "title": "Lucruri care mă fascinează",
