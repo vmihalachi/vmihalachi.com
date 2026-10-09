@@ -17,6 +17,7 @@
 }
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
 }
 /* main.js sets --room to the --tone of the section in the middle of the screen */
 body {
@@ -42,8 +43,19 @@ footer {
   padding-left: var(--gutter);
   padding-right: var(--gutter);
 }
+/* Fixed header: full-bleed strip tinted with the current room color, content scrolls beneath it */
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--room, var(--paper)) 88%, transparent);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px dashed var(--line);
+  transition: background-color 1.1s cubic-bezier(0.33, 1, 0.68, 1);
+}
 .nav {
-  height: 88px;
+  height: 72px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -107,7 +119,7 @@ footer {
   box-shadow: inset 0 -2px 0 var(--coral);
 }
 .hero {
-  min-height: calc(100vh - 88px);
+  min-height: calc(100vh - 72px);
   display: grid;
   grid-template-columns: 1.18fr 0.82fr;
   align-items: center;
@@ -1271,6 +1283,9 @@ footer {
   }
   footer {
     flex-direction: column;
+  }
+  html {
+    scroll-padding-top: 8rem;
   }
   .nav {
     height: auto;
