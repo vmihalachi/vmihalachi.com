@@ -36,18 +36,6 @@
     "status": "macOS și Windows",
     "artExercise": "Genuflexiune la scaun"
   },
-  "deskling": {
-    "mark": "OPEN SOURCE",
-    "title": "Apoi am pus piesele<br />la <span>comun.</span>",
-    "description": "adună bucățile de care are nevoie orice aplicație din bara de meniu sau din zona de notificare și pe care nimeni nu vrea să le scrie de două ori: un temporizator pentru mementouri care ține cont de orele de liniște și de inactivitate, detectarea apelurilor fără să ceară vreodată acces la cameră sau la microfon, scurtături de tastatură globale și pornirea automată la conectare.",
-    "details": "mybackhurts și sunnysays rulează pe Deskling. E scris în Swift pe macOS și în .NET pe Windows, cu teste comune care fac ca cele două variante să se comporte la fel. Dacă faci și tu o aplicație mică de felul ăsta, s-ar putea să-ți economisească ceva timp.",
-    "link": "Vezi site-ul Deskling",
-    "status": "macOS și Windows · MIT",
-    "artTimer": "Temporizator",
-    "artCalls": "Detectarea apelurilor",
-    "artHotkey": "Scurtătură globală",
-    "artLogin": "Pornire la conectare"
-  },
   "sunnysays": {
     "mark": "JUCĂRIE DE BIROU",
     "title": "Apoi am făcut ceva<br />doar de <span>joacă.</span>",
@@ -60,12 +48,23 @@
     "line3": "Fotosinteza merge grozav, mulțumesc de întrebare.",
     "line4": "Cred că biroul e puțin înclinat. Sau eu."
   },
+  "pagliacci": {
+    "mark": "CLOVN DE BIROU",
+    "title": "Acum construiesc<br />un clovn <span>trist.</span>",
+    "description": "e un clovn care stă în bara de meniu sau în zona de notificare și spune o glumă scurtă de vreo două ori pe oră, uneori în doi timpi: începutul, o pauză, apoi poanta. Dai clic pe el și spune una imediat. Îi spui șșt și tace.",
+    "details": "Glumele sunt amuzante și puțin triste în același timp, înregistrate cu vocea lui în engleză și în italiană. Ca Sunny, tace când ești într-un apel, fără să ceară acces la cameră sau la microfon, și nu face cereri în rețea.",
+    "link": "Fă cunoștință cu Mister Pagliacci",
+    "status": "În faza de design · întâi macOS, apoi Windows",
+    "artLine": "…ma chi fa ridere Mister Pagliacci?",
+    "artShh": "Șșt"
+  },
   "tools": {
-    "mark": "TOT OPEN SOURCE",
-    "title": "Plus două unelte<br />mai <span>mici.</span>",
+    "mark": "OPEN SOURCE",
+    "title": "Și piesele open source<br />de <span>dedesubt.</span>",
+    "deskling": "e infrastructura pentru aplicațiile din bara de meniu și din zona de notificare pe care rulează mybackhurts, sunnysays și Mister Pagliacci: mementouri care țin cont de orele de liniște, detectarea apelurilor fără acces la cameră sau la microfon, scurtături globale și pornirea la conectare. E scris în Swift pe macOS și în .NET pe Windows, cu teste comune care țin cele două variante în pas.",
     "webling": "e fratele web al lui Deskling: piesele de care are nevoie orice site mic ASP.NET Core și Blazor din spatele Cloudflare, cum ar fi o coadă de joburi în PostgreSQL, protecția originii și Tailwind fără Node.",
     "untranslated": "oprește build-ul când o componentă Blazor afișează text netradus și îți arată linia.",
-    "status": ".NET · MIT"
+    "status": "Swift și .NET · MIT"
   },
   "interests": {
     "mark": "DUPĂ PROGRAM",

@@ -15,7 +15,7 @@ that isn't there, ask.
 ## 2. Find the strings
 
 Text lives in `src/i18n/en.json`, `it.json`, and `ro.json`, grouped by section (`hero`,
-`work`, `project` for mybackhurts, `deskling`, `sunnysays`, `interests`, `contact`, and so
+`work`, `project` for mybackhurts, `sunnysays`, `pagliacci`, `tools` for the open-source card, `interests`, `contact`, and so
 on). `index.html` holds only `{{ section.key }}` placeholders. Look up the placeholder in
 the template to see where a string is used.
 
@@ -41,7 +41,8 @@ the template to see where a string is used.
 - `meta.description` fills the meta, Open Graph, and Twitter descriptions. Keep it under
   about 155 characters.
 - Art text appears inside the drawings, so keep it short enough to fit. That covers
-  `project.artExercise`, the Deskling `art*` labels, and Sunny's `line1` to `line4`.
+  `project.artExercise`, Sunny's `line1` to `line4`, and `pagliacci.artLine` (his Italian
+  signature line, kept the same in every language) and `pagliacci.artShh`.
   Sunny talks for a time proportional to the line's length, so keep its lines one short
   sentence.
 - `nav.*` labels and section `mark`s are short. Section IDs and anchors stay in English

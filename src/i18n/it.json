@@ -36,18 +36,6 @@
     "status": "macOS e Windows",
     "artExercise": "Squat sulla sedia"
   },
-  "deskling": {
-    "mark": "OPEN SOURCE",
-    "title": "Poi ho condiviso<br />i <span>mattoncini.</span>",
-    "description": "raccoglie i pezzi che servono a ogni app nella barra dei menu o nell’area di notifica, quelli che nessuno ha voglia di scrivere due volte: un timer per i promemoria che sa quando non disturbarti e quando sei lontano dal computer, un modo per capire se sei in chiamata senza mai chiedere l’accesso a fotocamera o microfono, le scorciatoie da tastiera globali e l’avvio automatico all’accesso.",
-    "details": "mybackhurts e sunnysays girano su Deskling. È scritto in Swift su macOS e in .NET su Windows, con gli stessi test per tutte e due le versioni, così si comportano allo stesso modo. Se stai creando una piccola app del genere, potrebbe farti risparmiare un po’ di tempo.",
-    "link": "Vai al sito di Deskling",
-    "status": "macOS e Windows · MIT",
-    "artTimer": "Timer dei promemoria",
-    "artCalls": "Rilevamento chiamate",
-    "artHotkey": "Scorciatoia globale",
-    "artLogin": "Avvio all’accesso"
-  },
   "sunnysays": {
     "mark": "GIOCATTOLO DA SCRIVANIA",
     "title": "Poi ho fatto qualcosa<br />solo per <span>gioco.</span>",
@@ -60,12 +48,23 @@
     "line3": "La fotosintesi va alla grande, grazie di avermelo chiesto.",
     "line4": "Mi sa che la scrivania è un po’ storta. O io."
   },
+  "pagliacci": {
+    "mark": "CLOWN DA SCRIVANIA",
+    "title": "Ora sto costruendo<br />un clown <span>triste.</span>",
+    "description": "è un clown che vive nella barra dei menu o nell’area di notifica e racconta una barzelletta breve un paio di volte all’ora, a volte in due tempi: la premessa, una pausa, poi la battuta. Cliccalo e te ne racconta una subito. Digli shh e sta zitto.",
+    "details": "Le barzellette fanno ridere e insieme un po’ di tristezza, e sono registrate con la sua voce in italiano e in inglese. Come Sunny, sta zitto quando sei in chiamata senza chiedere l’accesso a fotocamera o microfono, e non si collega a internet.",
+    "link": "Conosci Mister Pagliacci",
+    "status": "In progettazione · prima macOS, poi Windows",
+    "artLine": "…ma chi fa ridere Mister Pagliacci?",
+    "artShh": "Shh"
+  },
   "tools": {
-    "mark": "ANCHE OPEN SOURCE",
-    "title": "E un paio di strumenti<br />più <span>piccoli.</span>",
+    "mark": "OPEN SOURCE",
+    "title": "E, sotto, i pezzi<br />open <span>source.</span>",
+    "deskling": "è l’impianto per le app nella barra dei menu e nell’area di notifica su cui girano mybackhurts, sunnysays e Mister Pagliacci: promemoria che rispettano le ore di silenzio, rilevamento delle chiamate senza accesso a fotocamera o microfono, scorciatoie globali e avvio all’accesso. È scritto in Swift su macOS e in .NET su Windows, con test comuni che tengono allineate le due versioni.",
     "webling": "è il fratello web di Deskling: i pezzi che servono a ogni piccolo sito ASP.NET Core e Blazor dietro Cloudflare, come una coda di job in PostgreSQL, la protezione dell’origine e Tailwind senza Node.",
     "untranslated": "fa fallire la build quando un componente Blazor mostra un testo non tradotto, e ti indica la riga.",
-    "status": ".NET · MIT"
+    "status": "Swift e .NET · MIT"
   },
   "interests": {
     "mark": "FUORI ORARIO",

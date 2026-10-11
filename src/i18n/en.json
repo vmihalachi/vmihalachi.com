@@ -36,18 +36,6 @@
     "status": "macOS and Windows",
     "artExercise": "Chair squat"
   },
-  "deskling": {
-    "mark": "OPEN SOURCE",
-    "title": "Then I shared<br />the <span>plumbing.</span>",
-    "description": "holds the parts every menu bar or tray app needs and nobody wants to write twice: a reminder timer that knows about quiet hours and idle time, call detection that never asks for camera or microphone access, global hotkeys, and starting at login.",
-    "details": "mybackhurts and sunnysays run on it. It’s Swift on macOS and .NET on Windows, with shared tests that keep the two behaving the same. If you’re building a little app like this, it might save you some time.",
-    "link": "See the Deskling site",
-    "status": "macOS and Windows · MIT",
-    "artTimer": "Reminder timer",
-    "artCalls": "Call detection",
-    "artHotkey": "Global hotkey",
-    "artLogin": "Launch at login"
-  },
   "sunnysays": {
     "mark": "DESK TOY",
     "title": "Then I built something<br />just for <span>fun.</span>",
@@ -60,12 +48,23 @@
     "line3": "Photosynthesis is going great, thanks for asking.",
     "line4": "I think the desk is slightly tilted. Or I am."
   },
+  "pagliacci": {
+    "mark": "DESK CLOWN",
+    "title": "Now I’m building<br />a sad <span>clown.</span>",
+    "description": "is a clown who lives in your menu bar or tray and tells a short joke a couple of times an hour, sometimes in two parts: the setup, a beat, then the punchline. Click him and he tells one now. Tell him shh and he goes quiet.",
+    "details": "The jokes are funny and a little sad at the same time, recorded in his own voice in English and Italian. Like Sunny, he keeps quiet when you’re on a call without asking for your camera or microphone, and he makes no network requests.",
+    "link": "Meet Mister Pagliacci",
+    "status": "In design · macOS first, then Windows",
+    "artLine": "…ma chi fa ridere Mister Pagliacci?",
+    "artShh": "Shh"
+  },
   "tools": {
-    "mark": "ALSO OPEN SOURCE",
-    "title": "Plus a couple of<br /><span>smaller</span> tools.",
+    "mark": "OPEN SOURCE",
+    "title": "And the open-source<br />parts <span>underneath.</span>",
+    "deskling": "is the menu bar and tray plumbing that mybackhurts, sunnysays, and Mister Pagliacci run on: reminders that respect quiet hours, call detection without camera or microphone access, global hotkeys, and launch at login. It’s Swift on macOS and .NET on Windows, with shared tests that keep the two in step.",
     "webling": "is Deskling’s web sibling: the parts every small ASP.NET Core and Blazor site behind Cloudflare needs, like a job queue in PostgreSQL, origin protection, and Tailwind without Node.",
     "untranslated": "fails the build when a Blazor component shows text that isn’t translated, and points at the line.",
-    "status": ".NET · MIT"
+    "status": "Swift and .NET · MIT"
   },
   "interests": {
     "mark": "OFF THE CLOCK",

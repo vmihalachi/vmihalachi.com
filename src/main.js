@@ -97,7 +97,8 @@ function chatter(art) {
   };
 }
 
-// Deskling is CSS only: it plays when .is-visible is added and resets when it's removed.
+// Mister Pagliacci and the open-source parts are CSS only: they play when .is-visible is
+// added and reset when it's removed.
 const plays = { "mbh-art": finishSet, "sunny-art": chatter };
 const resets = new Map();
 

@@ -57,12 +57,14 @@ npm run preview  # vp preview
     `section:not(.hero)` and `.interest-card`.
   - Plays each `.project-art` drawing when it scrolls into view and resets it once it is
     fully off screen, so it plays again on the next visit: the mybackhurts card finishes
-    its set of squats (rep 6 to 10), Deskling's parts plug in, and Sunny says its four
-    lines, then dozes off. With reduced motion, the drawings stay in their still pose.
+    its set of squats (rep 6 to 10), Sunny says its four lines, then dozes off, Mister
+    Pagliacci's panel drops open and he says his line, and the open-source crates drop
+    in under the three apps' marks. With reduced motion, the drawings stay in their still pose.
 - The project drawings reuse each project's own art: the chair squat poses from the
-  mybackhurts landing page, Deskling's mark, and Sunny from the sunnysays character
-  sheet. Text inside them (exercise name, Deskling parts, Sunny's lines) comes from the
-  strings files like any other copy.
+  mybackhurts landing page, Sunny from the sunnysays character sheet, and Mister
+  Pagliacci's menu bar glyph (a line drawing, per his design doc). Text inside them
+  (exercise name, Sunny's lines, Pagliacci's line) comes from the strings files like any
+  other copy. Pagliacci's line stays in Italian in every language (`lang="it"`).
 - `src/style.css`:
   - Design tokens are CSS custom properties in `:root`.
   - Reveal animations apply only under the `.js` class, which the inline `<head>` script

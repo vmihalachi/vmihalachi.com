@@ -6,7 +6,9 @@ description: Add a new project to the Projects section of vmihalachi.com, or res
 # Add a project
 
 The Projects section (`section#projects` in `index.html`) is a stack of `.side-project`
-cards: mybackhurts, Deskling, and sunnysays. A new project is one more card. The page is
+cards: mybackhurts, sunnysays, and Mister Pagliacci, then one open-source card (Deskling,
+Webling, Blazor.Untranslated). A new app is one more card before the open-source one; a
+new open-source library is one more paragraph (and crate) in that card. The page is
 meant to grow this way, so don't restructure the section to fit it.
 
 ## 1. Check the facts first
@@ -50,7 +52,7 @@ translation. The build fails if any language is missing a key or has an extra on
 
 Reuse the project's real visuals: its icon, character, or UI, redrawn in SVG/HTML from
 its repo or site, as the others are (the chair squat from the mybackhurts landing page,
-Deskling's mark, Sunny from the sunnysays character sheet). Never a made-up screenshot.
+Sunny from the sunnysays character sheet, Mister Pagliacci's menu bar glyph). Never a made-up screenshot.
 
 - Self-host any asset in `public/`. Loading from another origin needs a CSP change in
   `public/staticwebapp.config.json`, which is a deliberate trade-off, so ask first.
@@ -58,7 +60,7 @@ Deskling's mark, Sunny from the sunnysays character sheet). Never a made-up scre
   so it should read well on its own.
 - Put motion under `.js .<prefix>-art.is-visible`. `main.js` adds `.is-visible` when the
   art scrolls into view and removes it once the art is fully off screen, so CSS-only art
-  (like Deskling's) replays on its own.
+  (like Pagliacci's) replays on its own.
 - If the art needs JS (like counting reps or switching lines), add a function to `plays`
   in `src/main.js`, keyed by the art's class. It starts the animation and returns a reset
   function that restores the still pose. It isn't called under reduced motion.
