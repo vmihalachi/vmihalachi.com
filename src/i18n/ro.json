@@ -87,6 +87,7 @@
     "github": "Găsește-mă pe GitHub"
   },
   "footer": {
-    "tagline": "Încă pun întrebări."
+    "tagline": "Încă pun întrebări.",
+    "openSource": "Acest site este open source"
   }
 }

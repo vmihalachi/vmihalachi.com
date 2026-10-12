@@ -1329,6 +1329,14 @@ footer {
     monospace;
   color: #61706c;
 }
+footer a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+footer a:hover {
+  color: var(--coral);
+}
 .js section:not(.hero),
 .js .interest-card {
   opacity: 0;
