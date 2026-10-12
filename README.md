@@ -22,15 +22,20 @@ npm run build    # build to dist/
 npm run preview  # preview the production build
 ```
 
-Static files served as-is (favicon, `robots.txt`, web manifest and the Azure Static Web
-Apps config) live in `public/`. `sitemap.xml` is generated at build time.
+Static files served as-is (favicon, `robots.txt`, web manifest and the Cloudflare
+`_headers` file) live in `public/`. `sitemap.xml` is generated at build time.
 
 ## Deployment
 
-Automated via GitHub Actions to Azure Static Web Apps. Pushes to `master` deploy to
-production; pull requests get a preview environment.
+Automated via GitHub Actions (`.github/workflows/deploy.yml`) to Cloudflare Workers static
+assets: `wrangler deploy` uploads `dist/` to the `vmihalachi-com` Worker (`wrangler.json`),
+which serves `vmihalachi.com` with no Worker code and no logs. It needs the
+`CLOUDFLARE_API_TOKEN` secret and the `CLOUDFLARE_ACCOUNT_ID` variable. Pushes to `master`
+deploy to production; pull requests from this repository upload a preview version at
+`pr-<number>-vmihalachi-com.<subdomain>.workers.dev` (the URL is in the job summary).
+`www.vmihalachi.com` redirects to the apex through a Cloudflare redirect rule.
 
-Security headers and caching are configured in `public/staticwebapp.config.json`. The
+Security headers and caching are configured in `public/_headers`. The
 Content-Security-Policy allows the inline script in `index.html` by its SHA-256 hash.
 `npm run check` fails when the hash is stale, and `npm run csp:fix` rewrites it.
 

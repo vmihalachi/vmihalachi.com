@@ -55,7 +55,7 @@ its repo or site, as the others are (the chair squat from the mybackhurts landin
 Sunny from the sunnysays character sheet, Mister Pagliacci's menu bar glyph). Never a made-up screenshot.
 
 - Self-host any asset in `public/`. Loading from another origin needs a CSP change in
-  `public/staticwebapp.config.json`, which is a deliberate trade-off, so ask first.
+  `public/_headers`, which is a deliberate trade-off, so ask first.
 - The default CSS is the still pose. That's what no-JS and reduced-motion visitors see,
   so it should read well on its own.
 - Put motion under `.js .<prefix>-art.is-visible`. `main.js` adds `.is-visible` when the

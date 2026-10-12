@@ -72,11 +72,13 @@ npm run preview  # vp preview
   - It has a `prefers-reduced-motion` override and a single mobile breakpoint at `720px`.
 - `public/` is copied as-is: favicon, the self-hosted fonts (`public/fonts/`, declared in
   `src/fonts.css`, latin and latin-ext subsets from Google Fonts), `robots.txt`, the web manifest, and
-  `staticwebapp.config.json`.
-- Deployment runs through GitHub Actions to Azure Static Web Apps:
-  - CI runs `npm ci && npm run check && npm run build` and uploads `dist/` with
-    `skip_app_build: true`.
-  - Pushes to `master` deploy to production; PRs get preview environments.
+  `_headers` (Cloudflare's response headers: CSP, HSTS, caching).
+- Deployment runs through GitHub Actions (`.github/workflows/deploy.yml`) to Cloudflare Workers
+  static assets:
+  - CI runs `npm ci && npm run check && npm run build`, then `wrangler deploy` with `wrangler.json`
+    (the `vmihalachi-com` Worker: `/it` redirects to `/it/`, no 404 page, no logs).
+  - Pushes to `master` deploy to production; PRs from this repository upload a preview version
+    (`wrangler versions upload --preview-alias pr-<number>`; the URL is in the job summary).
 
 ## Conventions and gotchas
 
@@ -85,7 +87,7 @@ npm run preview  # vp preview
   Section IDs stay in English in every language so anchors work the same everywhere. To add
   a language, add it to `languages.json` and create its strings file.
 
-- **CSP hash:** `public/staticwebapp.config.json` allows the inline `<head>` script by its
+- **CSP hash:** `public/_headers` allows the inline `<head>` script by its
   SHA-256 hash, so any change to that script, including whitespace, needs a new hash.
   `scripts/check-csp.mjs` (part of `npm run check`) fails on a stale hash. Run
   `npm run csp:fix` to rewrite it. All languages share the template, so they share the hash.

@@ -13,5 +13,5 @@ The rules that matter most in review:
 - Never put visible text in `index.html`. Use a `{{ key }}` placeholder and add the key to
   every `src/i18n/*.json` file.
 - Any change to the inline `<head>` script needs `npm run csp:fix`, and any new external
-  origin must be added to the CSP in `public/staticwebapp.config.json`.
+  origin must be added to the CSP in `public/_headers`.
 - Never invent credentials, projects, metrics, or claims about Vlad.

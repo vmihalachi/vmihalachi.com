@@ -20,7 +20,7 @@ A first-person site written by one engineer about his own work and curiosity. It
 
 ## Operating Context
 
-- A single static page served from Azure Static Web Apps, deployed from `master` via GitHub Actions.
+- A single static page served as Cloudflare Workers static assets, deployed from `master` via GitHub Actions.
 - Visitors mostly land from outbound profiles (LinkedIn, GitHub) or from mybackhurts.app.
 - Visitors can follow up via email (hello@vmihalachi.com), LinkedIn (https://www.linkedin.com/in/vmihalachi/), and GitHub (https://github.com/vmihalachi).
 

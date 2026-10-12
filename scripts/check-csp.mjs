@@ -1,9 +1,9 @@
-// Verifies that the CSP in staticwebapp.config.json allows the inline <head> script in
-// index.html by its SHA-256 hash. Pass --fix to write the correct hash into the config.
+// Verifies that the CSP in public/_headers allows the inline <head> script in index.html
+// by its SHA-256 hash. Pass --fix to write the correct hash into the headers file.
 import { createHash } from "node:crypto";
 import { readFileSync, writeFileSync } from "node:fs";
 
-const configPath = new URL("../public/staticwebapp.config.json", import.meta.url);
+const configPath = new URL("../public/_headers", import.meta.url);
 const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
 const config = readFileSync(configPath, "utf8");
 
@@ -21,6 +21,6 @@ if (process.argv.includes("--fix")) {
   console.log(`Updated the CSP script hash to ${expected}.`);
 } else {
   console.error(`The CSP script hash is out of date. Expected ${expected}.`);
-  console.error("Run `npm run csp:fix` to update public/staticwebapp.config.json.");
+  console.error("Run `npm run csp:fix` to update public/_headers.");
   process.exit(1);
 }
