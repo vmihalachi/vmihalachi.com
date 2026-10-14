@@ -119,12 +119,7 @@ directly when the task matches:
 ## Finding code
 
 The code is a handful of files, so reading `index.html`, `src/main.js`, `src/style.css`,
-and `scripts/` directly, or `rg`/`git grep`, is usually faster than search. Where
-`jbcontext` is installed (Vlad's machine, not cloud sessions), one
-`jbcontext search "<what the code does>"` is enough when you don't know where something
-lives; the `context-search` skill and `context-explorer` agent are installed per user, not
-in this repository. Session-start hooks keep the index fresh (`.claude/settings.json`,
-`.codex/config.toml`).
+and `scripts/` directly, or `rg`/`git grep`, is the way to find things.
 
 ## Vite+
 

@@ -5,40 +5,10 @@
       "Bash(npm run build)",
       "Bash(npm run csp:fix)",
       "Bash(vp check:*)",
-      "Bash(jbcontext search:*)",
-      "Bash(jbcontext status)",
       "Bash(git status:*)",
       "Bash(git diff:*)",
       "Bash(git log:*)",
-      "Bash(git show:*)",
-      "mcp__jbcontext__code_search"
-    ]
-  },
-  "enabledMcpjsonServers": ["jbcontext"],
-  "hooks": {
-    "SessionStart": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "jbcontext index --silent --only-incremental",
-            "async": true
-          }
-        ]
-      }
-    ],
-    "SessionEnd": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "jbcontext index --silent --only-incremental",
-            "async": true
-          }
-        ]
-      }
+      "Bash(git show:*)"
     ]
   }
 }
