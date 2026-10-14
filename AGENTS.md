@@ -118,8 +118,10 @@ directly when the task matches:
 
 ## Finding code
 
-The code is a handful of files, so reading `index.html`, `src/main.js`, `src/style.css`,
-and `scripts/` directly, or `rg`/`git grep`, is the way to find things.
+The code is a handful of files, so reading `index.html`, `src/main.js` and `scripts/`
+directly, or `rg`/`git grep`, is the way to find things. `src/style.css` is over 1,400 lines:
+`grep -n '^/\* \|^\.[a-z-]* {' src/style.css` for its outline, then a range (the hook,
+`.claude/hooks/guard.py`, refuses a whole read).
 
 ## Vite+
 
@@ -127,3 +129,7 @@ and `scripts/` directly, or `rg`/`git grep`, is the way to find things.
 runs a `package.json` script, so check `package.json` first. `vp check` alone skips the CSP
 and i18n checks, so use `npm run check`. Run `vp install` after pulling. Docs:
 `node_modules/vite-plus/docs` or https://viteplus.dev/guide/.
+
+## Sessions
+
+One task per session: start a new one for unrelated work and hand off follow-ups instead of continuing here. Before searching for code you don't know the location of, use the `context-explorer` subagent (or `jbcontext search`) so the reads stay out of this context. Read big files by outline (`grep -n '^\(func\|class\|struct\|extension\|public\|##\)'`) and then a range, never whole; the hook refuses a whole read over 600 lines. `/compact` at a milestone in a long session.

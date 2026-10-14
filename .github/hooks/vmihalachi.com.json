@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "hooks": {
+    "preToolUse": [
+      {
+        "type": "command",
+        "bash": "python3 .claude/hooks/guard.py",
+        "powershell": "python .claude/hooks/guard.py",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ]
+  }
+}

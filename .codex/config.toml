@@ -1,2 +1,11 @@
 [features]
 hooks = true
+
+# The read guard Claude Code runs too (.claude/hooks/guard.py): a big or generated file is read by range, never whole.
+[[hooks.PreToolUse]]
+matcher = "^Bash$"
+
+[[hooks.PreToolUse.hooks]]
+type = "command"
+command = 'python3 "$(git rev-parse --show-toplevel)/.claude/hooks/guard.py"'
+timeout = 10
