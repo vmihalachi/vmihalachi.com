@@ -45,7 +45,8 @@ def big(path, cwd):
 
 
 def reason(path, lines):
-    return (f"{path} is {lines:,} lines: outline it first ({OUTLINE} {path}), then read a range "
+    what = f"is generated ({lines:,} lines)" if any(re.search(g, path.replace("\\", "/")) for g in GENERATED) else f"is {lines:,} lines"
+    return (f"{path} {what}: outline it first ({OUTLINE} {path}), then read a range "
             f"(Read with offset and limit, or `sed -n 'A,Bp'`), never the whole file.")
 
 
