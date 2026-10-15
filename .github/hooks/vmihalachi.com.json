@@ -9,6 +9,24 @@
         "cwd": ".",
         "timeoutSec": 10
       }
+    ],
+    "postToolUse": [
+      {
+        "type": "command",
+        "bash": "python3 -I .claude/hooks/validate.py record",
+        "powershell": "python -I .claude/hooks/validate.py record",
+        "cwd": ".",
+        "timeoutSec": 5
+      }
+    ],
+    "agentStop": [
+      {
+        "type": "command",
+        "bash": "python3 -I .claude/hooks/validate.py check",
+        "powershell": "python -I .claude/hooks/validate.py check",
+        "cwd": ".",
+        "timeoutSec": 600
+      }
     ]
   }
 }
