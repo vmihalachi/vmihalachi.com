@@ -1,0 +1,5 @@
+{
+  "patterns": ["\\.(ts|js|mjs|cjs|json|css|html|md|toml|ya?ml)$", "^public/_headers$"],
+  "exclude": ["^(node_modules|dist|\\.wrangler)/"],
+  "checks": [["npm", "run", "check"]]
+}

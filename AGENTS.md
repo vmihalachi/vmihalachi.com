@@ -25,6 +25,8 @@ npm run preview  # vp preview
 
 - There is no test suite, so never run `vp test` (it exits 1 with "No test files
   found"). `npm run check` is the validation step, and CI runs it before building.
+- A Stop hook (`.claude/hooks/validate.py`, `validate.json`) runs `npm run check` when you
+  edited source or content files; fix what it reports before ending.
 - The pre-commit hook (`.vite-hooks/pre-commit` → `vp staged`) runs `vp check --fix` on
   staged files.
 - Lint rule `vite-plus/prefer-vite-plus-imports` is an error: import from `vite-plus`,

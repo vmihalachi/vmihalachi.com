@@ -19,6 +19,8 @@ pnpm-debug.log*
 
 # Local agent tooling
 .junie/plans/
+.claude/settings.local.json
+.claude/worktrees/
 
 # Wrangler local state
 .wrangler/
