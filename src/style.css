@@ -594,7 +594,7 @@ h1 em {
   --muted: #535d67;
 }
 /* The open-source parts share one card with a smaller title, each name in its mark's
-   color (Deskling's mint, Webling's amber block, Blazor.Untranslated's red squiggle) */
+   color (Laching's mint, Webling's amber block, Blazor.Untranslated's red squiggle) */
 .side-tools {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -602,7 +602,7 @@ h1 em {
 .manifesto.side-tools h3 {
   font-size: clamp(2.2rem, 3.6vw, 3.2rem);
 }
-.side-tools .tool-deskling {
+.side-tools .tool-laching {
   background: color-mix(in oklab, var(--tone), #2fd3b4 35%);
 }
 .side-tools .tool-webling {
@@ -1210,7 +1210,7 @@ h1 em {
 .oss-crate span {
   font-weight: 400;
 }
-.oss-deskling {
+.oss-laching {
   background: #e3f3ef;
   border-color: #0b7a68;
   color: #0b4d42;
@@ -1254,7 +1254,7 @@ h1 em {
 .js .oss-art.is-visible .oss-untranslated {
   animation-delay: 0.15s;
 }
-.js .oss-art.is-visible .oss-deskling {
+.js .oss-art.is-visible .oss-laching {
   animation-delay: 0.4s;
 }
 .js .oss-art.is-visible .oss-mbh {

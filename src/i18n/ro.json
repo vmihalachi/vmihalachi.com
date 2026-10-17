@@ -64,8 +64,8 @@
   "tools": {
     "mark": "OPEN SOURCE",
     "title": "Și piesele open source<br />de <span>dedesubt.</span>",
-    "deskling": "e infrastructura pentru aplicațiile din bara de meniu și din zona de notificare pe care rulează mybackhurts, sunnysays și Mister Pagliacci: mementouri care țin cont de orele de liniște, detectarea apelurilor fără acces la cameră sau la microfon, scurtături globale și pornirea la conectare. E scris în Swift pe macOS și în .NET pe Windows, cu teste comune care țin cele două variante în pas.",
-    "webling": "e fratele web al lui Deskling: piesele de care are nevoie orice site mic ASP.NET Core și Blazor din spatele Cloudflare, cum ar fi o coadă de joburi în PostgreSQL, protecția originii și Tailwind fără Node.",
+    "laching": "e infrastructura pentru aplicațiile din bara de meniu și din zona de notificare pe care rulează mybackhurts, sunnysays și Mister Pagliacci: mementouri care țin cont de orele de liniște, detectarea apelurilor fără acces la cameră sau la microfon, scurtături globale și pornirea la conectare. E scris în Swift pe macOS și în .NET pe Windows, cu teste comune care țin cele două variante în pas.",
+    "webling": "e fratele web al lui Laching: piesele de care are nevoie orice site mic ASP.NET Core și Blazor din spatele Cloudflare, cum ar fi o coadă de joburi în PostgreSQL, protecția originii și Tailwind fără Node.",
     "untranslated": "oprește build-ul când o componentă Blazor afișează text netradus și îți arată linia.",
     "status": "Swift și .NET · MIT"
   },

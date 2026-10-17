@@ -64,8 +64,8 @@
   "tools": {
     "mark": "OPEN SOURCE",
     "title": "E, sotto, i pezzi<br />open <span>source.</span>",
-    "deskling": "è l’impianto per le app nella barra dei menu e nell’area di notifica su cui girano mybackhurts, sunnysays e Mister Pagliacci: promemoria che rispettano le ore di silenzio, rilevamento delle chiamate senza accesso a fotocamera o microfono, scorciatoie globali e avvio all’accesso. È scritto in Swift su macOS e in .NET su Windows, con test comuni che tengono allineate le due versioni.",
-    "webling": "è il fratello web di Deskling: i pezzi che servono a ogni piccolo sito ASP.NET Core e Blazor dietro Cloudflare, come una coda di job in PostgreSQL, la protezione dell’origine e Tailwind senza Node.",
+    "laching": "è l’impianto per le app nella barra dei menu e nell’area di notifica su cui girano mybackhurts, sunnysays e Mister Pagliacci: promemoria che rispettano le ore di silenzio, rilevamento delle chiamate senza accesso a fotocamera o microfono, scorciatoie globali e avvio all’accesso. È scritto in Swift su macOS e in .NET su Windows, con test comuni che tengono allineate le due versioni.",
+    "webling": "è il fratello web di Laching: i pezzi che servono a ogni piccolo sito ASP.NET Core e Blazor dietro Cloudflare, come una coda di job in PostgreSQL, la protezione dell’origine e Tailwind senza Node.",
     "untranslated": "fa fallire la build quando un componente Blazor mostra un testo non tradotto, e ti indica la riga.",
     "status": "Swift e .NET · MIT"
   },

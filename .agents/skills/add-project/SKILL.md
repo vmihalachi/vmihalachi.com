@@ -6,7 +6,7 @@ description: Add a new project to the Projects section of vmihalachi.com, or res
 # Add a project
 
 The Projects section (`section#projects` in `index.html`) is a stack of `.side-project`
-cards: mybackhurts, sunnysays, and Mister Pagliacci, then one open-source card (Deskling,
+cards: mybackhurts, sunnysays, and Mister Pagliacci, then one open-source card (Laching,
 Webling, Blazor.Untranslated). A new app is one more card before the open-source one; a
 new open-source library is one more paragraph (and crate) in that card. The page is
 meant to grow this way, so don't restructure the section to fit it.

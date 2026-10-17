@@ -64,8 +64,8 @@
   "tools": {
     "mark": "OPEN SOURCE",
     "title": "And the open-source<br />parts <span>underneath.</span>",
-    "deskling": "is the menu bar and tray plumbing that mybackhurts, sunnysays, and Mister Pagliacci run on: reminders that respect quiet hours, call detection without camera or microphone access, global hotkeys, and launch at login. It’s Swift on macOS and .NET on Windows, with shared tests that keep the two in step.",
-    "webling": "is Deskling’s web sibling: the parts every small ASP.NET Core and Blazor site behind Cloudflare needs, like a job queue in PostgreSQL, origin protection, and Tailwind without Node.",
+    "laching": "is the menu bar and tray plumbing that mybackhurts, sunnysays, and Mister Pagliacci run on: reminders that respect quiet hours, call detection without camera or microphone access, global hotkeys, and launch at login. It’s Swift on macOS and .NET on Windows, with shared tests that keep the two in step.",
+    "webling": "is Laching’s web sibling: the parts every small ASP.NET Core and Blazor site behind Cloudflare needs, like a job queue in PostgreSQL, origin protection, and Tailwind without Node.",
     "untranslated": "fails the build when a Blazor component shows text that isn’t translated, and points at the line.",
     "status": "Swift and .NET · MIT"
   },
