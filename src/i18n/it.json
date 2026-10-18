@@ -68,7 +68,6 @@
     "mark": "OPEN SOURCE",
     "title": "E, sotto, i pezzi<br />open <span>source.</span>",
     "laching": "è l’impianto sotto tutte e tre le app: promemoria, ore di silenzio e chiamate rilevate senza fotocamera.",
-    "webling": "è il fratello web, per piccoli siti ASP.NET Core e Blazor dietro Cloudflare.",
     "untranslated": "fa fallire la build quando una pagina Blazor mostra un testo che nessuno ha tradotto.",
     "fact1": "Swift · .NET · Kotlin",
     "fact2": "MIT"

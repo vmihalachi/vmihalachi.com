@@ -87,9 +87,12 @@ footer {
 .nav-links a {
   padding: 0.32rem 0.65rem;
 }
-.nav-links a:hover,
-.bar-app:hover {
-  background: color-mix(in srgb, var(--ink) 9%, transparent);
+/* Hover only where there is a pointer to hover with: on touch, :hover sticks after a tap */
+@media (hover: hover) {
+  .nav-links a:hover,
+  .bar-app:hover {
+    background: color-mix(in srgb, var(--ink) 9%, transparent);
+  }
 }
 .bar-apps {
   display: flex;
@@ -134,8 +137,10 @@ footer {
   color: #61706c;
   transition: color 0.2s;
 }
-.lang-switch a:hover {
-  color: var(--ink);
+@media (hover: hover) {
+  .lang-switch a:hover {
+    color: var(--ink);
+  }
 }
 .lang-switch a[aria-current="page"] {
   color: var(--ink);
@@ -801,7 +806,7 @@ h1 em {
   --muted: #535d67;
 }
 /* The open-source parts share one card with a smaller title, each name in its mark's
-   color (Laching's mint, Webling's amber block, Blazor.Untranslated's red squiggle) */
+   color (Laching's mint, Blazor.Untranslated's red squiggle) */
 .side-tools {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -811,9 +816,6 @@ h1 em {
 }
 .side-tools .tool-laching {
   background: color-mix(in oklab, var(--tone), #2fd3b4 35%);
-}
-.side-tools .tool-webling {
-  background: color-mix(in oklab, var(--tone), #ffb547 55%);
 }
 .side-tools .tool-untranslated {
   background: color-mix(in oklab, var(--tone), #ff6b81 35%);
@@ -1437,17 +1439,6 @@ h1 em {
   background: #e3f3ef;
   border-color: #0b7a68;
   color: #0b4d42;
-}
-.oss-row {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.6rem;
-  margin-top: 0.6rem;
-}
-.oss-webling {
-  background: #ffe2b3;
-  border-color: #b9770e;
-  color: #5e3b00;
 }
 .oss-untranslated {
   background: #ffe0e5;

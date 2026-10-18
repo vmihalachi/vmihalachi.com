@@ -197,7 +197,10 @@ apps.forEach((app, index) => {
   };
   app.addEventListener("pointerenter", open);
   app.addEventListener("pointerleave", close);
-  app.addEventListener("focus", open);
+  // Keyboard focus only: a tap focuses the glyph too, and that would keep its panel open
+  app.addEventListener("focus", () => {
+    if (app.matches(":focus-visible")) open();
+  });
   app.addEventListener("blur", close);
 });
 

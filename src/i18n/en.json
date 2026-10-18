@@ -68,7 +68,6 @@
     "mark": "OPEN SOURCE",
     "title": "And the open-source<br />parts <span>underneath.</span>",
     "laching": "is the plumbing under all three apps: reminders, quiet hours, and call detection without the camera.",
-    "webling": "is its web sibling, for small ASP.NET Core and Blazor sites behind Cloudflare.",
     "untranslated": "fails the build when a Blazor page shows text nobody translated.",
     "fact1": "Swift · .NET · Kotlin",
     "fact2": "MIT"
