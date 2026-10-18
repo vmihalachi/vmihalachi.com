@@ -124,3 +124,91 @@ const artObserver = new IntersectionObserver(
 );
 
 document.querySelectorAll(".project-art").forEach((art) => artObserver.observe(art));
+
+// The menu bar: while the hero is on screen, the three apps open their panels in turn,
+// left to right. Hovering or focusing an app's glyph opens its panel at any time.
+const masthead = document.querySelector(".masthead");
+const nav = masthead.querySelector(".nav");
+const apps = [...masthead.querySelectorAll(".bar-app")];
+const panels = new Map(
+  [...masthead.querySelectorAll(".say")].map((panel) => [panel.dataset.app, panel]),
+);
+// Long enough to read each one: the set of ten, Sunny's line, the clown's beat and line
+const turns = { mybackhurts: 4600, sunnysays: 4200, pagliacci: 5600 };
+// The first panel waits until the hero has been read for a while
+const firstTurn = 6000;
+
+// Hang each panel under its glyph, the notch on the glyph's center, inside the bar's margins.
+function hangPanels() {
+  const style = getComputedStyle(nav);
+  const bounds = nav.getBoundingClientRect();
+  const start = bounds.left + parseFloat(style.paddingLeft);
+  const end = bounds.right - parseFloat(style.paddingRight);
+  apps.forEach((app) => {
+    const panel = panels.get(app.dataset.app);
+    const glyph = app.getBoundingClientRect();
+    const center = glyph.left + glyph.width / 2;
+    const left = Math.max(
+      start,
+      Math.min(center - panel.offsetWidth + 28, end - panel.offsetWidth),
+    );
+    panel.style.setProperty("--say-x", `${left}px`);
+    panel.style.setProperty("--say-notch", `${center - left}px`);
+  });
+}
+
+let turn = -1;
+let timer;
+let heroInView = false;
+let hovered = false;
+
+// With reduced motion the bar opens Sunny's panel (the template's data-say) and leaves it there
+function nextTurn() {
+  if (reduceMotion) turn = Math.max(turn, 0);
+  else {
+    turn = (turn + 1) % apps.length;
+    const app = apps[turn].dataset.app;
+    masthead.dataset.say = app;
+    timer = setTimeout(nextTurn, turns[app]);
+  }
+  masthead.classList.add("is-saying");
+}
+
+// No panel opens until the first turn: turn stays -1 until then
+function update() {
+  clearTimeout(timer);
+  masthead.classList.toggle("is-saying", hovered || (heroInView && turn >= 0));
+  if (heroInView && !hovered) timer = setTimeout(nextTurn, turn < 0 ? firstTurn : 0);
+}
+
+apps.forEach((app, index) => {
+  const open = () => {
+    hovered = true;
+    turn = index;
+    masthead.dataset.say = app.dataset.app;
+    update();
+  };
+  const close = () => {
+    hovered = false;
+    // Pick the cycle up after this app, once its panel has had its full turn
+    clearTimeout(timer);
+    masthead.classList.toggle("is-saying", heroInView && turn >= 0);
+    if (heroInView && !reduceMotion) timer = setTimeout(nextTurn, turns[app.dataset.app]);
+  };
+  app.addEventListener("pointerenter", open);
+  app.addEventListener("pointerleave", close);
+  app.addEventListener("focus", open);
+  app.addEventListener("blur", close);
+});
+
+new IntersectionObserver(
+  ([entry]) => {
+    heroInView = entry.isIntersecting;
+    update();
+  },
+  { threshold: 0.5 },
+).observe(document.querySelector(".hero"));
+
+hangPanels();
+void document.fonts.ready.then(hangPanels);
+addEventListener("resize", hangPanels);

@@ -65,8 +65,8 @@ npm run preview  # vp preview
 - The project drawings reuse each project's own art: the chair squat poses from the
   mybackhurts landing page, Sunny from the sunnysays character sheet, and Mister
   Pagliacci's menu bar glyph (a line drawing, per his design doc). Text inside them
-  (exercise name, Sunny's lines, Pagliacci's line) comes from the strings files like any
-  other copy. Pagliacci's line stays in Italian in every language (`lang="it"`).
+  (exercise name, Sunny's lines, Pagliacci's line) comes from the strings files and is
+  translated like any other copy.
 - `src/style.css`:
   - Design tokens are CSS custom properties in `:root`.
   - Reveal animations apply only under the `.js` class, which the inline `<head>` script

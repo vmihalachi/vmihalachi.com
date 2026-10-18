@@ -43,30 +43,29 @@ footer {
   padding-left: var(--gutter);
   padding-right: var(--gutter);
 }
-/* Fixed header: full-bleed strip tinted with the current room color, content scrolls beneath it */
+/* The header is a menu bar: the site's menus on the left, the three apps' glyphs and the
+   language on the right. Translucent and tinted with the current room color, like the
+   real one, with the page scrolling beneath it. */
 .masthead {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: color-mix(in srgb, var(--room, var(--paper)) 88%, transparent);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px dashed var(--line);
+  background: color-mix(in srgb, var(--room, var(--paper)) 78%, transparent);
+  -webkit-backdrop-filter: blur(18px) saturate(1.6);
+  backdrop-filter: blur(18px) saturate(1.6);
+  border-bottom: 1px solid var(--line);
   transition: background-color 1.1s cubic-bezier(0.33, 1, 0.68, 1);
 }
 .nav {
-  height: 72px;
+  height: 52px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 1.6rem;
+  gap: 0.25rem;
 }
 .wordmark {
-  margin-right: auto;
-}
-.wordmark {
+  margin-right: 0.9rem;
   font:
-    600 1.45rem "DM Mono",
+    600 1.3rem "DM Mono",
     monospace;
   letter-spacing: -0.12em;
 }
@@ -75,28 +74,52 @@ footer {
 }
 .nav-links {
   display: flex;
-  gap: 1.6rem;
+  gap: 0.1rem;
   font-size: 0.88rem;
   font-weight: 500;
 }
+/* Menu items and status items highlight the way a menu bar does: a rounded block, not a line */
+.nav-links a,
+.bar-app {
+  border-radius: 6px;
+  transition: background-color 0.15s;
+}
 .nav-links a {
-  position: relative;
+  padding: 0.32rem 0.65rem;
 }
-.nav-links a:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  background: var(--ink);
-  left: 0;
-  bottom: -4px;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.25s;
+.nav-links a:hover,
+.bar-app:hover {
+  background: color-mix(in srgb, var(--ink) 9%, transparent);
 }
-.nav-links a:hover:after {
-  transform: scaleX(1);
-  transform-origin: left;
+.bar-apps {
+  display: flex;
+  gap: 0.1rem;
+  margin-left: auto;
+  padding-right: 0.6rem;
+  margin-right: 0.4rem;
+  border-right: 1px solid var(--line);
+}
+.bar-app {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 30px;
+}
+.bar-app svg {
+  width: 20px;
+  height: 20px;
+  overflow: visible;
+}
+.bar-mbh,
+.bar-pg {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.bar-mbh {
+  stroke-width: 2;
 }
 .lang-switch {
   display: flex;
@@ -118,8 +141,192 @@ footer {
   color: var(--ink);
   box-shadow: inset 0 -2px 0 var(--coral);
 }
+
+/* The panels the apps open, each in its own app's look, hung under its glyph. main.js
+   sets --say-x (the panel's left edge) and --say-notch (the glyph's center within it). */
+.says {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+.say {
+  --say-bg: #fff;
+  --say-ink: var(--ink);
+  --say-border: 1.5px;
+  position: absolute;
+  top: 14px;
+  left: var(--say-x, 0);
+  width: max-content;
+  max-width: min(290px, 100vw - 2 * var(--gutter));
+  margin: 0;
+  background: var(--say-bg);
+  color: var(--say-ink);
+  border: var(--say-border) solid var(--say-ink);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px) scale(0.96);
+  transform-origin: var(--say-notch, 50%) 0;
+  transition:
+    opacity 0.2s,
+    transform 0.2s,
+    visibility 0s 0.2s;
+}
+/* The notch points up at the glyph. It is placed from the panel's padding box, so the
+   border is taken off to center it on --say-notch, which is measured from the outer edge. */
+.say::before {
+  content: "";
+  position: absolute;
+  top: -7.5px;
+  left: calc(var(--say-notch, 50%) - var(--say-border) - 7.5px);
+  box-sizing: border-box;
+  width: 15px;
+  height: 15px;
+  background: var(--say-bg);
+  border-left: var(--say-border) solid var(--say-ink);
+  border-top: var(--say-border) solid var(--say-ink);
+  transform: rotate(45deg);
+}
+.masthead.is-saying[data-say="mybackhurts"] .say-mybackhurts,
+.masthead.is-saying[data-say="sunnysays"] .say-sunnysays,
+.masthead.is-saying[data-say="pagliacci"] .say-pagliacci {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition:
+    opacity 0.25s,
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* The open app's glyph stays highlighted, as a menu bar item does while its panel is open */
+.masthead.is-saying[data-say="mybackhurts"] .bar-app[data-app="mybackhurts"],
+.masthead.is-saying[data-say="sunnysays"] .bar-app[data-app="sunnysays"],
+.masthead.is-saying[data-say="pagliacci"] .bar-app[data-app="pagliacci"] {
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+/* mybackhurts: the chair squat card, small, counting a set of ten */
+.say-mybackhurts {
+  --say-bg: #f3ede1;
+  --say-ink: #26336b;
+  --say-border: 2px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.7rem 1rem 0.75rem 0.75rem;
+  border-radius: 6px;
+  box-shadow: 4px 4px 0 #ff4d9d;
+}
+.say-mbh-figure {
+  width: 34px;
+  height: 40px;
+  padding: 3px;
+  background: radial-gradient(rgba(38, 51, 107, 0.2) 1px, transparent 1.3px) 0 0 / 6px 6px #faf7f0;
+  border: 1.5px solid #26336b;
+  border-radius: 3px;
+  fill: none;
+  stroke: #26336b;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.say-mbh-name {
+  margin: 0 0 0.35rem;
+  font:
+    600 0.8rem/1 "DM Sans",
+    sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-shadow: 0.06em 0.05em 0 #ff4d9d;
+}
+.say-mbh-reps {
+  display: flex;
+  gap: 3px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.say-mbh-reps li {
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid #26336b;
+  border-radius: 2px;
+}
+.masthead.is-saying[data-say="mybackhurts"] .say-mbh-reps li {
+  animation: say-rep 0.2s 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.masthead.is-saying[data-say="mybackhurts"] .say-mbh-reps li:nth-child(2) {
+  animation-delay: 1s;
+}
+.masthead.is-saying[data-say="mybackhurts"] .say-mbh-reps li:nth-child(3) {
+  animation-delay: 1.3s;
+}
+.masthead.is-saying[data-say="mybackhurts"] .say-mbh-reps li:nth-child(4) {
+  animation-delay: 1.6s;
+}
+.masthead.is-saying[data-say="mybackhurts"] .say-mbh-reps li:nth-child(5) {
+  animation-delay: 1.9s;
+}
+.masthead.is-saying[data-say="mybackhurts"] .say-mbh-reps li:nth-child(6) {
+  animation-delay: 2.2s;
+}
+.masthead.is-saying[data-say="mybackhurts"] .say-mbh-reps li:nth-child(7) {
+  animation-delay: 2.5s;
+}
+.masthead.is-saying[data-say="mybackhurts"] .say-mbh-reps li:nth-child(8) {
+  animation-delay: 2.8s;
+}
+.masthead.is-saying[data-say="mybackhurts"] .say-mbh-reps li:nth-child(9) {
+  animation-delay: 3.1s;
+}
+.masthead.is-saying[data-say="mybackhurts"] .say-mbh-reps li:nth-child(10) {
+  animation-delay: 3.4s;
+}
+@keyframes say-rep {
+  to {
+    background: #ff4d9d;
+  }
+}
+
+/* sunnysays: Sunny's speech bubble */
+.say-sunnysays {
+  --say-bg: #fffdf7;
+  --say-ink: #4a2e1a;
+  --say-border: 2.5px;
+  padding: 0.75rem 1rem;
+  border-radius: 18px;
+  font:
+    600 1rem/1.35 "DM Sans",
+    sans-serif;
+}
+
+/* Mister Pagliacci: his panel, a beat of dots, then the line */
+.say-pagliacci {
+  display: grid;
+  align-items: center;
+  padding: 0.85rem 1.1rem;
+  border-radius: 12px;
+  --say-ink: #1f2328;
+  font:
+    500 1.2rem/1.2 Fraunces,
+    serif;
+  letter-spacing: -0.02em;
+}
+.say-pagliacci > span {
+  grid-area: 1 / 1;
+}
+.say-pagliacci .pg-beat i {
+  background: #5c6670;
+}
+.masthead.is-saying[data-say="pagliacci"] .pg-beat {
+  animation: pg-beat 1.5s 0.4s backwards;
+}
+.masthead.is-saying[data-say="pagliacci"] .say-pg-line {
+  animation: pg-line 0.5s 1.9s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
 .hero {
-  min-height: calc(100vh - 72px);
+  min-height: calc(100svh - 52px);
   display: grid;
   grid-template-columns: 1.18fr 0.82fr;
   align-items: center;
@@ -1386,9 +1593,10 @@ footer a:hover {
   .manifesto-grid {
     grid-template-columns: 1fr;
   }
+  /* Room at the top for the panels, which hang below both rows of the bar */
   .hero {
-    padding-top: 2rem;
     min-height: auto;
+    padding-top: 7.5rem;
   }
   /* Below about 390px, shrink with the column so the longest word ("Construiesc") still fits */
   h1 {
@@ -1436,20 +1644,25 @@ footer a:hover {
     flex-direction: column;
   }
   html {
-    scroll-padding-top: 8rem;
+    scroll-padding-top: 6.5rem;
   }
+  /* Two rows: the bar itself (wordmark, apps, language), then the menus */
   .nav {
     height: auto;
     flex-wrap: wrap;
-    row-gap: 0.9rem;
-    padding-top: 1.4rem;
-    padding-bottom: 1.4rem;
+    row-gap: 0.3rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.45rem;
   }
   .nav-links {
     order: 1;
-    width: 100%;
+    width: calc(100% + 1.3rem);
+    margin-left: -0.65rem;
     flex-wrap: wrap;
-    gap: 0.7rem 1rem;
+  }
+  .bar-app {
+    width: 38px;
+    height: 34px;
   }
   .project-art {
     margin-top: 2.5rem;

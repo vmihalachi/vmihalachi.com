@@ -72,7 +72,9 @@
   </head>
   <body>
     <main>
-      <header class="masthead">
+      <!-- The header is a menu bar, and the three apps live in it as they do on a desktop.
+           While the hero is on screen, main.js opens each one's panel in turn. -->
+      <header class="masthead" data-say="sunnysays">
         <nav class="nav" aria-label="{{ nav.label }}">
           <a class="wordmark" href="#top" aria-label="{{ nav.home }}">VM<span>.</span></a>
           <div class="nav-links">
@@ -81,10 +83,93 @@
             <a href="#interests">{{ nav.interests }}</a>
             <a href="#contact">{{ nav.contact }}</a>
           </div>
+          <div class="bar-apps">
+            <a
+              class="bar-app"
+              href="#mybackhurts-title"
+              data-app="mybackhurts"
+              aria-label="mybackhurts"
+            >
+              <svg class="bar-mbh" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="4.5" r="2.6" />
+                <path d="M12 7.6v7.2M12 9.8 8 12.6M12 9.8l4 2.8M12 14.8 9.4 21M12 14.8l2.6 6.2" />
+              </svg>
+            </a>
+            <a class="bar-app" href="#sunnysays-title" data-app="sunnysays" aria-label="sunnysays">
+              <svg class="bar-sunny" viewBox="23 6 74 76" aria-hidden="true">
+                <g fill="#FFD25A" stroke="#EBAA2E" stroke-width="2">
+                  <circle cx="60" cy="20" r="12" />
+                  <circle cx="74.11" cy="24.58" r="12" />
+                  <circle cx="82.83" cy="36.58" r="12" />
+                  <circle cx="82.83" cy="51.42" r="12" />
+                  <circle cx="74.11" cy="63.42" r="12" />
+                  <circle cx="60" cy="68" r="12" />
+                  <circle cx="45.89" cy="63.42" r="12" />
+                  <circle cx="37.17" cy="51.42" r="12" />
+                  <circle cx="37.17" cy="36.58" r="12" />
+                  <circle cx="45.89" cy="24.58" r="12" />
+                </g>
+                <circle cx="60" cy="44" r="22" fill="#8B5A2B" />
+                <ellipse cx="52.5" cy="42" rx="3.4" ry="4.4" fill="#2B1A0E" />
+                <ellipse cx="67.5" cy="42" rx="3.4" ry="4.4" fill="#2B1A0E" />
+                <path
+                  d="M56 49Q60 53.5 64 49"
+                  fill="none"
+                  stroke="#2B1A0E"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </a>
+            <a
+              class="bar-app"
+              href="#pagliacci-title"
+              data-app="pagliacci"
+              aria-label="Mister Pagliacci"
+            >
+              <svg class="bar-pg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 11 12 3 17 11M5.5 11h13" />
+                <circle cx="12" cy="2.2" r="1.2" />
+                <circle cx="12" cy="16" r="6" />
+                <path d="M9.2 14.6h1.5M13.3 14.6h1.5" />
+                <path d="M10.2 20.2q1.8-1.2 3.6 0" />
+                <circle class="pg-nose" cx="12" cy="17.2" r="1.5" />
+              </svg>
+            </a>
+          </div>
           <div class="lang-switch" role="group" aria-label="{{ nav.language }}">
             {{ page.languageLinks }}
           </div>
         </nav>
+        <!-- What each app shows when it opens: the same lines as their drawings below -->
+        <div class="says" aria-hidden="true">
+          <div class="say say-mybackhurts" data-app="mybackhurts">
+            <svg class="say-mbh-figure" viewBox="0 0 24 24">
+              <circle cx="12" cy="4.5" r="2.6" />
+              <path d="M12 7.6v7.2M12 9.8 8 12.6M12 9.8l4 2.8M12 14.8 9.4 21M12 14.8l2.6 6.2" />
+            </svg>
+            <div>
+              <p class="say-mbh-name">{{ project.artExercise }}</p>
+              <ol class="say-mbh-reps">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ol>
+            </div>
+          </div>
+          <p class="say say-sunnysays" data-app="sunnysays">{{ sunnysays.line1 }}</p>
+          <p class="say say-pagliacci" data-app="pagliacci">
+            <span class="pg-beat"><i></i><i></i><i></i></span>
+            <span class="say-pg-line">{{ pagliacci.artLine }}</span>
+          </p>
+        </div>
       </header>
 
       <section class="hero" id="top" aria-labelledby="hero-title">
@@ -325,7 +410,7 @@
                 <div class="pg-panel">
                   <p class="pg-say">
                     <span class="pg-beat"><i></i><i></i><i></i></span>
-                    <span class="pg-line" lang="it">{{ pagliacci.artLine }}</span>
+                    <span class="pg-line">{{ pagliacci.artLine }}</span>
                   </p>
                   <p class="pg-shh">{{ pagliacci.artShh }}</p>
                 </div>

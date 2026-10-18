@@ -41,8 +41,8 @@ the template to see where a string is used.
 - `meta.description` fills the meta, Open Graph, and Twitter descriptions. Keep it under
   about 155 characters.
 - Art text appears inside the drawings, so keep it short enough to fit. That covers
-  `project.artExercise`, Sunny's `line1` to `line4`, and `pagliacci.artLine` (his Italian
-  signature line, kept the same in every language) and `pagliacci.artShh`.
+  `project.artExercise`, Sunny's `line1` to `line4`, and `pagliacci.artLine` (his signature
+  line, written in Italian and translated like the rest) and `pagliacci.artShh`.
   Sunny talks for a time proportional to the line's length, so keep its lines one short
   sentence.
 - `nav.*` labels and section `mark`s are short. Section IDs and anchors stay in English
