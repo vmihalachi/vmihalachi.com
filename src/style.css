@@ -852,7 +852,7 @@ h1 em {
 }
 .sunny-bubble {
   position: relative;
-  display: grid;
+  width: fit-content;
   margin-top: 1.25rem;
   padding: 0.8rem 1rem;
   background: #fffdf7;
@@ -876,13 +876,12 @@ h1 em {
   border-bottom: 2.5px solid var(--sunny-ink);
   transform: rotate(45deg);
 }
-/* Every line sits in the same cell, so the bubble is sized for the longest one */
+/* Only the current line takes up room, so the bubble hugs what Sunny is saying */
 .sunny-bubble span {
-  grid-area: 1 / 1;
-  visibility: hidden;
+  display: none;
 }
 .sunny-bubble .is-current {
-  visibility: visible;
+  display: block;
 }
 .js .sunny-art.is-visible .sunny-bubble .is-current {
   animation: sunny-line 0.35s cubic-bezier(0.16, 1, 0.3, 1);
