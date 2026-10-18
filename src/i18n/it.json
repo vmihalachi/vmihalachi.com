@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Vlad Mihalachi — Software Engineer",
-    "description": "Vlad Mihalachi, Senior Software Engineer in Microsoft e creatore di mybackhurts.app.",
+    "description": "Vlad Mihalachi, Senior Software Engineer in Microsoft e creatore di mybackhurts, sunnysays e Mister Pagliacci.",
     "imageAlt": "Vlad Mihalachi, sviluppatore software e maker, accanto al disegno delle orbite VM del sito."
   },
   "nav": {
@@ -15,15 +15,15 @@
   },
   "hero": {
     "title": "Faccio software<br />che ha un <em>perché.</em>",
-    "intro": "Sono Vlad e sviluppo software su tutto lo stack, dai servizi alle app. Quasi ogni giorno prendo qualcosa di complicato e lo semplifico finché non riesco a spiegarlo.",
+    "intro": "Sono Vlad e sviluppo software su tutto lo stack. Sbroglio le cose finché non sono abbastanza semplici da spiegare.",
     "cta": "Il mio lavoro",
     "badge": "CURIOSO<br />PER NATURA"
   },
   "work": {
     "mark": "LAVORO",
     "title": "Mi piace la parte confusa,<br />prima che tutto <span>torni.</span>",
-    "experience": "Sono Senior Software Engineer in Microsoft. Sviluppo software per lavoro da <span id=\"professional-experience\">9+</span> anni, di cui gli ultimi <span id=\"microsoft-experience\">6+</span> proprio lì.",
-    "openSource": "Fuori dal lavoro leggo molto codice open source e contribuisco quando ho qualcosa di utile da aggiungere. È il modo migliore che conosco per vedere come gli altri ragionano sui problemi."
+    "experience": "Sono Senior Software Engineer in Microsoft: <span id=\"professional-experience\">9+</span> anni di software, gli ultimi <span id=\"microsoft-experience\">6+</span> proprio lì.",
+    "openSource": "Nel tempo libero leggo codice open source e contribuisco quando ho qualcosa di utile da aggiungere."
   },
   "projects": {
     "mark": "PROGETTI PERSONALI",
@@ -31,20 +31,22 @@
   },
   "project": {
     "title": "Mi fa male la schiena.<br />Così ho creato un’app.",
-    "description": "vive nella barra dei menu del tuo computer e ogni 45 minuti ti ricorda di alzarti e fare qualche movimento veloce. Se glielo permetti, la webcam conta le ripetizioni. Tutto resta sul tuo computer.",
+    "description": "ti fa alzare dalla sedia ogni 45 minuti per qualche movimento veloce. Se glielo permetti, la webcam conta le ripetizioni.",
+    "fact1": "Ripetizioni contate sul dispositivo",
+    "fact2": "macOS · Windows · iPhone · iPad",
     "url": "https://mybackhurts.app/it/",
     "link": "Vai su mybackhurts.app",
-    "status": "macOS e Windows",
     "artExercise": "Squat sulla sedia"
   },
   "sunnysays": {
     "mark": "GIOCATTOLO DA SCRIVANIA",
     "title": "Poi ho fatto qualcosa<br />solo per <span>gioco.</span>",
-    "description": "è un piccolo girasole di nome Sunny che vive nella barra dei menu o nell’area di notifica e dice qualcosa un paio di volte all’ora: sulla luce, sull’ora o su niente di particolare. Premi Di’ qualcosa e parla subito. Digli shh e china la testa.",
-    "details": "Sta zitto quando sei in chiamata, senza mai chiedere l’accesso a fotocamera o microfono. Non si collega a internet e non salva niente tranne le tue impostazioni.",
+    "description": "è un girasole nella barra dei menu o nell’area di notifica che dice qualcosa di piccolo un paio di volte all’ora. Digli shh e china la testa.",
+    "fact1": "Zitto in chiamata",
+    "fact2": "Niente rete",
+    "fact3": "macOS · Windows",
     "url": "https://sunnysays.app/it/",
     "link": "Conosci Sunny",
-    "status": "macOS e Windows",
     "line1": "Una volta è passata un’ape. Ci siamo fatti un cenno.",
     "line2": "Ho pensato alle nuvole. Nessuna conclusione, per ora.",
     "line3": "La fotosintesi va alla grande, grazie di avermelo chiesto.",
@@ -53,21 +55,23 @@
   "pagliacci": {
     "mark": "CLOWN DA SCRIVANIA",
     "title": "Ora sto costruendo<br />un clown <span>triste.</span>",
-    "description": "è un clown che vive nella barra dei menu o nell’area di notifica e racconta una barzelletta breve un paio di volte all’ora, a volte in due tempi: la premessa, una pausa, poi la battuta. Cliccalo e te ne racconta una subito. Digli shh e sta zitto.",
-    "details": "Le barzellette fanno ridere e insieme un po’ di tristezza, e sono registrate con la sua voce in italiano e in inglese. Come Sunny, sta zitto quando sei in chiamata senza chiedere l’accesso a fotocamera o microfono, e non si collega a internet.",
+    "description": "è un clown nella barra dei menu o nell’area di notifica che racconta una barzelletta breve un paio di volte all’ora, a volte con una pausa prima della battuta. Fa ridere, e un po’ di tristezza.",
+    "fact1": "La sua voce, in italiano e inglese",
+    "fact2": "Zitto in chiamata",
+    "fact3": "In progettazione · prima macOS",
     "url": "https://pagliacci.app/it/",
     "link": "Conosci Mister Pagliacci",
-    "status": "In progettazione · prima macOS, poi Windows",
     "artLine": "…ma chi fa ridere Mister Pagliacci?",
     "artShh": "Shh"
   },
   "tools": {
     "mark": "OPEN SOURCE",
     "title": "E, sotto, i pezzi<br />open <span>source.</span>",
-    "laching": "è l’impianto per le app nella barra dei menu e nell’area di notifica su cui girano mybackhurts, sunnysays e Mister Pagliacci: promemoria che rispettano le ore di silenzio, rilevamento delle chiamate senza accesso a fotocamera o microfono, scorciatoie globali e avvio all’accesso. È scritto in Swift su macOS e in .NET su Windows, con test comuni che tengono allineate le due versioni.",
-    "webling": "è il fratello web di Laching: i pezzi che servono a ogni piccolo sito ASP.NET Core e Blazor dietro Cloudflare, come una coda di job in PostgreSQL, la protezione dell’origine e Tailwind senza Node.",
-    "untranslated": "fa fallire la build quando un componente Blazor mostra un testo non tradotto, e ti indica la riga.",
-    "status": "Swift e .NET · MIT"
+    "laching": "è l’impianto sotto tutte e tre le app: promemoria, ore di silenzio e chiamate rilevate senza fotocamera.",
+    "webling": "è il fratello web, per piccoli siti ASP.NET Core e Blazor dietro Cloudflare.",
+    "untranslated": "fa fallire la build quando una pagina Blazor mostra un testo che nessuno ha tradotto.",
+    "fact1": "Swift · .NET · Kotlin",
+    "fact2": "MIT"
   },
   "interests": {
     "mark": "FUORI ORARIO",

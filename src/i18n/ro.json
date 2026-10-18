@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Vlad Mihalachi — Software Engineer",
-    "description": "Vlad Mihalachi, Senior Software Engineer la Microsoft și creatorul mybackhurts.app.",
+    "description": "Vlad Mihalachi, Senior Software Engineer la Microsoft și creatorul mybackhurts, sunnysays și Mister Pagliacci.",
     "imageAlt": "Vlad Mihalachi, inginer software și maker, lângă desenul cu orbitele VM de pe site."
   },
   "nav": {
@@ -15,15 +15,15 @@
   },
   "hero": {
     "title": "Construiesc software<br />care își câștigă <em>locul.</em>",
-    "intro": "Sunt Vlad, inginer software și lucrez la toate nivelurile, de la servicii la aplicații. În cele mai multe zile, asta înseamnă să descâlcesc ceva până devine destul de simplu încât să-l pot explica.",
+    "intro": "Sunt Vlad, inginer software pe tot stack-ul. Descâlcesc lucrurile până devin destul de simple încât să le pot explica.",
     "cta": "Ce fac",
     "badge": "CURIOS<br />DIN FIRE"
   },
   "work": {
     "mark": "MUNCĂ",
     "title": "Îmi place haosul<br />dinainte ca totul să se <span>lege.</span>",
-    "experience": "Sunt Senior Software Engineer la Microsoft. Fac software în mod profesionist de <span id=\"professional-experience\">9+</span> ani, dintre care ultimii <span id=\"microsoft-experience\">6+</span> acolo.",
-    "openSource": "În afara serviciului citesc mult cod open source și contribui când am ceva util de adăugat. E cel mai bun mod pe care îl știu de a vedea cum gândesc alții o problemă."
+    "experience": "Sunt Senior Software Engineer la Microsoft: <span id=\"professional-experience\">9+</span> ani de software, ultimii <span id=\"microsoft-experience\">6+</span> acolo.",
+    "openSource": "În timpul liber citesc cod open source și contribui când am ceva util de adăugat."
   },
   "projects": {
     "mark": "PROIECTE PERSONALE",
@@ -31,20 +31,22 @@
   },
   "project": {
     "title": "Mă doare spatele.<br />Așa că am făcut o aplicație.",
-    "description": "stă în bara de meniu a calculatorului tău și, la fiecare 45 de minute, îți amintește să te ridici și să faci câteva mișcări rapide. Dacă îi dai voie, camera web numără repetările. Totul rămâne pe calculatorul tău.",
+    "description": "te ridică de pe scaun la fiecare 45 de minute pentru câteva mișcări rapide. Dacă îi dai voie, camera web numără repetările.",
+    "fact1": "Repetări numărate pe dispozitiv",
+    "fact2": "macOS · Windows · iPhone · iPad",
     "url": "https://mybackhurts.app/ro/",
     "link": "Vezi mybackhurts.app",
-    "status": "macOS și Windows",
     "artExercise": "Genuflexiune la scaun"
   },
   "sunnysays": {
     "mark": "JUCĂRIE DE BIROU",
     "title": "Apoi am făcut ceva<br />doar de <span>joacă.</span>",
-    "description": "e o floarea-soarelui mică, pe nume Sunny, care stă în bara de meniu sau în zona de notificare și spune ceva de vreo două ori pe oră: despre lumină, despre oră sau despre nimic anume. Apeși Spune ceva și vorbește imediat. Îi spui șșt și își pleacă capul.",
-    "details": "Tace când ești într-un apel, fără să ceară vreodată acces la cameră sau la microfon. Nu face cereri în rețea și nu păstrează nimic în afară de setările tale.",
+    "description": "e o floarea-soarelui din bara de meniu sau din zona de notificare care spune câte ceva de vreo două ori pe oră. Îi spui șșt și își pleacă capul.",
+    "fact1": "Tace în apeluri",
+    "fact2": "Fără rețea",
+    "fact3": "macOS · Windows",
     "url": "https://sunnysays.app/ro/",
     "link": "Fă cunoștință cu Sunny",
-    "status": "macOS și Windows",
     "line1": "A trecut o albină odată. Ne-am salutat din cap.",
     "line2": "M-am tot gândit la nori. Încă nicio concluzie.",
     "line3": "Fotosinteza merge grozav, mulțumesc de întrebare.",
@@ -53,21 +55,23 @@
   "pagliacci": {
     "mark": "CLOVN DE BIROU",
     "title": "Acum construiesc<br />un clovn <span>trist.</span>",
-    "description": "e un clovn care stă în bara de meniu sau în zona de notificare și spune o glumă scurtă de vreo două ori pe oră, uneori în doi timpi: începutul, o pauză, apoi poanta. Dai clic pe el și spune una imediat. Îi spui șșt și tace.",
-    "details": "Glumele sunt amuzante și puțin triste în același timp, înregistrate cu vocea lui în engleză și în italiană. Ca Sunny, tace când ești într-un apel, fără să ceară acces la cameră sau la microfon, și nu face cereri în rețea.",
+    "description": "e un clovn din bara de meniu sau din zona de notificare care spune o glumă scurtă de vreo două ori pe oră, uneori cu o pauză înainte de poantă. Amuzant și puțin trist.",
+    "fact1": "Cu vocea lui, în engleză și italiană",
+    "fact2": "Tace în apeluri",
+    "fact3": "În design · întâi macOS",
     "url": "https://pagliacci.app/",
     "link": "Fă cunoștință cu Mister Pagliacci",
-    "status": "În faza de design · întâi macOS, apoi Windows",
     "artLine": "…ma chi fa ridere Mister Pagliacci?",
     "artShh": "Șșt"
   },
   "tools": {
     "mark": "OPEN SOURCE",
     "title": "Și piesele open source<br />de <span>dedesubt.</span>",
-    "laching": "e infrastructura pentru aplicațiile din bara de meniu și din zona de notificare pe care rulează mybackhurts, sunnysays și Mister Pagliacci: mementouri care țin cont de orele de liniște, detectarea apelurilor fără acces la cameră sau la microfon, scurtături globale și pornirea la conectare. E scris în Swift pe macOS și în .NET pe Windows, cu teste comune care țin cele două variante în pas.",
-    "webling": "e fratele web al lui Laching: piesele de care are nevoie orice site mic ASP.NET Core și Blazor din spatele Cloudflare, cum ar fi o coadă de joburi în PostgreSQL, protecția originii și Tailwind fără Node.",
-    "untranslated": "oprește build-ul când o componentă Blazor afișează text netradus și îți arată linia.",
-    "status": "Swift și .NET · MIT"
+    "laching": "e infrastructura de sub toate trei aplicațiile: mementouri, ore de liniște și apeluri detectate fără cameră.",
+    "webling": "e fratele web, pentru site-uri mici ASP.NET Core și Blazor din spatele Cloudflare.",
+    "untranslated": "oprește build-ul când o pagină Blazor afișează text pe care nu l-a tradus nimeni.",
+    "fact1": "Swift · .NET · Kotlin",
+    "fact2": "MIT"
   },
   "interests": {
     "mark": "DUPĂ PROGRAM",

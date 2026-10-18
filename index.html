@@ -168,6 +168,10 @@
                 >
                 {{ project.description }}
               </p>
+              <ul class="facts">
+                <li>{{ project.fact1 }}</li>
+                <li>{{ project.fact2 }}</li>
+              </ul>
               <a
                 class="project-link"
                 href="{{ project.url }}"
@@ -175,7 +179,6 @@
                 rel="noopener noreferrer"
                 >{{ project.link }} <span aria-hidden="true">↗</span></a
               >
-              <p class="small">{{ project.status }}</p>
             </div>
           </div>
         </div>
@@ -283,7 +286,11 @@
                 >
                 {{ sunnysays.description }}
               </p>
-              <p>{{ sunnysays.details }}</p>
+              <ul class="facts">
+                <li>{{ sunnysays.fact1 }}</li>
+                <li>{{ sunnysays.fact2 }}</li>
+                <li>{{ sunnysays.fact3 }}</li>
+              </ul>
               <a
                 class="project-link"
                 href="{{ sunnysays.url }}"
@@ -291,7 +298,6 @@
                 rel="noopener noreferrer"
                 >{{ sunnysays.link }} <span aria-hidden="true">↗</span></a
               >
-              <p class="small">{{ sunnysays.status }}</p>
             </div>
           </div>
         </div>
@@ -336,7 +342,11 @@
                 >
                 {{ pagliacci.description }}
               </p>
-              <p>{{ pagliacci.details }}</p>
+              <ul class="facts">
+                <li>{{ pagliacci.fact1 }}</li>
+                <li>{{ pagliacci.fact2 }}</li>
+                <li>{{ pagliacci.fact3 }}</li>
+              </ul>
               <a
                 class="project-link"
                 href="{{ pagliacci.url }}"
@@ -344,7 +354,6 @@
                 rel="noopener noreferrer"
                 >{{ pagliacci.link }} <span aria-hidden="true">↗</span></a
               >
-              <p class="small">{{ pagliacci.status }}</p>
             </div>
           </div>
         </div>
@@ -397,7 +406,9 @@
                     <circle class="pg-nose" cx="12" cy="17.2" r="1.5" />
                   </svg>
                 </div>
-                <p class="oss-crate oss-laching"><b>Laching</b> <span>Swift · .NET</span></p>
+                <p class="oss-crate oss-laching">
+                  <b>Laching</b> <span>Swift · .NET · Kotlin</span>
+                </p>
                 <div class="oss-row">
                   <p class="oss-crate oss-webling"><b>Webling</b> <span>.NET</span></p>
                   <p class="oss-crate oss-untranslated"><b>Blazor.Untranslated</b></p>
@@ -436,7 +447,10 @@
                 >
                 {{ tools.untranslated }}
               </p>
-              <p class="small">{{ tools.status }}</p>
+              <ul class="facts">
+                <li>{{ tools.fact1 }}</li>
+                <li>{{ tools.fact2 }}</li>
+              </ul>
             </div>
           </div>
         </div>

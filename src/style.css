@@ -636,12 +636,29 @@ h1 em {
 .side-project .project-link:focus-visible {
   outline-color: var(--accent-text);
 }
-.side-project .small {
+/* One sentence per app, so it can be read at a larger size */
+.side-project:not(.side-tools) .manifesto-copy > p:first-child {
+  font-size: clamp(1.2rem, 1.7vw, 1.4rem);
+  line-height: 1.5;
+}
+/* The facts as small chips in the app's colors, between the sentence and the link */
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.75rem 0 2.25rem;
+  padding: 0;
+  list-style: none;
+}
+.facts li {
+  padding: 0.4em 0.85em;
+  border: 1px solid color-mix(in oklab, var(--accent) 45%, transparent);
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--tone), white 45%);
   font:
-    400 0.82rem "DM Mono",
-    monospace;
+    500 0.85rem/1.2 "DM Sans",
+    sans-serif;
   color: var(--muted);
-  margin-top: 2.5rem;
 }
 
 /* Project art: each project drawn in its own app's look. The default is the

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Vlad Mihalachi — Software Engineer",
-    "description": "Vlad Mihalachi, Senior Software Engineer at Microsoft and maker of mybackhurts.app.",
+    "description": "Vlad Mihalachi, Senior Software Engineer at Microsoft and maker of mybackhurts, sunnysays and Mister Pagliacci.",
     "imageAlt": "Vlad Mihalachi, software engineer and maker, next to the VM orbit drawing from the site."
   },
   "nav": {
@@ -15,15 +15,15 @@
   },
   "hero": {
     "title": "I build software<br />that earns its <em>place.</em>",
-    "intro": "I’m Vlad, a software engineer working across the stack, from services to apps. Most days that means untangling something until it’s simple enough to explain.",
+    "intro": "I’m Vlad, a software engineer across the stack. I untangle things until they’re simple enough to explain.",
     "cta": "My work",
     "badge": "CURIOUS<br />BY NATURE"
   },
   "work": {
     "mark": "WORK",
     "title": "I like the messy part<br />before things <span>click.</span>",
-    "experience": "I’m a Senior Software Engineer at Microsoft. I’ve been building software professionally for <span id=\"professional-experience\">9+</span> years, the last <span id=\"microsoft-experience\">6+</span> of them there.",
-    "openSource": "Outside work, I read a lot of open-source code and contribute back when I have something useful to add. It’s the best way I know to see how other people think through problems."
+    "experience": "I’m a Senior Software Engineer at Microsoft: <span id=\"professional-experience\">9+</span> years building software, the last <span id=\"microsoft-experience\">6+</span> there.",
+    "openSource": "Off the clock, I read open-source code and chip in when I have something useful to add."
   },
   "projects": {
     "mark": "SIDE PROJECTS",
@@ -31,20 +31,22 @@
   },
   "project": {
     "title": "My back hurts.<br />So I built an app.",
-    "description": "lives in your desktop’s menu bar and nudges you every 45 minutes to stand up and do a few quick moves. If you let it, your webcam counts the reps. Everything stays on your desktop.",
+    "description": "gets you off the chair every 45 minutes for a few quick moves. If you let it, your webcam counts the reps.",
+    "fact1": "Reps counted on-device",
+    "fact2": "macOS · Windows · iPhone · iPad",
     "url": "https://mybackhurts.app/",
     "link": "See mybackhurts.app",
-    "status": "macOS and Windows",
     "artExercise": "Chair squat"
   },
   "sunnysays": {
     "mark": "DESK TOY",
     "title": "Then I built something<br />just for <span>fun.</span>",
-    "description": "is a little sunflower named Sunny that lives in your menu bar or tray and says something a couple of times an hour: about the light, the time, or nothing much at all. Press Say something and it talks now. Tell it shh and it droops.",
-    "details": "It goes quiet when you’re on a call, without ever asking for your camera or microphone. It makes no network requests and keeps nothing but your settings.",
+    "description": "is a sunflower in your menu bar or tray that says something small a couple of times an hour. Tell it shh and it droops.",
+    "fact1": "Quiet on calls",
+    "fact2": "No network",
+    "fact3": "macOS · Windows",
     "url": "https://sunnysays.app/",
     "link": "Meet Sunny",
-    "status": "macOS and Windows",
     "line1": "A bee came by once. We nodded.",
     "line2": "I’ve been thinking about clouds. No conclusions yet.",
     "line3": "Photosynthesis is going great, thanks for asking.",
@@ -53,21 +55,23 @@
   "pagliacci": {
     "mark": "DESK CLOWN",
     "title": "Now I’m building<br />a sad <span>clown.</span>",
-    "description": "is a clown who lives in your menu bar or tray and tells a short joke a couple of times an hour, sometimes in two parts: the setup, a beat, then the punchline. Click him and he tells one now. Tell him shh and he goes quiet.",
-    "details": "The jokes are funny and a little sad at the same time, recorded in his own voice in English and Italian. Like Sunny, he keeps quiet when you’re on a call without asking for your camera or microphone, and he makes no network requests.",
+    "description": "is a clown in your menu bar or tray who tells a short joke a couple of times an hour, sometimes with a beat before the punchline. Funny, and a little sad.",
+    "fact1": "His own voice, in English and Italian",
+    "fact2": "Quiet on calls",
+    "fact3": "In design · macOS first",
     "url": "https://pagliacci.app/",
     "link": "Meet Mister Pagliacci",
-    "status": "In design · macOS first, then Windows",
     "artLine": "…ma chi fa ridere Mister Pagliacci?",
     "artShh": "Shh"
   },
   "tools": {
     "mark": "OPEN SOURCE",
     "title": "And the open-source<br />parts <span>underneath.</span>",
-    "laching": "is the menu bar and tray plumbing that mybackhurts, sunnysays, and Mister Pagliacci run on: reminders that respect quiet hours, call detection without camera or microphone access, global hotkeys, and launch at login. It’s Swift on macOS and .NET on Windows, with shared tests that keep the two in step.",
-    "webling": "is Laching’s web sibling: the parts every small ASP.NET Core and Blazor site behind Cloudflare needs, like a job queue in PostgreSQL, origin protection, and Tailwind without Node.",
-    "untranslated": "fails the build when a Blazor component shows text that isn’t translated, and points at the line.",
-    "status": "Swift and .NET · MIT"
+    "laching": "is the plumbing under all three apps: reminders, quiet hours, and call detection without the camera.",
+    "webling": "is its web sibling, for small ASP.NET Core and Blazor sites behind Cloudflare.",
+    "untranslated": "fails the build when a Blazor page shows text nobody translated.",
+    "fact1": "Swift · .NET · Kotlin",
+    "fact2": "MIT"
   },
   "interests": {
     "mark": "OFF THE CLOCK",
