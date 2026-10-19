@@ -1428,6 +1428,9 @@ h1 em {
   border: 2px solid;
   border-radius: 6px;
 }
+.oss-crate + .oss-crate {
+  margin-top: 0.6rem;
+}
 .oss-crate b {
   font-weight: 500;
   overflow-wrap: anywhere;
