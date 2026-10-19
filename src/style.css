@@ -636,29 +636,78 @@ h1 em {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-top: 2rem;
+  counter-reset: plate;
 }
 .interest-card {
-  padding: 2rem;
+  --tilt: -0.6deg;
+  --delay: 0s;
+  counter-increment: plate;
+  padding: 1rem 1rem 1.6rem;
   min-height: 250px;
   border: 1px solid var(--line);
   display: flex;
   flex-direction: column;
   transition:
-    transform 0.25s,
+    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
     box-shadow 0.25s;
 }
+.interest-card:nth-child(2) {
+  --tilt: 0.5deg;
+  --delay: 0.12s;
+}
+.interest-card:nth-child(3) {
+  --tilt: -0.4deg;
+  --delay: 0.24s;
+}
 .interest-card:hover {
-  transform: translateY(-7px);
+  transform: translateY(-7px) rotate(var(--tilt));
   box-shadow: 7px 8px 0 var(--shade);
 }
+/* Each drawing sits on its own specimen plate: graph paper, a ruler, a dot grid */
+.interest-plate {
+  position: relative;
+  padding: 1.7rem 1rem 1rem;
+  border: 1px solid var(--line);
+  --tick: rgba(23, 42, 40, 0.09);
+}
+.interest-plate::before {
+  content: counter(plate, decimal-leading-zero);
+  position: absolute;
+  top: 0.55rem;
+  left: 0.7rem;
+  font:
+    500 0.62rem "DM Mono",
+    monospace;
+  letter-spacing: 0.1em;
+  opacity: 0.55;
+}
+.maths .interest-plate {
+  background:
+    linear-gradient(var(--tick) 1px, transparent 1px) 0 0 / 18px 18px,
+    linear-gradient(90deg, var(--tick) 1px, transparent 1px) 0 0 / 18px 18px,
+    rgba(255, 255, 255, 0.42);
+}
+.physics .interest-plate {
+  background:
+    linear-gradient(90deg, rgba(23, 42, 40, 0.3) 1px, transparent 1px) 0 100% / 6px 5px repeat-x,
+    linear-gradient(90deg, rgba(23, 42, 40, 0.3) 1px, transparent 1px) 0 100% / 30px 10px repeat-x,
+    rgba(255, 255, 255, 0.42);
+}
+.biology .interest-plate {
+  background:
+    radial-gradient(circle, rgba(23, 42, 40, 0.22) 1px, transparent 1.5px) 0 0 / 14px 14px,
+    rgba(255, 255, 255, 0.42);
+}
 .interest-icon {
-  align-self: flex-start;
-  height: 3rem;
+  display: block;
+  width: 100%;
+  max-width: 17rem;
+  margin: 0 auto;
   aspect-ratio: 36 / 23;
   color: var(--ink);
   fill: none;
   stroke: currentColor;
-  stroke-width: 0.9;
+  stroke-width: 0.5;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -668,19 +717,11 @@ h1 em {
 }
 .interest-icon .guide,
 .interest-icon .rungs {
-  stroke-width: 0.6;
+  stroke-width: 0.3;
   stroke-opacity: 0.35;
 }
 .spiral {
   stroke-dasharray: 1;
-}
-.interest-card:hover .spiral {
-  animation: draw 1.4s cubic-bezier(0.65, 0, 0.35, 1);
-}
-@keyframes draw {
-  from {
-    stroke-dashoffset: 1;
-  }
 }
 .swing-left {
   transform-origin: 9px 1.5px;
@@ -688,11 +729,41 @@ h1 em {
 .swing-right {
   transform-origin: 25px 1.5px;
 }
+/* Every drawing plays once as its card arrives, then again whenever it's hovered */
+.interest-card.is-visible .spiral {
+  animation: draw 1.4s cubic-bezier(0.65, 0, 0.35, 1) calc(var(--delay) + 0.5s) backwards;
+}
+.interest-card.is-visible .swing-left {
+  animation: swing-left 1.4s calc(var(--delay) + 0.5s) 3 backwards;
+}
+.interest-card.is-visible .swing-right {
+  animation: swing-right 1.4s calc(var(--delay) + 0.5s) 3 backwards;
+}
+.interest-card.is-visible .helix {
+  animation: twist 2.4s linear calc(var(--delay) + 0.5s) 2 backwards;
+}
+.interest-card:hover .spiral {
+  animation: draw-again 1.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
 .interest-card:hover .swing-left {
   animation: swing-left 1.4s infinite;
 }
 .interest-card:hover .swing-right {
   animation: swing-right 1.4s infinite;
+}
+/* The strands repeat every 17 units, so sliding by one wavelength loops seamlessly */
+.interest-card:hover .helix {
+  animation: twist 2.4s linear infinite;
+}
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+@keyframes draw-again {
+  from {
+    stroke-dashoffset: 1;
+  }
 }
 @keyframes swing-left {
   0%,
@@ -718,10 +789,6 @@ h1 em {
     animation-timing-function: ease-in;
   }
 }
-/* The strands repeat every 17 units, so sliding by one wavelength loops seamlessly */
-.interest-card:hover .helix {
-  animation: twist 2.4s linear infinite;
-}
 @keyframes twist {
   to {
     transform: translateX(17px);
@@ -732,12 +799,12 @@ h1 em {
     600 2.2rem Fraunces,
     serif;
   letter-spacing: -0.04em;
-  margin: 1.5rem 0 0.6rem;
+  margin: 1.4rem 0.6rem 0.6rem;
 }
 .interest-card p {
   font-size: 0.95rem;
   line-height: 1.5;
-  margin: 0;
+  margin: 0 0.6rem;
 }
 .maths {
   background: #eee5ff;
@@ -1524,7 +1591,40 @@ h1 em {
     500 1.1rem "DM Mono",
     monospace;
   border-bottom: 2px solid var(--coral);
-  padding-bottom: 0.45rem;
+  padding-bottom: 0.6rem;
+}
+/* The icons borrow the three interest colors, as little riso stickers */
+.contact-icon {
+  flex: none;
+  box-sizing: content-box;
+  width: 1.4rem;
+  height: 1.4rem;
+  padding: 0.55rem;
+  border: 2px solid var(--ink);
+  border-radius: 0.55rem;
+  background: var(--sticker);
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition:
+    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.25s;
+}
+.contact-link:hover .contact-icon,
+.contact-link:focus-visible .contact-icon {
+  transform: translate(-3px, -3px) rotate(-5deg);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.contact-mail {
+  --sticker: #eee5ff;
+}
+.contact-linkedin {
+  --sticker: var(--blue);
+}
+.contact-github {
+  --sticker: #d9efb2;
 }
 .contact-link span {
   color: var(--coral);
@@ -1554,18 +1654,29 @@ footer a {
 footer a:hover {
   color: var(--coral);
 }
-.js section:not(.hero),
-.js .interest-card {
+.js section:not(.hero) {
   opacity: 0;
   transform: translateY(18px);
   transition:
     opacity 0.65s ease,
     transform 0.65s ease;
 }
-.js section.is-visible,
-.js .interest-card.is-visible {
+.js section.is-visible {
   opacity: 1;
   transform: none;
+}
+/* The cards rise with an animation instead, so their transform stays free for the hover */
+.js .interest-card:not(.is-visible) {
+  opacity: 0;
+}
+.js .interest-card.is-visible {
+  animation: card-rise 0.65s ease var(--delay) backwards;
+}
+@keyframes card-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -1576,10 +1687,12 @@ footer a:hover {
   *::before {
     animation: none !important;
   }
-  .js section:not(.hero),
-  .js .interest-card {
+  .js section:not(.hero) {
     opacity: 1;
     transform: none;
+  }
+  .js .interest-card:not(.is-visible) {
+    opacity: 1;
   }
 }
 @media (max-width: 720px) {
@@ -1628,7 +1741,7 @@ footer a:hover {
     padding-bottom: 5rem;
   }
   .interest-card {
-    min-height: 180px;
+    min-height: 0;
   }
   .contact {
     padding-top: 5rem;
