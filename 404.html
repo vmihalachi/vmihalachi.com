@@ -1,0 +1,69 @@
+<!doctype html>
+<!-- The page for a missing path. Built per language like index.html (/404.html, /it/404.html,
+     /ro/404.html); Cloudflare serves the nearest one (not_found_handling in wrangler.json). -->
+<html lang="{{ page.lang }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#f4f0e8" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="preload"
+      href="/fonts/fraunces-v38-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/dmsans-v17-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>{{ notFound.title }}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{{ nav.skip }}</a>
+    <header class="masthead">
+      <div class="nav">
+        <a class="wordmark" href="{{ page.home }}" aria-label="{{ nav.home }}">VM<span>.</span></a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="not-found-title">
+        <div class="hero-copy">
+          <h1 id="not-found-title">{{ notFound.heading }}</h1>
+          <p class="intro">{{ notFound.text }}</p>
+          <a class="button" href="{{ page.home }}"
+            >{{ notFound.cta }} <span aria-hidden="true">→</span></a
+          >
+        </div>
+        <div class="orbit-art" aria-hidden="true">
+          <div class="orbit orbit-one"><span class="planet"></span></div>
+          <div class="orbit orbit-two"><span class="planet"></span></div>
+          <div class="core">VM</div>
+          <span class="star star-one">✦</span>
+          <span class="star star-two">✦</span>
+          <span class="orbit-label">{{ notFound.badge }}</span>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span
+        >Vlad Mihalachi ·
+        <a
+          href="https://github.com/vmihalachi/vmihalachi.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          >{{ footer.openSource }} <span aria-hidden="true">↗</span></a
+        ></span
+      >
+      <span>{{ footer.tagline }}</span>
+    </footer>
+  </body>
+</html>

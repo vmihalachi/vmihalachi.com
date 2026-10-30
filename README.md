@@ -4,11 +4,11 @@ My portfolio :)
 
 ---
 
-Available in English (`/`), Italian (`/it/`), and Romanian (`/ro/`). `index.html` is a
-template with `{{ key }}` placeholders, and the strings for each language live in
-`src/i18n/` (`en.json`, `it.json`, `ro.json`). A small Vite plugin (`scripts/i18n.mjs`)
-renders one static page per language at build time and fails the build if a translation
-is missing or out of sync.
+Available in English (`/`), Italian (`/it/`), and Romanian (`/ro/`). `index.html` and
+`404.html` are templates with `{{ key }}` placeholders, and the strings for each language
+live in `src/i18n/` (`en.json`, `it.json`, `ro.json`). A small Vite plugin
+(`scripts/i18n.mjs`) renders each language's static pages (the home page and the 404) at
+build time and fails the build if a translation is missing or out of sync.
 
 ## Development
 

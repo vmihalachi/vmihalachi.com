@@ -35,6 +35,26 @@ a {
   outline: 2px solid var(--coral);
   outline-offset: 4px;
 }
+/* The first stop for the keyboard: it waits above the screen and drops over the menu bar
+   while it has focus */
+.skip-link {
+  position: fixed;
+  top: 0.45rem;
+  /* Lined up with the wordmark, as .band lines its content up with the rest */
+  left: max(var(--gutter), (100% - 1240px) / 2 + var(--gutter));
+  z-index: 60;
+  padding: 0.55rem 0.9rem;
+  border-radius: 6px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.86rem;
+  font-weight: 600;
+  transform: translateY(calc(-100% - 1rem));
+  transition: transform 0.2s;
+}
+.skip-link:focus {
+  transform: none;
+}
 .nav,
 section,
 footer {

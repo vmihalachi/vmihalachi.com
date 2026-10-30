@@ -34,22 +34,25 @@ npm run preview  # vp preview
 
 ## Architecture
 
-- The page is built in three languages from one template: English at `/` (also the
+- The site is built in three languages from two templates: English at `/` (also the
   `x-default`), Italian at `/it/`, and Romanian at `/ro/`.
   - `index.html` is the template. It holds all markup, nav, and SEO metadata (meta
-    description, Open Graph, Twitter, and JSON-LD `Person`), with `{{ key }}` placeholders
-    for every piece of text.
+    description, Open Graph, Twitter, and JSON-LD: the `Person` and the apps and Laching
+    he made), with `{{ key }}` placeholders for every piece of text.
+  - `404.html` is the not-found page's template, built the same way into `/404.html`,
+    `/it/404.html` and `/ro/404.html`. Cloudflare serves the nearest one for a missing path.
   - `src/i18n/en.json`, `it.json`, and `ro.json` hold the strings. Values are inserted
     as-is, so they may contain HTML (`<br />`, `<em>`, the counter `<span>`s).
   - `src/i18n/languages.json` lists the languages (code, name, path, `og:locale`). The
     first one is the default.
-  - `scripts/i18n.mjs` is a Vite plugin that renders each language's page, serves `/it/`
-    and `/ro/` in dev, and generates `sitemap.xml`. It also fills the `{{ page.* }}`
-    placeholders: `lang`, canonical URL, `og:locale`, the `hreflang` alternates, and the
-    language switcher links (`.lang-switch`).
+  - `scripts/i18n.mjs` is a Vite plugin that renders each language's pages from both
+    templates, serves `/it/`, `/ro/` and their `404.html` in dev, and generates
+    `sitemap.xml`. It also fills the `{{ page.* }}` placeholders: `lang`, canonical URL,
+    the language's home path, `og:locale`, the `hreflang` alternates, and the language
+    switcher links (`.lang-switch`).
   - The build fails, and `npm run check` runs the same validation, if a language is missing
     a key or has an extra one, a placeholder has no string, a string is unused, or a
-    language renders different element IDs than English.
+    language renders different element IDs than English (each template checked on its own).
 
 - `src/main.js` does three things:
   - Writes computed values into `#year`, `#microsoft-experience`, and
@@ -78,14 +81,16 @@ npm run preview  # vp preview
 - Deployment runs through GitHub Actions (`.github/workflows/deploy.yml`) to Cloudflare Workers
   static assets:
   - CI runs `npm ci && npm run check && npm run build`, then `wrangler deploy` with `wrangler.json`
-    (the `vmihalachi-com` Worker: `/it` redirects to `/it/`, no 404 page, no logs).
+    (the `vmihalachi-com` Worker: `/it` redirects to `/it/`, a missing path gets the nearest
+    `404.html`, no logs).
   - Pushes to `master` deploy to production; PRs from this repository upload a preview version
     (`wrangler versions upload --preview-alias pr-<number>`; the URL is in the job summary).
 
 ## Conventions and gotchas
 
-- **Translations:** never put visible text directly in `index.html`. Add a placeholder and
-  the same key to every `src/i18n/*.json` file. Markup changes happen once, in the template.
+- **Translations:** never put visible text directly in a template (`index.html`,
+  `404.html`). Add a placeholder and the same key to every `src/i18n/*.json` file. Markup
+  changes happen once, in the template.
   Section IDs stay in English in every language so anchors work the same everywhere. To add
   a language, add it to `languages.json` and create its strings file.
 
@@ -121,9 +126,9 @@ directly when the task matches:
 ## Finding code
 
 The code is a handful of files, so reading `index.html`, `src/main.js` and `scripts/`
-directly, or `rg`/`git grep`, is the way to find things. `src/style.css` is over 1,400 lines:
-`grep -n '^/\* \|^\.[a-z-]* {' src/style.css` for its outline, then a range (the hook,
-`.claude/hooks/guard.py`, refuses a whole read).
+directly, or `rg`/`git grep`, is the way to find things. `src/style.css` is about 1,800 lines
+(`wc -l`), well past the 600 a whole read allows: `grep -n '^/\* \|^\.[a-z-]* {' src/style.css`
+for its outline, then a range (the hook, `.claude/hooks/guard.py`, refuses a whole read).
 
 ## Vite+
 
