@@ -7,6 +7,7 @@
   "nav": {
     "label": "Main navigation",
     "home": "Vlad Mihalachi, home",
+    "skip": "Skip to content",
     "work": "Work",
     "projects": "Projects",
     "interests": "Interests",
@@ -33,7 +34,7 @@
     "title": "My back hurts.<br />So I built an app.",
     "description": "gets you off the chair every 45 minutes for a few quick moves. If you let it, your webcam counts the reps.",
     "fact1": "Reps counted on-device",
-    "fact2": "macOS · Windows · iPhone · iPad",
+    "fact2": "macOS · Windows · iPhone · iPad · Android",
     "url": "https://mybackhurts.app/",
     "link": "See mybackhurts.app",
     "artExercise": "Chair squat"
@@ -41,7 +42,7 @@
   "sunnysays": {
     "mark": "DESK TOY",
     "title": "Then I built something<br />just for <span>fun.</span>",
-    "description": "is a sunflower in your menu bar or tray that says something small a couple of times an hour. Tell it shh and it droops.",
+    "description": "is a sunflower in your menu bar or tray that says something small about once an hour. Tell it shh and it droops.",
     "fact1": "Quiet on calls",
     "fact2": "No network",
     "fact3": "macOS · Windows",
@@ -55,10 +56,10 @@
   "pagliacci": {
     "mark": "DESK CLOWN",
     "title": "Now I’m building<br />a sad <span>clown.</span>",
-    "description": "is a clown in your menu bar or tray who tells a short joke a couple of times an hour, sometimes with a beat before the punchline. Funny, and a little sad.",
+    "description": "is a clown in your menu bar or tray who tells a short joke about once an hour, sometimes with a beat before the punchline. Funny, and a little sad.",
     "fact1": "His own voice, in English and Italian",
     "fact2": "Quiet on calls",
-    "fact3": "In design · macOS first",
+    "fact3": "In development · macOS · Windows",
     "url": "https://pagliacci.app/",
     "link": "Meet Mister Pagliacci",
     "artLine": "…but who makes Mister Pagliacci laugh?",
@@ -92,5 +93,12 @@
   "footer": {
     "tagline": "Still asking questions.",
     "openSource": "This site is open source"
+  },
+  "notFound": {
+    "title": "Vlad Mihalachi — Page not found",
+    "heading": "This page<br />isn’t <em>here.</em>",
+    "text": "The link may be mistyped, or the page never existed. Everything on this site is on one page.",
+    "cta": "Go to the home page",
+    "badge": "404<br />NOT FOUND"
   }
 }

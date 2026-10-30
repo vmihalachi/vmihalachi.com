@@ -16,8 +16,9 @@ that isn't there, ask.
 
 Text lives in `src/i18n/en.json`, `it.json`, and `ro.json`, grouped by section (`hero`,
 `work`, `project` for mybackhurts, `sunnysays`, `pagliacci`, `tools` for the open-source card, `interests`, `contact`, and so
-on). `index.html` holds only `{{ section.key }}` placeholders. Look up the placeholder in
-the template to see where a string is used.
+on, plus `notFound` for the 404 page). `index.html` and `404.html` hold only
+`{{ section.key }}` placeholders. Look up the placeholder in the template to see where a
+string is used.
 
 ## 3. Change all three languages together
 

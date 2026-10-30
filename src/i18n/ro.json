@@ -7,6 +7,7 @@
   "nav": {
     "label": "Navigare principală",
     "home": "Vlad Mihalachi, începutul paginii",
+    "skip": "Sari la conținut",
     "work": "Muncă",
     "projects": "Proiecte",
     "interests": "Interese",
@@ -33,7 +34,7 @@
     "title": "Mă doare spatele.<br />Așa că am făcut o aplicație.",
     "description": "te ridică de pe scaun la fiecare 45 de minute pentru câteva mișcări rapide. Dacă îi dai voie, camera web numără repetările.",
     "fact1": "Repetări numărate pe dispozitiv",
-    "fact2": "macOS · Windows · iPhone · iPad",
+    "fact2": "macOS · Windows · iPhone · iPad · Android",
     "url": "https://mybackhurts.app/ro/",
     "link": "Vezi mybackhurts.app",
     "artExercise": "Genuflexiune la scaun"
@@ -41,7 +42,7 @@
   "sunnysays": {
     "mark": "JUCĂRIE DE BIROU",
     "title": "Apoi am făcut ceva<br />doar de <span>joacă.</span>",
-    "description": "e o floarea-soarelui din bara de meniu sau din zona de notificare care spune câte ceva de vreo două ori pe oră. Îi spui șșt și își pleacă capul.",
+    "description": "e o floarea-soarelui din bara de meniu sau din zona de notificare care spune câte ceva cam o dată pe oră. Îi spui șșt și își pleacă capul.",
     "fact1": "Tace în apeluri",
     "fact2": "Fără rețea",
     "fact3": "macOS · Windows",
@@ -55,10 +56,10 @@
   "pagliacci": {
     "mark": "CLOVN DE BIROU",
     "title": "Acum construiesc<br />un clovn <span>trist.</span>",
-    "description": "e un clovn din bara de meniu sau din zona de notificare care spune o glumă scurtă de vreo două ori pe oră, uneori cu o pauză înainte de poantă. Amuzant și puțin trist.",
+    "description": "e un clovn din bara de meniu sau din zona de notificare care spune o glumă scurtă cam o dată pe oră, uneori cu o pauză înainte de poantă. Amuzant și puțin trist.",
     "fact1": "Cu vocea lui, în engleză și italiană",
     "fact2": "Tace în apeluri",
-    "fact3": "În design · întâi macOS",
+    "fact3": "În dezvoltare · macOS · Windows",
     "url": "https://pagliacci.app/",
     "link": "Fă cunoștință cu Mister Pagliacci",
     "artLine": "…dar cine îl face pe Mister Pagliacci să râdă?",
@@ -92,5 +93,12 @@
   "footer": {
     "tagline": "Încă pun întrebări.",
     "openSource": "Acest site este open source"
+  },
+  "notFound": {
+    "title": "Vlad Mihalachi — Pagina nu a fost găsită",
+    "heading": "Pagina asta<br />nu <em>există.</em>",
+    "text": "Poate linkul e scris greșit sau pagina n-a existat niciodată. Tot site-ul e o singură pagină.",
+    "cta": "Mergi la pagina principală",
+    "badge": "404<br />NEGĂSITĂ"
   }
 }

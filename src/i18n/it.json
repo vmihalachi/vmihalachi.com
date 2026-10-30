@@ -7,6 +7,7 @@
   "nav": {
     "label": "Navigazione principale",
     "home": "Vlad Mihalachi, inizio pagina",
+    "skip": "Vai al contenuto",
     "work": "Lavoro",
     "projects": "Progetti",
     "interests": "Interessi",
@@ -33,7 +34,7 @@
     "title": "Mi fa male la schiena.<br />Così ho creato un’app.",
     "description": "ti fa alzare dalla sedia ogni 45 minuti per qualche movimento veloce. Se glielo permetti, la webcam conta le ripetizioni.",
     "fact1": "Ripetizioni contate sul dispositivo",
-    "fact2": "macOS · Windows · iPhone · iPad",
+    "fact2": "macOS · Windows · iPhone · iPad · Android",
     "url": "https://mybackhurts.app/it/",
     "link": "Vai su mybackhurts.app",
     "artExercise": "Squat sulla sedia"
@@ -41,7 +42,7 @@
   "sunnysays": {
     "mark": "GIOCATTOLO DA SCRIVANIA",
     "title": "Poi ho fatto qualcosa<br />solo per <span>gioco.</span>",
-    "description": "è un girasole nella barra dei menu o nell’area di notifica che dice qualcosa di piccolo un paio di volte all’ora. Digli shh e china la testa.",
+    "description": "è un girasole nella barra dei menu o nell’area di notifica che dice qualcosa di piccolo più o meno una volta all’ora. Digli shh e china la testa.",
     "fact1": "Zitto in chiamata",
     "fact2": "Niente rete",
     "fact3": "macOS · Windows",
@@ -55,10 +56,10 @@
   "pagliacci": {
     "mark": "CLOWN DA SCRIVANIA",
     "title": "Ora sto costruendo<br />un clown <span>triste.</span>",
-    "description": "è un clown nella barra dei menu o nell’area di notifica che racconta una barzelletta breve un paio di volte all’ora, a volte con una pausa prima della battuta. Fa ridere, e un po’ di tristezza.",
+    "description": "è un clown nella barra dei menu o nell’area di notifica che racconta una barzelletta breve più o meno una volta all’ora, a volte con una pausa prima della battuta. Fa ridere, e un po’ di tristezza.",
     "fact1": "La sua voce, in italiano e inglese",
     "fact2": "Zitto in chiamata",
-    "fact3": "In progettazione · prima macOS",
+    "fact3": "In sviluppo · macOS · Windows",
     "url": "https://pagliacci.app/it/",
     "link": "Conosci Mister Pagliacci",
     "artLine": "…ma chi fa ridere Mister Pagliacci?",
@@ -92,5 +93,12 @@
   "footer": {
     "tagline": "Ancora pieno di domande.",
     "openSource": "Questo sito è open source"
+  },
+  "notFound": {
+    "title": "Vlad Mihalachi — Pagina non trovata",
+    "heading": "Questa pagina<br />non <em>c’è.</em>",
+    "text": "Forse il link è scritto male, o la pagina non è mai esistita. Tutto il sito sta in una pagina sola.",
+    "cta": "Vai alla pagina iniziale",
+    "badge": "404<br />NON TROVATA"
   }
 }

@@ -1,7 +1,7 @@
-// Renders one static page per language from the index.html template and the strings in
-// src/i18n/. The template uses {{ key }} placeholders: most come from src/i18n/<code>.json,
-// and {{ page.* }} values are generated here from src/i18n/languages.json. Strings are
-// inserted as-is, so they may contain HTML.
+// Renders each language's pages from the templates (index.html and 404.html) and the
+// strings in src/i18n/. The templates use {{ key }} placeholders: most come from
+// src/i18n/<code>.json, and {{ page.* }} values are generated here from
+// src/i18n/languages.json. Strings are inserted as-is, so they may contain HTML.
 //
 // Used as a Vite plugin (vite.config.ts) and, run directly, as a check that every language
 // has the same keys and renders the same element IDs.
@@ -15,8 +15,12 @@ const read = (path) => readFileSync(resolve(projectRoot, path), "utf8");
 
 export const loadLanguages = () => JSON.parse(read("src/i18n/languages.json"));
 
-// "/" → "index.html", "/it/" → "it/index.html"
-const pageFile = (language) => `${language.path.slice(1)}index.html`;
+// The page templates at the project root. Every language renders each one, and only the
+// main language's pages exist on disk.
+const templates = ["index.html", "404.html"];
+
+// ("/", "index.html") → "index.html", ("/it/", "404.html") → "it/404.html"
+const pageFile = (language, template) => `${language.path.slice(1)}${template}`;
 
 const flatten = (strings, prefix = "") =>
   Object.entries(strings).flatMap(([key, value]) =>
@@ -29,6 +33,7 @@ function pageValues(language, languages) {
   return {
     "page.lang": language.code,
     "page.url": url(language),
+    "page.home": language.path,
     "page.locale": language.locale,
     "page.alternateLinks": [
       ...languages.map(
@@ -50,8 +55,10 @@ function pageValues(language, languages) {
   };
 }
 
-// Renders every language from the template, or throws listing every problem found.
-export function renderPages(template = read("index.html")) {
+// Renders every template in every language as a Map of template → language code → HTML, or
+// throws listing every problem found. `sources` can hold a template's HTML by file name;
+// the others are read from disk.
+export function renderPages(sources = {}) {
   const languages = loadLanguages();
   const problems = new Set();
   const strings = new Map(
@@ -74,36 +81,40 @@ export function renderPages(template = read("index.html")) {
     }
   }
 
+  // main.js and the nav anchors rely on the same IDs existing in every language.
+  const ids = (html) => [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]).join(" ");
   const used = new Set();
   const pages = new Map();
-  for (const language of languages) {
-    const values = new Map([
-      ...strings.get(language.code),
-      ...Object.entries(pageValues(language, languages)),
-    ]);
-    const html = template.replace(/{{\s*([\w.]+)\s*}}/g, (placeholder, key) => {
-      used.add(key);
-      if (values.has(key)) return values.get(key);
-      // A key missing from a translation is already reported above.
-      if (language === main || !mainKeys.includes(key)) {
-        problems.add(`${language.code}.json has no string for ${placeholder}`);
+  for (const template of templates) {
+    const source = sources[template] ?? read(template);
+    const rendered = new Map();
+    for (const language of languages) {
+      const values = new Map([
+        ...strings.get(language.code),
+        ...Object.entries(pageValues(language, languages)),
+      ]);
+      const html = source.replace(/{{\s*([\w.]+)\s*}}/g, (placeholder, key) => {
+        used.add(key);
+        if (values.has(key)) return values.get(key);
+        // A key missing from a translation is already reported above.
+        if (language === main || !mainKeys.includes(key)) {
+          problems.add(`${language.code}.json has no string for ${placeholder} in ${template}`);
+        }
+        return placeholder;
+      });
+      rendered.set(language.code, html);
+    }
+    const mainIds = ids(rendered.get(main.code));
+    for (const { code } of languages.slice(1)) {
+      if (ids(rendered.get(code)) !== mainIds) {
+        problems.add(`${code} renders different element IDs than ${main.code} in ${template}`);
       }
-      return placeholder;
-    });
-    pages.set(language.code, html);
+    }
+    pages.set(template, rendered);
   }
 
   for (const key of mainKeys) {
-    if (!used.has(key)) problems.add(`"${key}" is not used in index.html`);
-  }
-
-  // main.js and the nav anchors rely on the same IDs existing in every language.
-  const ids = (html) => [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]).join(" ");
-  const mainIds = ids(pages.get(main.code));
-  for (const { code } of languages.slice(1)) {
-    if (ids(pages.get(code)) !== mainIds) {
-      problems.add(`${code} renders different element IDs than ${main.code}`);
-    }
+    if (!used.has(key)) problems.add(`"${key}" is not used in ${templates.join(" or ")}`);
   }
 
   if (problems.size > 0) throw new Error(`Translation problems:\n- ${[...problems].join("\n- ")}`);
@@ -129,12 +140,17 @@ ${urls}
 }
 
 export default function i18nPages() {
-  // Only the main language's page exists on disk; the others are served from the template.
+  // Only the main language's pages exist on disk; the others are served from the templates.
   const translatedPages = () =>
     new Map(
       loadLanguages()
         .slice(1)
-        .map((language) => [resolve(projectRoot, pageFile(language)), language]),
+        .flatMap((language) =>
+          templates.map((template) => [
+            resolve(projectRoot, pageFile(language, template)),
+            { language, template },
+          ]),
+        ),
     );
 
   return {
@@ -145,10 +161,14 @@ export default function i18nPages() {
       build: {
         rollupOptions: {
           input: Object.fromEntries(
-            loadLanguages().map((language) => [
-              language.code,
-              resolve(projectRoot, pageFile(language)),
-            ]),
+            loadLanguages().flatMap((language) =>
+              templates.map((template) => [
+                template === "index.html"
+                  ? language.code
+                  : `${language.code}-${template.slice(0, -5)}`,
+                resolve(projectRoot, pageFile(language, template)),
+              ]),
+            ),
           ),
         },
       },
@@ -160,32 +180,38 @@ export default function i18nPages() {
     },
 
     load(id) {
-      return translatedPages().has(id) ? read("index.html") : null;
+      const page = translatedPages().get(id);
+      return page ? read(page.template) : null;
     },
 
     transformIndexHtml: {
       order: "pre",
       handler(html, { path }) {
-        const { languages, pages } = renderPages(html);
-        const dir = path.replace(/index\.html$/, "");
-        const language = languages.find((candidate) => candidate.path === dir);
+        const slash = path.lastIndexOf("/") + 1;
+        const template = path.slice(slash) || "index.html";
+        if (!templates.includes(template)) throw new Error(`No page is built from ${path}.`);
+        const { languages, pages } = renderPages({ [template]: html });
+        const language = languages.find((candidate) => candidate.path === path.slice(0, slash));
         if (!language) throw new Error(`No language is served at ${path}.`);
-        return pages.get(language.code);
+        return pages.get(template).get(language.code);
       },
     },
 
     configureServer(server) {
-      // Serve /it/ and the other translated pages in dev, and reload when strings change.
+      // Serve /it/, /it/404.html and the other translated pages in dev, and reload when
+      // strings change.
       server.middlewares.use(async (req, res, next) => {
         const url = req.url?.split("?")[0];
-        const language = loadLanguages()
-          .slice(1)
-          .find(({ path }) => url === path || url === `${path}index.html`);
-        if (!language) return next();
+        const page = [...translatedPages().values()].find(
+          ({ language, template }) =>
+            url === `${language.path}${template}` ||
+            (template === "index.html" && url === language.path),
+        );
+        if (!page) return next();
         try {
           const html = await server.transformIndexHtml(
-            `${language.path}index.html`,
-            read("index.html"),
+            `${page.language.path}${page.template}`,
+            read(page.template),
           );
           res.setHeader("Content-Type", "text/html");
           res.end(html);
