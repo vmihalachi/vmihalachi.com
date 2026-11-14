@@ -75,7 +75,8 @@ npm run preview  # vp preview
   - Reveal animations apply only under the `.js` class, which the inline `<head>` script
     adds, so content stays visible without JS.
   - It has a `prefers-reduced-motion` override and a single mobile breakpoint at `720px`.
-- `public/` is copied as-is: the favicon (`favicon.svg`, and `favicon.ico` rendered from it at 16,
+- `public/` is copied as-is: the favicon (`favicon.svg`, `favicon-96.png` rendered from it for Google Search, which
+  reads only raster favicons, and `favicon.ico` rendered from it at 16,
   32 and 48 px for crawlers and old clients that probe that path), the self-hosted fonts (`public/fonts/`, declared in
   `src/fonts.css`, latin and latin-ext subsets from Google Fonts), `robots.txt`, the web manifest, and
   `_headers` (Cloudflare's response headers: CSP, HSTS, caching).
