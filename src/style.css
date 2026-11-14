@@ -1596,6 +1596,27 @@ h1 em {
   line-height: 1.6;
   max-width: 500px;
 }
+/* The link card sits beside the text, tilted like the interest cards */
+.contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 520px);
+  column-gap: 4rem;
+  align-content: start;
+}
+.contact > :not(.contact-card) {
+  grid-column: 1;
+}
+.contact-card {
+  grid-column: 2;
+  grid-row: 1 / span 4;
+  align-self: center;
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--ink);
+  border-radius: 1rem;
+  box-shadow: 7px 8px 0 var(--coral);
+  transform: rotate(1.5deg);
+}
 .contact-links {
   display: flex;
   flex-direction: column;
@@ -1716,6 +1737,13 @@ footer a:hover {
   }
 }
 @media (max-width: 720px) {
+  .contact {
+    display: block;
+  }
+  .contact-card {
+    margin-top: 3rem;
+    transform: rotate(1deg);
+  }
   .hero,
   .manifesto-grid {
     grid-template-columns: 1fr;

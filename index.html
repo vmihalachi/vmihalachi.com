@@ -16,6 +16,7 @@
     {{ page.alternateLocales }}
     <meta property="og:title" content="{{ meta.title }}" />
     <meta property="og:description" content="{{ meta.description }}" />
+    <meta name="robots" content="max-image-preview:large" />
     <meta property="og:image" content="https://vmihalachi.com/og-image.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
@@ -35,6 +36,7 @@
             "@id": "https://vmihalachi.com/#person",
             "name": "Vlad Mihalachi",
             "url": "https://vmihalachi.com/",
+            "image": "https://vmihalachi.com/og-image.png",
             "jobTitle": "Senior Software Engineer",
             "worksFor": { "@type": "Organization", "name": "Microsoft" },
             "sameAs": ["https://www.linkedin.com/in/vmihalachi/", "https://github.com/vmihalachi"],
@@ -665,6 +667,16 @@
             {{ contact.github }} <span aria-hidden="true">↗</span></a
           >
         </div>
+        <!-- The link card, shown as an image: Google takes result thumbnails from images in the page. -->
+        <img
+          class="contact-card"
+          src="/og-image.png"
+          alt="{{ meta.imageAlt }}"
+          width="1200"
+          height="630"
+          loading="lazy"
+          decoding="async"
+        />
       </section>
     </main>
     <footer>
