@@ -85,7 +85,7 @@ npm run preview  # vp preview
   - CI runs `npm ci && npm run check && npm run build`, then `wrangler deploy` with `wrangler.json`
     (the `vmihalachi-com` Worker: `/it` redirects to `/it/`, a missing path gets the nearest
     `404.html`, no logs).
-  - Pushes to `master` deploy to production; PRs from this repository upload a preview version
+  - Pushes to `main` deploy to production; PRs from this repository upload a preview version
     (`wrangler versions upload --preview-alias pr-<number>`; the URL is in the job summary).
 
 ## Conventions and gotchas

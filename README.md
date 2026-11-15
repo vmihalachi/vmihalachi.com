@@ -30,7 +30,7 @@ Static files served as-is (favicon, `robots.txt`, web manifest and the Cloudflar
 Automated via GitHub Actions (`.github/workflows/deploy.yml`) to Cloudflare Workers static
 assets: `wrangler deploy` uploads `dist/` to the `vmihalachi-com` Worker (`wrangler.json`),
 which serves `vmihalachi.com` with no Worker code and no logs. It needs the
-`CLOUDFLARE_API_TOKEN` secret and the `CLOUDFLARE_ACCOUNT_ID` variable. Pushes to `master`
+`CLOUDFLARE_API_TOKEN` secret and the `CLOUDFLARE_ACCOUNT_ID` variable. Pushes to `main`
 deploy to production; pull requests from this repository upload a preview version at
 `pr-<number>-vmihalachi-com.<subdomain>.workers.dev` (the URL is in the job summary).
 `www.vmihalachi.com` redirects to the apex through a Cloudflare redirect rule.
