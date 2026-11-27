@@ -42,7 +42,8 @@ npm run preview  # vp preview
   - `404.html` is the not-found page's template, built the same way into `/404.html`,
     `/it/404.html` and `/ro/404.html`. Cloudflare serves the nearest one for a missing path.
   - `src/i18n/en.json`, `it.json`, and `ro.json` hold the strings. Values are inserted
-    as-is, so they may contain HTML (`<br />`, `<em>`, the counter `<span>`s).
+    as-is, so they may contain HTML (`<br />`, the counter `<span>`s, and the `<span>`
+    around "click." in `work.title`).
   - `src/i18n/languages.json` lists the languages (code, name, path, `og:locale`). The
     first one is the default.
   - `scripts/i18n.mjs` is a Vite plugin that renders each language's pages from both
@@ -59,7 +60,8 @@ npm run preview  # vp preview
     `#professional-experience`. Microsoft tenure is counted from December 2019;
     professional experience is Microsoft years + 3.
   - Runs an `IntersectionObserver` that adds `.is-visible` to every
-    `section:not(.hero)` and `.interest-card`.
+    `section:not(.hero)` and `.interest-card`. Sections don't fade in: the class only
+    starts the Work band's "click." and each interest drawing.
   - Plays each `.project-art` drawing when it scrolls into view and resets it once it is
     fully off screen, so it plays again on the next visit: the mybackhurts card finishes
     its set of squats (rep 6 to 10), Sunny says its four lines, then dozes off, Mister
@@ -72,14 +74,17 @@ npm run preview  # vp preview
   translated like any other copy.
 - `src/style.css`:
   - Design tokens are CSS custom properties in `:root`.
-  - Reveal animations apply only under the `.js` class, which the inline `<head>` script
-    adds, so content stays visible without JS.
+  - Nothing fades or slides in on scroll. What plays on arrival ("click.", the interest
+    drawings, the project art) waits under the `.js` class, which the inline `<head>`
+    script adds, so without JS everything shows at rest. Don't add scroll reveals to
+    sections or cards.
   - It has a `prefers-reduced-motion` override and a single mobile breakpoint at `720px`.
 - `public/` is copied as-is: the favicon (`favicon.svg`, `favicon-96.png` rendered from it for Google Search, which
   reads only raster favicons, and `favicon.ico` rendered from it at 16,
   32 and 48 px for crawlers and old clients that probe that path), the self-hosted fonts (`public/fonts/`, declared in
-  `src/fonts.css`, latin and latin-ext subsets from Google Fonts), `robots.txt`, the web manifest, and
-  `_headers` (Cloudflare's response headers: CSP, HSTS, caching).
+  `src/fonts.css`, latin and latin-ext subsets: Fraunces and DM Mono from Google Fonts,
+  Atkinson Hyperlegible Next, OFL, from the `@fontsource/atkinson-hyperlegible-next` npm
+  package), `robots.txt`, the web manifest, and `_headers` (Cloudflare's response headers: CSP, HSTS, caching).
 - Deployment runs through GitHub Actions (`.github/workflows/deploy.yml`) to Cloudflare Workers
   static assets:
   - CI runs `npm ci && npm run check && npm run build`, then `wrangler deploy` with `wrangler.json`
@@ -106,8 +111,10 @@ npm run preview  # vp preview
 - When editing copy, keep the counter element IDs used by `main.js` in every language's
   strings. Their text is what no-JS visitors see, so keep those fallbacks current as well.
 - Nav `href`s must match section `id`s.
-- Section marks are numbered (`01 / {{ work.mark }}`, `02 / …`); the numbers live in the
-  template, so renumber them there when sections change.
+- No labels above headings: no section marks, eyebrows or numbering. Each section's `h2`
+  is its visible heading.
+- One accent word on the page: "click." in the Work band, which pops in the way it says.
+  Other headings stay one color, with no `<em>` or highlighted `<span>`.
 - External links use `target="_blank" rel="noopener noreferrer"`.
 - The meta description, `og:description`, and `twitter:description` all use
   `{{ meta.description }}`, so they stay identical. The sitemap is generated from

@@ -15,19 +15,16 @@
     "language": "Language"
   },
   "hero": {
-    "title": "I build software<br />that earns its <em>place.</em>",
+    "title": "I build software<br />that earns its place.",
     "intro": "I’m Vlad, a software engineer across the stack. I untangle things until they’re simple enough to explain.",
-    "cta": "My work",
-    "badge": "CURIOUS<br />BY NATURE"
+    "cta": "My work"
   },
   "work": {
-    "mark": "WORK",
     "title": "I like the messy part<br />before things <span>click.</span>",
     "experience": "I’m a Senior Software Engineer at Microsoft: <span id=\"professional-experience\">9+</span> years building software, the last <span id=\"microsoft-experience\">6+</span> there.",
     "openSource": "Off the clock, I read open-source code and chip in when I have something useful to add."
   },
   "projects": {
-    "mark": "SIDE PROJECTS",
     "title": "Side projects"
   },
   "project": {
@@ -40,8 +37,7 @@
     "artExercise": "Chair squat"
   },
   "sunnysays": {
-    "mark": "DESK TOY",
-    "title": "Then I built something<br />just for <span>fun.</span>",
+    "title": "Then I built something<br />just for fun.",
     "description": "is a sunflower in your menu bar or tray that says something small about once an hour. Tell it shh and it droops.",
     "fact1": "Quiet on calls",
     "fact2": "No network",
@@ -54,8 +50,7 @@
     "line4": "I think the desk is slightly tilted. Or I am."
   },
   "pagliacci": {
-    "mark": "DESK CLOWN",
-    "title": "Now I’m building<br />a sad <span>clown.</span>",
+    "title": "Now I’m building<br />a sad clown.",
     "description": "is a clown in your menu bar or tray who tells a short joke about once an hour, sometimes with a beat before the punchline. Funny, and a little sad.",
     "fact1": "His own voice, in English and Italian",
     "fact2": "Quiet on calls",
@@ -66,25 +61,22 @@
     "artShh": "Shh"
   },
   "tools": {
-    "mark": "OPEN SOURCE",
-    "title": "And the open-source<br />parts <span>underneath.</span>",
+    "title": "And the open-source<br />parts underneath.",
     "laching": "is the plumbing under all three apps: reminders, quiet hours, and call detection without the camera.",
     "untranslated": "fails the build when a Blazor page shows text nobody translated.",
     "fact1": "Swift · .NET · Kotlin",
     "fact2": "MIT"
   },
   "interests": {
-    "mark": "OFF THE CLOCK",
     "title": "Things that fascinate me",
     "maths": "Maths",
-    "mathsText": "Patterns, proofs, and the quiet pleasure of an elegant solution.",
+    "mathsText": "A Fibonacci spiral, one square at a time.",
     "physics": "Physics",
-    "physicsText": "How the universe holds together, and why it behaves the way it does.",
+    "physicsText": "Newton’s cradle. What goes in one end comes out the other.",
     "biology": "Biology",
-    "biologyText": "Living systems are full of strange, practical solutions."
+    "biologyText": "A double helix, turning."
   },
   "contact": {
-    "mark": "SAY HELLO",
     "title": "Want to talk?",
     "text": "I’m happy to talk about software, open source, or anything we still don’t fully understand.",
     "linkedin": "Find me on LinkedIn",
@@ -96,9 +88,9 @@
   },
   "notFound": {
     "title": "Vlad Mihalachi — Page not found",
-    "heading": "This page<br />isn’t <em>here.</em>",
+    "heading": "This page<br />isn’t here.",
     "text": "The link may be mistyped, or the page never existed. Everything on this site is on one page.",
     "cta": "Go to the home page",
-    "badge": "404<br />NOT FOUND"
+    "badge": "404"
   }
 }

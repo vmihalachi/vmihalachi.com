@@ -25,8 +25,9 @@ string is used.
 - Edit English, then write the Italian and Romanian versions so they read naturally in
   each language. Don't translate word for word. The other languages may be phrased
   differently, but they must say the same things.
-- Keep the same inline HTML in each language: `<br />` line breaks, `<em>`, and the
-  `<span>` around the highlighted word in titles.
+- Keep the same inline HTML in each language: `<br />` line breaks and the `<span>`
+  around "click." in `work.title` (its translation's last word). That is the page's one
+  accent word, so don't add `<em>` or a highlighted `<span>` to other titles.
 - Use each language's typography: curly apostrophes (’) in English and Italian, and
   Romanian `ș` and `ț` with a comma below (not `ş`/`ţ` with a cedilla).
 - New text: add a placeholder to `index.html` and the same key to all three files. The
@@ -46,8 +47,9 @@ string is used.
   line, written in Italian and translated like the rest) and `pagliacci.artShh`.
   Sunny talks for a time proportional to the line's length, so keep its lines one short
   sentence.
-- `nav.*` labels and section `mark`s are short. Section IDs and anchors stay in English
-  in every language.
+- `nav.*` labels are short. Sections have no marks, eyebrows or caps labels above their
+  headings, so don't add strings for them. Section IDs and anchors stay in English in
+  every language.
 
 ## 5. Check it
 

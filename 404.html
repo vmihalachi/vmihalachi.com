@@ -19,7 +19,7 @@
     />
     <link
       rel="preload"
-      href="/fonts/dmsans-v17-latin.woff2"
+      href="/fonts/atkinson-hyperlegible-next-v7-latin-400.woff2"
       as="font"
       type="font/woff2"
       crossorigin
@@ -40,7 +40,7 @@
         <div class="hero-copy">
           <h1 id="not-found-title">{{ notFound.heading }}</h1>
           <p class="intro">{{ notFound.text }}</p>
-          <a class="button" href="{{ page.home }}"
+          <a class="button button-forward" href="{{ page.home }}"
             >{{ notFound.cta }} <span aria-hidden="true">→</span></a
           >
         </div>
@@ -48,8 +48,6 @@
           <div class="orbit orbit-one"><span class="planet"></span></div>
           <div class="orbit orbit-two"><span class="planet"></span></div>
           <div class="core">VM</div>
-          <span class="star star-one">✦</span>
-          <span class="star star-two">✦</span>
           <span class="orbit-label">{{ notFound.badge }}</span>
         </div>
       </section>

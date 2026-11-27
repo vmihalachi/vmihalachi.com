@@ -25,16 +25,17 @@ project belongs in the stack. Use a short lowercase slug (for example `sunnysays
 class, the ID, and the string keys. The card has these parts:
 
 - `<div class="manifesto side-project tone-<slug>">`.
-- `<p class="section-mark">{{ <slug>.mark }}</p>`. Only the first card carries the
-  `02 /` number, because the number belongs to the section.
-- `<h3 id="<slug>-title">{{ <slug>.title }}</h3>`. A `<span>` around a word in the title
-  string gets the highlight animation, as in the other cards.
+- `<h3 id="<slug>-title">{{ <slug>.title }}</h3>`, with no label above it. The title is
+  plain text: no `<span>` or `<em>` around a word. The page's one accent word is "click."
+  in the Work band.
 - The art: `<figure class="project-art <prefix>-art" aria-hidden="true">`, with a comment
   above it saying where the drawing comes from (see step 4).
 - `.manifesto-copy` holds:
-  - the name link (`.project-name-link` around `<span class="project-name">`) followed by
-    `{{ <slug>.description }}`;
+  - the name link (`.project-name-link`, the name as plain text, underlined in the
+    app's accent) followed by `{{ <slug>.description }}`;
   - an optional `{{ <slug>.details }}` paragraph;
+  - an optional `<ul class="facts">`, one short fact per `<li>` (`{{ <slug>.fact1 }}` and
+    on), shown as plain lines with no chips or separators;
   - the `.project-link` with `<span aria-hidden="true">↗</span>`;
   - `<p class="small">{{ <slug>.status }}</p>`.
 - External links use `target="_blank" rel="noopener noreferrer"`.
@@ -44,7 +45,7 @@ class, the ID, and the string keys. The card has these parts:
 ## 3. Add the strings to every language
 
 Add a top-level `<slug>` object with the same keys to `src/i18n/en.json`, `it.json`, and
-`ro.json`: `mark`, `title`, `description`, `details` (if used), `link`, `status`, plus any
+`ro.json`: `title`, `description`, `details` (if used), `link`, `status`, plus any
 text the art shows (`artSomething`). Follow the `edit-copy` skill for voice and
 translation. The build fails if any language is missing a key or has an extra one.
 
@@ -69,15 +70,15 @@ Sunny from the sunnysays character sheet, Mister Pagliacci's menu bar glyph). Ne
 ## 5. Give it the project's colors
 
 Add a `.side-project.tone-<slug>` rule next to the others in `src/style.css` and set
-`--tone` (the page tint while the card is read), `--accent`, `--accent-text`, `--chip`,
-and `--muted`, taken from the project's own site or app. Add a one-line comment naming
+`--tone` (the page tint while the card is read), `--accent`, `--accent-text` and
+`--muted`, taken from the project's own site or app. Add a one-line comment naming
 the source, as the others do. `--accent-text` and `--muted` must meet WCAG AA contrast on
 `--tone`.
 
 ## 6. Check it
 
 1. `npm run check` (format, lint, types, CSP hash, i18n) and `npm run build`.
-2. Preview `/`, `/it/`, and `/ro/`. Check the reveal, the art playing and resetting, the
-   page tint, mobile width, and reduced motion.
+2. Preview `/`, `/it/`, and `/ro/`. Check the art playing and resetting, the page tint,
+   mobile width, and reduced motion. Don't add a scroll reveal to the card.
 3. Update the "Architecture" notes in `AGENTS.md` if the card adds something new,
    such as a new kind of JS animation.
