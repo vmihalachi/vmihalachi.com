@@ -1679,10 +1679,11 @@ footer a:hover {
   .lang-switch a {
     padding: 0.3rem clamp(0.3rem, 0.3rem + (100vw - 320px) * 0.04, 0.4rem);
   }
-  /* As the items close up, so do their focus rings (4px to 2px), to keep clear of the next */
+  /* As the items close up, so do their focus rings (4px at 360px to 1px at 300px), to keep
+     clear of the next word */
   .nav-links a:focus-visible,
   .lang-switch a:focus-visible {
-    outline-offset: clamp(2px, 2px + (100vw - 320px) / 20, 4px);
+    outline-offset: clamp(1px, 1px + (100vw - 300px) / 20, 4px);
   }
   .project-art {
     margin-top: 2.5rem;

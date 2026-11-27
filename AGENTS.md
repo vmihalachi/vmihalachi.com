@@ -85,7 +85,8 @@ npm run preview  # vp preview
     sections or cards.
   - It has a `prefers-reduced-motion` override and one mobile breakpoint at `720px`. Inside
     it, from 360px down to 320px the menu bar's item padding, glyph width and focus-ring
-    offset shrink with the screen through `clamp()` (no breakpoint, so nothing jumps), and
+    offset (that one on down to 300px) shrink with the screen through `clamp()` (no
+    breakpoint, so nothing jumps), and
     the bar keeps two rows without shrinking the text. Below `314px` two rows can't hold the
     language codes, so a last block restacks the bar into at most three rows, raises
     `scroll-padding-top` to clear it, and turns on the soft hyphens (`&shy;`) in the two long
