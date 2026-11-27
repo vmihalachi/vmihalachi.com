@@ -14,7 +14,8 @@ permissions:
 
 jobs:
   # Checks and builds every change. main deploys dist/ to the vmihalachi-com Worker (wrangler.json),
-  # served on vmihalachi.com; a pull request from this repository uploads a preview version instead.
+  # served on vmihalachi.com; a pull request from this repository uploads a preview version instead,
+  # except Dependabot's, which get no secrets.
   build_and_deploy:
     runs-on: ubuntu-latest
     name: ${{ github.event_name == 'pull_request' && 'Check and preview' || 'Check and deploy' }}
@@ -37,12 +38,15 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
         run: npx --yes wrangler@4.162.0 deploy
       # Uploads a version that serves no production traffic, at pr-<number>-vmihalachi-com.<subdomain>.workers.dev.
+      # Dependabot's runs get no Actions secrets, so its pull requests skip the preview.
       - name: Upload preview
-        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
+        # The default shell has no pipefail, so a failed upload would exit with tee's status.
         run: |
+          set -o pipefail
           npx --yes wrangler@4.162.0 versions upload --preview-alias "pr-$PR_NUMBER" | tee upload.log
           grep -o 'https://[^ ]*workers\.dev' upload.log | sed 's/^/Preview: /' >> "$GITHUB_STEP_SUMMARY" || true
