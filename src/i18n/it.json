@@ -68,7 +68,7 @@
     "fact2": "MIT"
   },
   "interests": {
-    "title": "Cose che mi affascinano",
+    "title": "Cose che mi affa&shy;scinano",
     "maths": "Matematica",
     "mathsText": "Una spirale di Fibonacci, un quadrato alla volta.",
     "physics": "Fisica",
@@ -77,7 +77,7 @@
     "biologyText": "Una doppia elica che gira."
   },
   "contact": {
-    "title": "Ti va di fare due chiacchiere?",
+    "title": "Ti va di fare due chiac&shy;chiere?",
     "text": "Parlo volentieri di software, di open source o di tutto quello che ancora non capiamo fino in fondo.",
     "linkedin": "Mi trovi su LinkedIn",
     "github": "Mi trovi su GitHub"
