@@ -88,9 +88,11 @@ npm run preview  # vp preview
     offset (that one on down to 300px) shrink with the screen through `clamp()` (no
     breakpoint, so nothing jumps), and
     the bar keeps two rows without shrinking the text. Below `314px` two rows can't hold the
-    language codes, so a last block restacks the bar into at most three rows, raises
-    `scroll-padding-top` to clear it, and turns on the soft hyphens (`&shy;`) in the two long
-    Italian headings; above it section headings don't hyphenate. A panel's notch stops short
+    language codes, so a block restacks the bar into at most three rows and raises
+    `scroll-padding-top` to clear it. Below `312px`, where Italian's "chiacchiere?" no longer
+    fits a line of its own, a last block turns on the soft hyphens (`&shy;`) in the two long
+    Italian headings; above it section headings don't hyphenate (lines fill greedily, so an
+    earlier start would split a word that still fits). A panel's notch stops short
     of its rounded corner (`--say-corner`) when its glyph sits at the end of the bar.
   - `build.cssTarget` in `vite.config.ts` includes Safari 15, so the built CSS keeps its media
     queries as `max-width`. Keep it: without it the minifier writes `width<=720px`, which
