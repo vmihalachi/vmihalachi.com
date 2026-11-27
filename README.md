@@ -32,7 +32,8 @@ assets: `wrangler deploy` uploads `dist/` to the `vmihalachi-com` Worker (`wrang
 which serves `vmihalachi.com` with no Worker code and no logs. It needs the
 `CLOUDFLARE_API_TOKEN` secret and the `CLOUDFLARE_ACCOUNT_ID` variable. Pushes to `main`
 deploy to production; pull requests from this repository upload a preview version at
-`pr-<number>-vmihalachi-com.<subdomain>.workers.dev` (the URL is in the job summary).
+`pr-<number>-vmihalachi-com.<subdomain>.workers.dev` (the URL is in the job summary),
+except Dependabot's, which get no secrets.
 `www.vmihalachi.com` redirects to the apex through a Cloudflare redirect rule.
 
 Security headers and caching are configured in `public/_headers`. The

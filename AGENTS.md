@@ -87,6 +87,7 @@ npm run preview  # vp preview
     `404.html`, no logs).
   - Pushes to `main` deploy to production; PRs from this repository upload a preview version
     (`wrangler versions upload --preview-alias pr-<number>`; the URL is in the job summary).
+    Dependabot's PRs skip the preview, because its runs get no secrets.
 
 ## Conventions and gotchas
 
