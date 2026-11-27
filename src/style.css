@@ -188,6 +188,7 @@ footer {
   --say-bg: #fff;
   --say-ink: var(--ink);
   --say-border: 1.5px;
+  --say-corner: 0px;
   position: absolute;
   top: 14px;
   left: var(--say-x, 0);
@@ -197,6 +198,7 @@ footer {
   background: var(--say-bg);
   color: var(--say-ink);
   border: var(--say-border) solid var(--say-ink);
+  border-radius: var(--say-corner);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px) scale(0.96);
@@ -207,12 +209,14 @@ footer {
     visibility 0s 0.2s;
 }
 /* The notch points up at the glyph. It is placed from the panel's padding box, so the
-   border is taken off to center it on --say-notch, which is measured from the outer edge. */
+   border is taken off to center it on --say-notch, which is measured from the outer edge.
+   When the glyph sits at the very end of the bar (below 314px), the notch stops short of
+   the panel's rounded corner rather than running into it. */
 .say::before {
   content: "";
   position: absolute;
   top: -7.5px;
-  left: calc(var(--say-notch, 50%) - var(--say-border) - 7.5px);
+  left: min(var(--say-notch, 50%) - var(--say-border) - 7.5px, 100% - var(--say-corner) - 15px);
   box-sizing: border-box;
   width: 15px;
   height: 15px;
@@ -246,8 +250,8 @@ footer {
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  --say-corner: 6px;
   padding: 0.7rem 1rem 0.75rem 0.75rem;
-  border-radius: 6px;
   box-shadow: 4px 4px 0 #ff4d9d;
 }
 .say-mbh-figure {
@@ -326,8 +330,8 @@ footer {
   --say-bg: #fffdf7;
   --say-ink: #4a2e1a;
   --say-border: 2.5px;
+  --say-corner: 18px;
   padding: 0.75rem 1rem;
-  border-radius: 18px;
   font:
     600 1rem/1.35 "Atkinson Hyperlegible Next",
     sans-serif;
@@ -337,8 +341,8 @@ footer {
 .say-pagliacci {
   display: grid;
   align-items: center;
+  --say-corner: 12px;
   padding: 0.85rem 1.1rem;
-  border-radius: 12px;
   --say-ink: #1f2328;
   font:
     500 1.2rem/1.2 Fraunces,
@@ -566,6 +570,9 @@ h1 {
 .interests h2,
 .contact h2 {
   font-size: clamp(3rem, 5.5vw, 5rem);
+  /* A soft hyphen in a title is only for the narrowest screens (the last mobile block) */
+  -webkit-hyphens: none;
+  hyphens: none;
 }
 /* Each project's line sits a step below the section heading, so "Side projects" reads as
    the title over them rather than one more line of the same size */
@@ -1229,6 +1236,9 @@ h1 {
   display: flex;
   flex: 1;
   gap: 0.7rem;
+  /* No width of their own (flex: 1 gives them the room), so the menus' fixed lengths don't
+     set the column's minimum: on a 280px screen they close up instead of widening it */
+  width: 0;
 }
 .pg-menus i {
   width: 18px;
@@ -1637,25 +1647,42 @@ footer a:hover {
   html {
     scroll-padding-top: 6.5rem;
   }
-  /* Two rows: the bar itself (wordmark, apps, language), then the menus. Below 360px the
-     longest language needs less room around the items to keep two rows, which the next
-     block gives them, and below 314px two rows don't hold at all (the last block). */
+  /* Two rows: the bar itself (wordmark, apps, language), then the menus. From 360px down to
+     320px the room around the items shrinks with the screen, never the text, so the longest
+     language keeps two rows down to 314px with no step on the way. Below 314px two rows
+     don't hold at all (the last block). */
   .nav {
+    /* The menus' side padding: 0.65rem from 360px up, 0.4rem from 320px down */
+    --menu-pad: clamp(0.4rem, 0.4rem + (100vw - 320px) / 10, 0.65rem);
     height: auto;
     flex-wrap: wrap;
     row-gap: 0.3rem;
     padding-top: 0.6rem;
     padding-bottom: 0.45rem;
   }
+  /* The menus' padding hangs into both gutters, so the first lines up with the wordmark */
   .nav-links {
     order: 1;
-    width: calc(100% + 1.3rem);
-    margin-left: -0.65rem;
+    gap: clamp(0px, (100vw - 320px) * 0.04, 0.1rem);
+    width: calc(100% + 2 * var(--menu-pad));
+    margin-right: calc(-1 * var(--menu-pad));
+    margin-left: calc(-1 * var(--menu-pad));
     flex-wrap: wrap;
   }
+  .nav-links a {
+    padding: 0.32rem var(--menu-pad);
+  }
   .bar-app {
-    width: 38px;
+    width: clamp(34px, 34px + (100vw - 320px) / 10, 38px);
     height: 34px;
+  }
+  .lang-switch a {
+    padding: 0.3rem clamp(0.3rem, 0.3rem + (100vw - 320px) * 0.04, 0.4rem);
+  }
+  /* As the items close up, so do their focus rings (4px to 2px), to keep clear of the next */
+  .nav-links a:focus-visible,
+  .lang-switch a:focus-visible {
+    outline-offset: clamp(2px, 2px + (100vw - 320px) / 20, 4px);
   }
   .project-art {
     margin-top: 2.5rem;
@@ -1680,37 +1707,50 @@ footer a:hover {
     margin-top: 0.4rem;
   }
 }
-/* The narrowest phones (314-359px): the bar keeps its two rows, and the scroll padding
-   above still clears it, because the room around the items shrinks and the text doesn't.
-   The glyphs go back to their desktop width and the language codes and menus sit closer. */
-@media (max-width: 359px) {
-  .bar-app {
-    width: 34px;
-  }
-  .lang-switch a {
-    padding: 0.3rem;
-  }
-  /* The menus' padding hangs into both gutters, so the first lines up with the wordmark */
-  .nav-links {
-    gap: 0;
-    width: calc(100% + 0.8rem);
-    margin-right: -0.4rem;
-    margin-left: -0.4rem;
-  }
-  .nav-links a {
-    padding: 0.32rem 0.4rem;
-  }
-  /* The items sit closer, so the focus ring does too, to keep clear of the next word */
-  .nav-links a:focus-visible,
-  .lang-switch a:focus-visible {
-    outline-offset: 2px;
-  }
-}
-/* Below 313.7px the first row runs out of room: the language codes drop to a row of their
-   own and a menu can wrap, so the bar grows to three or four rows (up to 155px). The scroll
-   padding grows with it, so an anchor jump still lands below the bar. */
+/* Below 314px the first row has no room left for the language codes, so the bar restacks:
+   the wordmark and the apps, then the menus, with the codes on the right after the last one.
+   The menus become items of the bar itself (display: contents), so the codes share a row
+   with whichever menu wraps last instead of taking a fourth: three rows at most (122px).
+   The scroll padding grows with the bar, so an anchor jump still lands below it. */
 @media (max-width: 313.98px) {
   html {
-    scroll-padding-top: 10.75rem;
+    scroll-padding-top: 8.75rem;
+  }
+  .nav {
+    row-gap: 0;
+    column-gap: 0;
+  }
+  /* A full-width item with no height ends the first row */
+  .nav::after {
+    content: "";
+    order: 1;
+    flex-basis: 100%;
+  }
+  .nav-links {
+    display: contents;
+  }
+  /* Each menu hangs back over its own padding and pushes the next one on by as much, so
+     whichever menu starts a row lines up with the wordmark */
+  .nav-links a {
+    order: 2;
+    margin: 0.3rem var(--menu-pad) 0 calc(-1 * var(--menu-pad));
+  }
+  /* Nothing follows the apps on their row, so there is nothing to divide them from */
+  .bar-apps {
+    padding-right: 0;
+    margin-right: 0;
+    border-right: 0;
+  }
+  .lang-switch {
+    order: 3;
+    margin: 0.3rem 0 0 auto;
+  }
+  /* The one place a heading's longest word can't have a line to itself (Italian's
+     "chiacchiere?" needs 312px): it breaks at the soft hyphen its string carries */
+  .manifesto h2,
+  .interests h2,
+  .contact h2 {
+    -webkit-hyphens: manual;
+    hyphens: manual;
   }
 }

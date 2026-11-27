@@ -83,11 +83,14 @@ npm run preview  # vp preview
     drawings, the project art) waits under the `.js` class, which the inline `<head>`
     script adds, so without JS everything shows at rest. Don't add scroll reveals to
     sections or cards.
-  - It has a `prefers-reduced-motion` override and one mobile breakpoint at `720px`. A
-    `359px` one after it only gives the menu bar's items less room (and their focus rings a
-    smaller offset), so the bar keeps its two rows on the narrowest phones without shrinking
-    the text. Below `314px` the bar can't hold
-    two rows, so a last block only raises `scroll-padding-top` to clear the taller bar.
+  - It has a `prefers-reduced-motion` override and one mobile breakpoint at `720px`. Inside
+    it, from 360px down to 320px the menu bar's item padding, glyph width and focus-ring
+    offset shrink with the screen through `clamp()` (no breakpoint, so nothing jumps), and
+    the bar keeps two rows without shrinking the text. Below `314px` two rows can't hold the
+    language codes, so a last block restacks the bar into at most three rows, raises
+    `scroll-padding-top` to clear it, and turns on the soft hyphens (`&shy;`) in the two long
+    Italian headings; above it section headings don't hyphenate. A panel's notch stops short
+    of its rounded corner (`--say-corner`) when its glyph sits at the end of the bar.
   - `build.cssTarget` in `vite.config.ts` includes Safari 15, so the built CSS keeps its media
     queries as `max-width`. Keep it: without it the minifier writes `width<=720px`, which
     Safari before 16.4 ignores, and iPhones stuck on iOS 15 lose the phone layout.
