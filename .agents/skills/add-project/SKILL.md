@@ -35,9 +35,11 @@ class, the ID, and the string keys. The card has these parts:
     app's accent) followed by `{{ <slug>.description }}`;
   - an optional `{{ <slug>.details }}` paragraph;
   - an optional `<ul class="facts">`, one short fact per `<li>` (`{{ <slug>.fact1 }}` and
-    on), shown as plain lines with no chips or separators;
-  - the `.project-link` with `<span aria-hidden="true">↗</span>`;
-  - `<p class="small">{{ <slug>.status }}</p>`.
+    on), shown as plain lines with no chips or separators. A status such as "In
+    development" is a fact too (see `pagliacci.fact3`), not a separate smaller line;
+  - the `.project-link` with `<span aria-hidden="true">↗</span>`.
+- Keep the existing classes and sizes: no text below the type floor in `AGENTS.md` (16px,
+  running copy at `--text-body`), and nothing set smaller to look secondary.
 - External links use `target="_blank" rel="noopener noreferrer"`.
 - The project name is a brand, so it can stay literal in the markup. Every other visible
   word is a placeholder.
@@ -45,8 +47,8 @@ class, the ID, and the string keys. The card has these parts:
 ## 3. Add the strings to every language
 
 Add a top-level `<slug>` object with the same keys to `src/i18n/en.json`, `it.json`, and
-`ro.json`: `title`, `description`, `details` (if used), `link`, `status`, plus any
-text the art shows (`artSomething`). Follow the `edit-copy` skill for voice and
+`ro.json`: `title`, `description`, `details` (if used), `fact1` and on (if used), `url`,
+`link`, plus any text the art shows (`artSomething`). Follow the `edit-copy` skill for voice and
 translation. The build fails if any language is missing a key or has an extra one.
 
 ## 4. Draw the art from the project's own art
@@ -65,7 +67,7 @@ Sunny from the sunnysays character sheet, Mister Pagliacci's menu bar glyph). Ne
 - If the art needs JS (like counting reps or switching lines), add a function to `plays`
   in `src/main.js`, keyed by the art's class. It starts the animation and returns a reset
   function that restores the still pose. It isn't called under reduced motion.
-- Check the art at the `720px` breakpoint at the end of `src/style.css`.
+- Check the art at the `720px` breakpoint near the end of `src/style.css`.
 
 ## 5. Give it the project's colors
 

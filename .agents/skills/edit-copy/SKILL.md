@@ -42,7 +42,8 @@ string is used.
   numbers inside current, because they're what visitors without JS see.
 - `meta.description` fills the meta, Open Graph, and Twitter descriptions. Keep it under
   about 155 characters.
-- Art text appears inside the drawings, so keep it short enough to fit. That covers
+- Art text appears inside the drawings, so keep it short enough to fit at its current size;
+  never shrink the type to fit a longer line (see the type floor in `AGENTS.md`). That covers
   `project.artExercise`, Sunny's `line1` to `line4`, and `pagliacci.artLine` (his signature
   line, written in Italian and translated like the rest) and `pagliacci.artShh`.
   Sunny talks for a time proportional to the line's length, so keep its lines one short

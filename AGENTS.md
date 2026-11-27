@@ -74,11 +74,23 @@ npm run preview  # vp preview
   translated like any other copy.
 - `src/style.css`:
   - Design tokens are CSS custom properties in `:root`.
+  - Type floor: no text outside the art below 16px (`--text-small`), running copy (paragraphs,
+    facts, captions) at `--text-body` (1.1rem) or more, and text drawn inside the art at 14px or
+    more. Secondary text stays secondary through color, never a smaller size, and keeps 4.5:1:
+    `--ink-soft` on paper and the project tints, a darker soft ink in the see-through menu bar
+    (the Work band can scroll under it), and `--accent-text`, not `--accent`, for accent text.
   - Nothing fades or slides in on scroll. What plays on arrival ("click.", the interest
     drawings, the project art) waits under the `.js` class, which the inline `<head>`
     script adds, so without JS everything shows at rest. Don't add scroll reveals to
     sections or cards.
-  - It has a `prefers-reduced-motion` override and a single mobile breakpoint at `720px`.
+  - It has a `prefers-reduced-motion` override and one mobile breakpoint at `720px`. A
+    `359px` one after it only gives the menu bar's items less room (and their focus rings a
+    smaller offset), so the bar keeps its two rows on the narrowest phones without shrinking
+    the text. Below `314px` the bar can't hold
+    two rows, so a last block only raises `scroll-padding-top` to clear the taller bar.
+  - `build.cssTarget` in `vite.config.ts` includes Safari 15, so the built CSS keeps its media
+    queries as `max-width`. Keep it: without it the minifier writes `width<=720px`, which
+    Safari before 16.4 ignores, and iPhones stuck on iOS 15 lose the phone layout.
 - `public/` is copied as-is: the favicon (`favicon.svg`, `favicon-96.png` rendered from it for Google Search, which
   reads only raster favicons, and `favicon.ico` rendered from it at 16,
   32 and 48 px for crawlers and old clients that probe that path), the self-hosted fonts (`public/fonts/`, declared in
