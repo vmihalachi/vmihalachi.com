@@ -127,6 +127,16 @@ npm run preview  # vp preview
 
   Any new external origin (fonts, images, scripts, fetch) must also be added to the CSP.
 
+- **HSTS preload:** `vmihalachi.com` was submitted to the browsers' HSTS preload list on
+  28 November 2026; https://hstspreload.org/?domain=vmihalachi.com shows its status.
+  Once the list reaches browser releases (that can take several months), browsers use
+  HTTPS for the domain and every subdomain, `go.vmihalachi.com` (a Signalio link domain)
+  included, even on a first visit. So keep `max-age` at a year or more and keep
+  `includeSubDomains` and `preload` in the `Strict-Transport-Security` line of
+  `public/_headers`. Any new subdomain must serve HTTPS with a valid certificate from its
+  first day. Leaving the list takes months: drop `preload` from the header, then ask at
+  https://hstspreload.org/removal/.
+
 - When editing copy, keep the counter element IDs used by `main.js` in every language's
   strings. Their text is what no-JS visitors see, so keep those fallbacks current as well.
 - Nav `href`s must match section `id`s.

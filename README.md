@@ -39,6 +39,9 @@ except Dependabot's, which get no secrets.
 Security headers and caching are configured in `public/_headers`. The
 Content-Security-Policy allows the inline script in `index.html` by its SHA-256 hash.
 `npm run check` fails when the hash is stale, and `npm run csp:fix` rewrites it.
+`vmihalachi.com` was submitted to the browsers' HSTS preload list on 28 November 2026.
+Once browsers ship the list, they reach the domain and every subdomain only over HTTPS,
+so any new subdomain must serve HTTPS with a valid certificate from its first day.
 
 ## License
 
